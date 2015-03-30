@@ -1,0 +1,43 @@
+<HTML><HEAD><meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<SCRIPT LANGUAGE="JavaScript">
+
+function ShowNotes(id)
+{
+	switch(id) 
+	{
+case "pc00bf023e99b4e799663b976ac79d527":
+document.body.innerHTML = "<STRONG><U>Home</U></STRONG><BR><BR>when user login to his account, the system will redirect him to this page, where he can see his account details , and current licenses, <br>user should be able to add new license by clicking on Add license button, which will redirect him to add licnese page<br><br>";
+break;
+case "pff3f778cf2d34a96983be79087601eb6":
+document.body.innerHTML = "<STRONG><U>My Product</U></STRONG><BR><BR>user should be able to see all license he has and click renew if the licnes expire, the licnese link will be active only if the license still active<br><br>";
+break;
+case "pb37bc966d81d4dc898b4f5a68bd924a4":
+document.body.innerHTML = "<STRONG><U>Download</U></STRONG><BR><BR>user should be able to download the license while it's active, if license expire, and user has no active one, he should get a message asking him to add or renew his license, the download process willnot direct to a physical path, but it will write the file as steam to the user, so noboday can download the physical file if he doesn't have rights too<br><br>";
+break;
+case "p39f8ae4edc7a49738f93be4553459b79":
+document.body.innerHTML = "<STRONG><U>Cloud</U></STRONG><BR><BR>";
+break;
+case "p8d5fc9938411482ab90f61518560a598":
+document.body.innerHTML = "<STRONG><U>Add License</U></STRONG><BR><BR>All license details is dynamic, get populated from the dbo.LicenseTypes table and related tables, user will only see option which he has permission to buy<br><br>";
+break;
+case "p12ea48c8cbde4c798bfe356bec12cf09":
+document.body.innerHTML = "<STRONG><U>Docs And Videos</U></STRONG><BR><BR>user will be able to see documents and videos<br><br>";
+break;
+case "p40fb3a0056bd4facb63cc3f2f0abf3b4":
+document.body.innerHTML = "<STRONG><U>Shopping Cart</U></STRONG><BR><BR>user should be able to change quantity in his shopping cart, apply a valid discount, and check out<br><br>";
+break;
+case "p22c57c1ca061401faa3006b2d489cf3d":
+document.body.innerHTML = "<STRONG><U>Redirect page</U></STRONG><BR><BR>this page will redirec user to paypal<br><br>";
+break;
+case "p51aa46c69dbc471aa00de0d848741962":
+document.body.innerHTML = "<STRONG><U>PayPal</U></STRONG><BR><BR>After user pay the money, paypal will redirect him to confirmaion page, if user cancel, paypal will redirect him to error page, the system should has an IPNHandler so it get notified automatically when user pay through PayPal, then system should allow user to download the software<br><br>";
+break;
+case "pbf3fad6d2e3f4fa594b5f8b82b090a89":
+document.body.innerHTML = "<STRONG><U>Orders</U></STRONG><BR><BR>user will able to view his previous orders and order details<br><br>";
+break;
+default:
+document.body.innerHTML = ""
+	}
+}
+</SCRIPT></HEAD><BODY style='font-family: arial; font-size: 12px; background-color:#EEEEFF;'></BODY></HTML>

@@ -1,3 +1,0 @@
-UPDATE [BMD].[dbo].[DB_Version]
-   SET [VersionID] = 31
-Select @@Rowcount

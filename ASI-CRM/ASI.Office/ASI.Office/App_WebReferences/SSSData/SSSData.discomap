@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://www.steelsmartsystem.com/services/Services/SSSData.asmx?disco" filename="SSSData.disco" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.steelsmartsystem.com/services/Services/SSSData.asmx?schema=Webinars" filename="Webinars.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.steelsmartsystem.com/services/Services/SSSData.asmx?wsdl" filename="SSSData.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.steelsmartsystem.com/services/Services/SSSData.asmx?schema=MembersDS" filename="MembersDS.xsd" />
-  </Results>
-</DiscoveryClientResultsFile>
