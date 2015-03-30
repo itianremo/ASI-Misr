@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>Here you can manage all employees personal data , you can control their status also you can search for any employe or delete any one.</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="003" FUNCTIONALITYID="003">
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>View Employee Details</ITEM_NAME>
+      <ITEM_DESCRIPTION>To view employee details at the left hand side of the the employees grid press the  ' View ' link for the required employee.</ITEM_DESCRIPTION>
+      <IMAGENAME>viewLink.GIF</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>3</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add New Employee</ITEM_NAME>
+      <ITEM_DESCRIPTION>To add a new employee , Fill the employee information :
+enter employee number ,  first name , last name , employee departement , employee job title and select the employee user account from the combo if he has one, then press the add employee button .
+
+</ITEM_DESCRIPTION>
+      <IMAGENAME>standardNew.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>4</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit Employee</ITEM_NAME>
+      <ITEM_DESCRIPTION>To edit employee first view his details by pressing the ' View ' link in the grid for the required employee , make your updates and then press the edit button.</ITEM_DESCRIPTION>
+      <IMAGENAME>edit.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>5</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Find Employee</ITEM_NAME>
+      <ITEM_DESCRIPTION>To find an employee reset the fields by clicking on the Reset button then use any employee field as a search criteria for example you can enter the first name of employee you want to search for or you can enter employee number or you can combine any fields you want to search for also you can search in all employees or in active employees or in inactive employees as shown in the picture there are three radio buttons.</ITEM_DESCRIPTION>
+      <IMAGENAME>findEmp.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>6</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Employee</ITEM_NAME>
+      <ITEM_DESCRIPTION>To delete an employee select an employee from employees list then press on the 'Delete' link for this employee.
+
+Note: If the employee has previose entries in the accountability sheet you will not be able to delete him at this time you can make a termination for him to keep his histosy.</ITEM_DESCRIPTION>
+      <IMAGENAME>empDelete.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>7</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Terminate Employee</ITEM_NAME>
+      <ITEM_DESCRIPTION>To terminate an active employee, after you select him from the employees table list press on the 'Terminate' button  </ITEM_DESCRIPTION>
+      <IMAGENAME>empTerminate.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>8</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Activate Employee</ITEM_NAME>
+      <ITEM_DESCRIPTION>To activate a terminated employee, after you select him from the employees table list press on the 'Activate' button.  </ITEM_DESCRIPTION>
+      <IMAGENAME>empActivate.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>9</ITEMID>
+      <ITEMPARENT>2</ITEMPARENT>
+      <ITEM_NAME>Manage Employee Addresses</ITEM_NAME>
+      <ITEM_DESCRIPTION>To manage employee addresses after you select the employee press on the button as shown in the picture to open addresses window, in this window you can add more than one address to the employee and select one as a primary address 
+you need to select the country , state ,city , zip code , enter the address then determine if it is a primary address or not .. Finally you press on save button the address then will be added to the table of employee addresses,
+In the table you can delete the address you want by pressing on 'Delete' link.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>empAddress.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>11</ITEMID>
+      <ITEMPARENT>2</ITEMPARENT>
+      <ITEM_NAME>Manage Employee Phones</ITEM_NAME>
+      <ITEM_DESCRIPTION>To manage employee phones after you select the employee press on the button as shown in the picture to open phones window, in this window you can add more than one phone to the employee and select one as a primary phone.
+you need to enter the area code , country code ,  zone code , phone number and select phone type then determine if it is a primary phone or not .. Finally you press on save button the phone then will be added to the table of employee phones,
+In the table you can delete any phone you want by pressing on 'Delete' link.
+
+</ITEM_DESCRIPTION>
+      <IMAGENAME>empPhone.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>12</ITEMID>
+      <ITEMPARENT>2</ITEMPARENT>
+      <ITEM_NAME>Employee Photo</ITEM_NAME>
+      <ITEM_DESCRIPTION>If you want to view employee photo or upload one after selecting the employee from the table press on photo link as shown in the picture if there is a photo for the employee it will appears and if you want to upload one press on browse button and select the photo you want and then press on edit button the photo then will be saved.</ITEM_DESCRIPTION>
+      <IMAGENAME>empPhoto.JPG</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

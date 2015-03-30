@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllOperations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllOperationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllOperationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TravelerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTravelerDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrvPartTypeInTable77">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TsnNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrvPartTypeInTable77Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrvPartTypeInTable77Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrvPartTypeInTable90">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StockNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrvPartTypeInTable90Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrvPartTypeInTable90Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelerOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TravelerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelerOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTravelerOperationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckConnectionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllOperationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllOperations" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOperationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllOperationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelerData" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrvPartTypeInTable77SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrvPartTypeInTable77" />
+  </wsdl:message>
+  <wsdl:message name="GetTrvPartTypeInTable77SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrvPartTypeInTable77Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTrvPartTypeInTable90SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrvPartTypeInTable90" />
+  </wsdl:message>
+  <wsdl:message name="GetTrvPartTypeInTable90SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrvPartTypeInTable90Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelerOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelerOperation" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelerOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelerOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckConnection" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConnectionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FoxProSrvSoap">
+    <wsdl:operation name="GetAllOperations">
+      <wsdl:input message="tns:GetAllOperationsSoapIn" />
+      <wsdl:output message="tns:GetAllOperationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelerData">
+      <wsdl:input message="tns:GetTravelerDataSoapIn" />
+      <wsdl:output message="tns:GetTravelerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrvPartTypeInTable77">
+      <wsdl:input message="tns:GetTrvPartTypeInTable77SoapIn" />
+      <wsdl:output message="tns:GetTrvPartTypeInTable77SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrvPartTypeInTable90">
+      <wsdl:input message="tns:GetTrvPartTypeInTable90SoapIn" />
+      <wsdl:output message="tns:GetTrvPartTypeInTable90SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelerOperation">
+      <wsdl:input message="tns:GetTravelerOperationSoapIn" />
+      <wsdl:output message="tns:GetTravelerOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <wsdl:input message="tns:CheckConnectionSoapIn" />
+      <wsdl:output message="tns:CheckConnectionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FoxProSrvSoap" type="tns:FoxProSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllOperations">
+      <soap:operation soapAction="http://tempuri.org/GetAllOperations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelerData">
+      <soap:operation soapAction="http://tempuri.org/GetTravelerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrvPartTypeInTable77">
+      <soap:operation soapAction="http://tempuri.org/GetTrvPartTypeInTable77" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrvPartTypeInTable90">
+      <soap:operation soapAction="http://tempuri.org/GetTrvPartTypeInTable90" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelerOperation">
+      <soap:operation soapAction="http://tempuri.org/GetTravelerOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <soap:operation soapAction="http://tempuri.org/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FoxProSrvSoap12" type="tns:FoxProSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllOperations">
+      <soap12:operation soapAction="http://tempuri.org/GetAllOperations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelerData">
+      <soap12:operation soapAction="http://tempuri.org/GetTravelerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrvPartTypeInTable77">
+      <soap12:operation soapAction="http://tempuri.org/GetTrvPartTypeInTable77" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrvPartTypeInTable90">
+      <soap12:operation soapAction="http://tempuri.org/GetTrvPartTypeInTable90" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelerOperation">
+      <soap12:operation soapAction="http://tempuri.org/GetTravelerOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <soap12:operation soapAction="http://tempuri.org/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FoxProSrv">
+    <wsdl:port name="FoxProSrvSoap" binding="tns:FoxProSrvSoap">
+      <soap:address location="http://localhost/maingui/FoxProSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FoxProSrvSoap12" binding="tns:FoxProSrvSoap12">
+      <soap12:address location="http://localhost/maingui/FoxProSrv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

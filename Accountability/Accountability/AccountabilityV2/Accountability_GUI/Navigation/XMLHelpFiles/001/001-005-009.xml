@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>Contains a list of all charts, every row contains the File ID, Chart name, view chart button, edit chart button, delete chart</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="005" FUNCTIONALITYID="009">
+    <ITEM_DATA>
+      <ITEMID>1</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>View FlowChart</ITEM_NAME>
+      <ITEM_DESCRIPTION>Press view chart button to see chart details you can press Back button to get back to flow charts list </ITEM_DESCRIPTION>
+      <IMAGENAME>viewChart.GIF</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete FlowChart</ITEM_NAME>
+      <ITEM_DESCRIPTION>Allows you to delete a chart by hit the delete button </ITEM_DESCRIPTION>
+      <IMAGENAME>deleteChart.GIF</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>3</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit FlowChart</ITEM_NAME>
+      <ITEM_DESCRIPTION>Allows you to edit the chart and change the view or chart name or chart structure ,  you can choose how you want to see the chart  </ITEM_DESCRIPTION>
+      <IMAGENAME>edit.gif</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

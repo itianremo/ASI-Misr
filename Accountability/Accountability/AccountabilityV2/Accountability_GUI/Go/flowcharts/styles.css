@@ -1,0 +1,151 @@
+body
+{
+
+}
+.smalllables {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #003366;
+}
+.normallables {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+}
+.blueborder {
+	border: 1px solid #003366;
+}
+fieldset {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FF6600;
+	font-weight: bold;
+	height: 50px;
+	bottom: 1px;
+	width: 350px;
+	padding: 3;
+}
+.leftpanel {
+	border: 1px inset #006699;border-collapse:collapse;
+}
+.lables {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	color: #003366;
+	text-align:right;
+	text-decoration: underline;
+}
+.inputtext {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #990000;
+	background-color: #FFFFFF;
+	border: 1px solid #003366;
+	width:150;
+}
+.checkbox {
+	border: 1px solid #003366;
+}
+/*.btn  
+
+{ 
+	background:#D7DBDD
+	url("pix/gray.gif") 
+	repeat-x; color:#000;  text-align:center; border:1px solid #000;
+	width:80;
+}
+*/
+.btn { 
+	border-width:1px;
+	border-color:black;
+	border-style:solid;
+	FONT-WEIGHT: normal; 
+	BORDER-LEFT: #000 1px solid; 
+	WIDTH: 80px; 
+	BORDER-BOTTOM: #000 1px solid;
+	BACKGROUND-COLOR: silver; 
+	TEXT-ALIGN: center; 
+	font-color: black;
+	border-size: 1px 
+	} 
+.btn1 
+{ 
+	BACKGROUND-COLOR: Red; 
+	border-width:1px;
+	border-color:black;
+	border-style:solid;
+    FONT-WEIGHT: bold; 
+    BORDER-LEFT: #000 1px solid; 
+    WIDTH: 80px;
+    BORDER-BOTTOM: #000 1px solid; 
+    TEXT-ALIGN: center; 
+    font-color: white; 
+    border-size: 1px 
+    } 
+
+.imgborder {
+	background-color: #DEEDFA;
+	border: 1px solid #FF6600;
+}
+.bluelables {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #006699;
+}
+
+.topbanner{
+	background:#D7DBDD
+	url("pix/gray.gif") 
+	repeat-x; color:#000;  text-align:center; border:0px solid #003366 ;border-collapse:collapse;	
+	text-align:center;
+	font-size:24px;
+	font-weight:bold;
+	color:#003366;
+	
+}
+.blue {                /* grid header styel */
+	background:#10618C
+	url("../images/grddarkblue.gif") 
+	repeat-x; color:#FFF; border:1px solid #FFF;
+}
+.orange   
+{ 
+	background:#FE8E32
+	url("pix/orange.gif") 
+	repeat-x; color:#000;  border:1px solid #fff;	
+}
+.green  /* projects */
+{ 
+	background: #7DC525   
+	url("pix/green.gif") 
+	repeat-x; color:#000;  border:1px solid #fff;	
+}
+.gray   
+{ 
+	background:#D7DBDD
+	url("pix/gray.gif") 
+	repeat-x; color:#000;  border:1px solid #003366;	
+}
+.red   
+{ 
+	background:#EF5F5F
+	url("pix/red.gif") 
+	repeat-x; color:#000;  border:1px solid #fff;	
+}
+.partLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF6600;
+}
+.parttitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bolder;
+}

@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListAllProjects">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListAllProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAllProjectsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ListProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProjectResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewProjects">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectFromPDMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectFromPDMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddProjectFromPDMSResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditProjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifiedProjects">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditProjectsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletedProjects">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteProjectsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectSimple">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListProjectSimpleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProjectSimpleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListEmployeeProjects">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListEmployeeProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListEmployeeProjectsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectsByEmployeeResponsibilty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="responseID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectsByEmployeeResponsibiltyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProjectsByEmployeeResponsibiltyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompleteProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteProjectFromPDMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteProjectFromPDMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompleteProjectFromPDMSResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectEmployees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProjectID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProjectEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmployeeToProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProjectID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmployeeToProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEmployeeToProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveEmployeeFromProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProjecID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveEmployeeFromProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveEmployeeFromProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListUserProjects">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListUserProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListUserProjectsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsByParent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parentID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsByParentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectsByParentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAllProjectsLevels">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListAllProjectsLevelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAllProjectsLevelsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projLvlID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProjectLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProjectLevelResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewProjectsLevels">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddProjectLevelResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditProjectsLevels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifiedProjectsLevels">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditProjectsLevelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditProjectsLevelsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProjectsLevels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletedProjectsLevels">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProjectsLevelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteProjectsLevelsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListAllProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAllProjects" />
+  </wsdl:message>
+  <wsdl:message name="ListAllProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAllProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAllProjectsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProject" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProject" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectFromPDMSSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProjectFromPDMS" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectFromPDMSSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProjectFromPDMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectFromPDMSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EditProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditProjects" />
+  </wsdl:message>
+  <wsdl:message name="EditProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditProjectsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProjects" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectSimpleSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProjectSimple" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectSimpleSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProjectSimpleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectSimpleAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListEmployeeProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListEmployeeProjects" />
+  </wsdl:message>
+  <wsdl:message name="ListEmployeeProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListEmployeeProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListEmployeeProjectsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectsByEmployeeResponsibiltySoapIn">
+    <wsdl:part name="parameters" element="tns:ListProjectsByEmployeeResponsibilty" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectsByEmployeeResponsibiltySoapOut">
+    <wsdl:part name="parameters" element="tns:ListProjectsByEmployeeResponsibiltyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectsByEmployeeResponsibiltyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CompleteProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:CompleteProject" />
+  </wsdl:message>
+  <wsdl:message name="CompleteProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteProjectAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CompleteProjectFromPDMSSoapIn">
+    <wsdl:part name="parameters" element="tns:CompleteProjectFromPDMS" />
+  </wsdl:message>
+  <wsdl:message name="CompleteProjectFromPDMSSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteProjectFromPDMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteProjectFromPDMSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProjectEmployees" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProjectEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectEmployeesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeToProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEmployeeToProject" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeToProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEmployeeToProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeToProjectAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeFromProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeFromProject" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeFromProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeFromProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeFromProjectAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListUserProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListUserProjects" />
+  </wsdl:message>
+  <wsdl:message name="ListUserProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListUserProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListUserProjectsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsByParentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectsByParent" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsByParentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectsByParentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsByParentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListAllProjectsLevelsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAllProjectsLevels" />
+  </wsdl:message>
+  <wsdl:message name="ListAllProjectsLevelsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAllProjectsLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAllProjectsLevelsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProjectLevel" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProjectLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProjectLevelAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProjectLevel" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProjectLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectLevelAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EditProjectsLevelsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditProjectsLevels" />
+  </wsdl:message>
+  <wsdl:message name="EditProjectsLevelsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditProjectsLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditProjectsLevelsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectsLevelsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProjectsLevels" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectsLevelsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProjectsLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectsLevelsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetERPSession" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetERPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProjectsServiceSoap">
+    <wsdl:operation name="ListAllProjects">
+      <wsdl:input message="tns:ListAllProjectsSoapIn" />
+      <wsdl:output message="tns:ListAllProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProject">
+      <wsdl:input message="tns:ListProjectSoapIn" />
+      <wsdl:output message="tns:ListProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <wsdl:input message="tns:AddProjectSoapIn" />
+      <wsdl:output message="tns:AddProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectFromPDMS">
+      <wsdl:input message="tns:AddProjectFromPDMSSoapIn" />
+      <wsdl:output message="tns:AddProjectFromPDMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProjects">
+      <wsdl:input message="tns:EditProjectsSoapIn" />
+      <wsdl:output message="tns:EditProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjects">
+      <wsdl:input message="tns:DeleteProjectsSoapIn" />
+      <wsdl:output message="tns:DeleteProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectSimple">
+      <wsdl:input message="tns:ListProjectSimpleSoapIn" />
+      <wsdl:output message="tns:ListProjectSimpleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListEmployeeProjects">
+      <wsdl:input message="tns:ListEmployeeProjectsSoapIn" />
+      <wsdl:output message="tns:ListEmployeeProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectsByEmployeeResponsibilty">
+      <wsdl:input message="tns:ListProjectsByEmployeeResponsibiltySoapIn" />
+      <wsdl:output message="tns:ListProjectsByEmployeeResponsibiltySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteProject">
+      <wsdl:input message="tns:CompleteProjectSoapIn" />
+      <wsdl:output message="tns:CompleteProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteProjectFromPDMS">
+      <wsdl:input message="tns:CompleteProjectFromPDMSSoapIn" />
+      <wsdl:output message="tns:CompleteProjectFromPDMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectEmployees">
+      <wsdl:input message="tns:ListProjectEmployeesSoapIn" />
+      <wsdl:output message="tns:ListProjectEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployeeToProject">
+      <wsdl:input message="tns:AddEmployeeToProjectSoapIn" />
+      <wsdl:output message="tns:AddEmployeeToProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeFromProject">
+      <wsdl:input message="tns:RemoveEmployeeFromProjectSoapIn" />
+      <wsdl:output message="tns:RemoveEmployeeFromProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListUserProjects">
+      <wsdl:input message="tns:ListUserProjectsSoapIn" />
+      <wsdl:output message="tns:ListUserProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsByParent">
+      <wsdl:input message="tns:GetProjectsByParentSoapIn" />
+      <wsdl:output message="tns:GetProjectsByParentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAllProjectsLevels">
+      <wsdl:input message="tns:ListAllProjectsLevelsSoapIn" />
+      <wsdl:output message="tns:ListAllProjectsLevelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectLevel">
+      <wsdl:input message="tns:ListProjectLevelSoapIn" />
+      <wsdl:output message="tns:ListProjectLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectLevel">
+      <wsdl:input message="tns:AddProjectLevelSoapIn" />
+      <wsdl:output message="tns:AddProjectLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProjectsLevels">
+      <wsdl:input message="tns:EditProjectsLevelsSoapIn" />
+      <wsdl:output message="tns:EditProjectsLevelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectsLevels">
+      <wsdl:input message="tns:DeleteProjectsLevelsSoapIn" />
+      <wsdl:output message="tns:DeleteProjectsLevelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <wsdl:input message="tns:GetERPSessionSoapIn" />
+      <wsdl:output message="tns:GetERPSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProjectsServiceSoap" type="tns:ProjectsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListAllProjects">
+      <soap:operation soapAction="http://tempuri.org/ListAllProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListAllProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProject">
+      <soap:operation soapAction="http://tempuri.org/ListProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <soap:operation soapAction="http://tempuri.org/AddProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectFromPDMS">
+      <soap:operation soapAction="http://tempuri.org/AddProjectFromPDMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddProjectFromPDMSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProjects">
+      <soap:operation soapAction="http://tempuri.org/EditProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EditProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjects">
+      <soap:operation soapAction="http://tempuri.org/DeleteProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectSimple">
+      <soap:operation soapAction="http://tempuri.org/ListProjectSimple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListProjectSimpleAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListEmployeeProjects">
+      <soap:operation soapAction="http://tempuri.org/ListEmployeeProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListEmployeeProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectsByEmployeeResponsibilty">
+      <soap:operation soapAction="http://tempuri.org/ListProjectsByEmployeeResponsibilty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListProjectsByEmployeeResponsibiltyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteProject">
+      <soap:operation soapAction="http://tempuri.org/CompleteProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CompleteProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteProjectFromPDMS">
+      <soap:operation soapAction="http://tempuri.org/CompleteProjectFromPDMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CompleteProjectFromPDMSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectEmployees">
+      <soap:operation soapAction="http://tempuri.org/ListProjectEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListProjectEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployeeToProject">
+      <soap:operation soapAction="http://tempuri.org/AddEmployeeToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddEmployeeToProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeFromProject">
+      <soap:operation soapAction="http://tempuri.org/RemoveEmployeeFromProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveEmployeeFromProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUserProjects">
+      <soap:operation soapAction="http://tempuri.org/ListUserProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListUserProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsByParent">
+      <soap:operation soapAction="http://tempuri.org/GetProjectsByParent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetProjectsByParentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllProjectsLevels">
+      <soap:operation soapAction="http://tempuri.org/ListAllProjectsLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListAllProjectsLevelsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectLevel">
+      <soap:operation soapAction="http://tempuri.org/ListProjectLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListProjectLevelAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectLevel">
+      <soap:operation soapAction="http://tempuri.org/AddProjectLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddProjectLevelAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProjectsLevels">
+      <soap:operation soapAction="http://tempuri.org/EditProjectsLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EditProjectsLevelsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectsLevels">
+      <soap:operation soapAction="http://tempuri.org/DeleteProjectsLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteProjectsLevelsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProjectsServiceSoap12" type="tns:ProjectsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListAllProjects">
+      <soap12:operation soapAction="http://tempuri.org/ListAllProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListAllProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProject">
+      <soap12:operation soapAction="http://tempuri.org/ListProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <soap12:operation soapAction="http://tempuri.org/AddProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectFromPDMS">
+      <soap12:operation soapAction="http://tempuri.org/AddProjectFromPDMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddProjectFromPDMSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProjects">
+      <soap12:operation soapAction="http://tempuri.org/EditProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EditProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjects">
+      <soap12:operation soapAction="http://tempuri.org/DeleteProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectSimple">
+      <soap12:operation soapAction="http://tempuri.org/ListProjectSimple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListProjectSimpleAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListEmployeeProjects">
+      <soap12:operation soapAction="http://tempuri.org/ListEmployeeProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListEmployeeProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectsByEmployeeResponsibilty">
+      <soap12:operation soapAction="http://tempuri.org/ListProjectsByEmployeeResponsibilty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListProjectsByEmployeeResponsibiltyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteProject">
+      <soap12:operation soapAction="http://tempuri.org/CompleteProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CompleteProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteProjectFromPDMS">
+      <soap12:operation soapAction="http://tempuri.org/CompleteProjectFromPDMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CompleteProjectFromPDMSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectEmployees">
+      <soap12:operation soapAction="http://tempuri.org/ListProjectEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListProjectEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployeeToProject">
+      <soap12:operation soapAction="http://tempuri.org/AddEmployeeToProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddEmployeeToProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeFromProject">
+      <soap12:operation soapAction="http://tempuri.org/RemoveEmployeeFromProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveEmployeeFromProjectAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUserProjects">
+      <soap12:operation soapAction="http://tempuri.org/ListUserProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListUserProjectsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsByParent">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectsByParent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetProjectsByParentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllProjectsLevels">
+      <soap12:operation soapAction="http://tempuri.org/ListAllProjectsLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListAllProjectsLevelsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProjectLevel">
+      <soap12:operation soapAction="http://tempuri.org/ListProjectLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListProjectLevelAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectLevel">
+      <soap12:operation soapAction="http://tempuri.org/AddProjectLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddProjectLevelAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProjectsLevels">
+      <soap12:operation soapAction="http://tempuri.org/EditProjectsLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EditProjectsLevelsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectsLevels">
+      <soap12:operation soapAction="http://tempuri.org/DeleteProjectsLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteProjectsLevelsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap12:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProjectsService">
+    <wsdl:port name="ProjectsServiceSoap" binding="tns:ProjectsServiceSoap">
+      <soap:address location="http://localhost/Accountability_WS/ProjectsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProjectsServiceSoap12" binding="tns:ProjectsServiceSoap12">
+      <soap12:address location="http://localhost/Accountability_WS/ProjectsService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

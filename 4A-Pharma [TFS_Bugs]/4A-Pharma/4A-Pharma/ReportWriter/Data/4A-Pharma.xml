@@ -1,0 +1,1001 @@
+<?xml version="1.0"?>
+<DATAMODEL Version="3" DefQuery="">
+  <DBPARAMS>
+    <ConnectionString>Provider=SQLOLEDB.1;Password=RW;Persist Security Info=True;User ID=RW;Initial Catalog=BMD;Data Source=MISServer;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=HAMDYAHMED;Use Encryption for Data=False;Tag with column collation when possible=False</ConnectionString>
+  </DBPARAMS>
+  <NAME></NAME>
+  <DESCRIPTION></DESCRIPTION>
+  <OPERATORS>
+    <OPERATOR ID="Equal" CAPTION="is equal to" MAINTEXT="is equal to" EXPR="{expr1} = {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotEqual" CAPTION="is not equal to" MAINTEXT="is not equal to" EXPR="{expr1} &lt;&gt; {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="LessThan" CAPTION="is less than" MAINTEXT="is less than" EXPR="{expr1} &lt; {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="LessOrEqual" CAPTION="is less than or equal to" MAINTEXT="is less than or equal to" EXPR="{expr1} &lt;= {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="GreaterThan" CAPTION="is greater than" MAINTEXT="is greater than" EXPR="{expr1} &gt; {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="GreaterOrEqual" CAPTION="is greater than or equal to" MAINTEXT="is greater than or equal to" EXPR="{expr1} &gt;= {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="IsNull" CAPTION="is null" MAINTEXT="is null" EXPR="{expr1} IS NULL" FORMAT="{expr1}{op}" KIND="Scalar">
+      <TYPES>Unknown,String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,BCD,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="InList" CAPTION="is in list" MAINTEXT="is in list" EXPR="{expr1} IN ({expr2})" FORMAT="{expr1}{op}{expr2}" KIND="List">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotInList" CAPTION="is not in list" MAINTEXT="is not in list" EXPR="NOT ({expr1} in ({expr2}))" FORMAT="{expr1}{op}{expr2}" KIND="List">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="StartsWith" CAPTION="starts with" MAINTEXT="starts with" EXPR="{expr1} LIKE {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotStartsWith" CAPTION="does not start with" MAINTEXT="does not start with" EXPR="NOT ({expr1} LIKE {expr2})" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="Contains" CAPTION="contains" MAINTEXT="contains" EXPR="{expr1} LIKE {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotContains" CAPTION="does not contain" MAINTEXT="does not contain" EXPR="NOT ({expr1} LIKE {expr2})" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="Between" CAPTION="is between" MAINTEXT="is between" EXPR="{expr1} BETWEEN {expr2} AND {expr3}" FORMAT="{expr1}{op}{expr2} and {expr3}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotBetween" CAPTION="is not between" MAINTEXT="is not between" EXPR="NOT ({expr1} BETWEEN {expr2} AND {expr3})" FORMAT="{expr1}{op}{expr2} and {expr3}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+  </OPERATORS>
+  <TABLES>
+    <TABLE NAME="[BMD-Bricks]" ALIAS="Bricks" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,10,110,160"/>
+    <TABLE NAME="[BMD-Categories]" ALIAS="Categories" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="160,9,110,160"/>
+    <TABLE NAME="[BMD-Distributor_Branches]" ALIAS="Distributor Branches" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="289,39,110,160"/>
+    <TABLE NAME="[BMD-Distributors]" ALIAS="Distributors" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="630,11,110,160"/>
+    <TABLE NAME="[BMD-Employees]" ALIAS="Employees" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="765,0,110,160"/>
+    <TABLE NAME="[BMD-MedicalAccounts]" ALIAS="Medical Accounts" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,10,111,176"/>
+    <TABLE NAME="[BMD-Pharmacies]" ALIAS="Pharmacies" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,246,110,160"/>
+    <TABLE NAME="[BMD-Physicians]" ALIAS="Physicians" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,246,110,160"/>
+    <TABLE NAME="[BMD-PhysicianScore]" ALIAS="Physicians Scores" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,246,110,160"/>
+    <TABLE NAME="[BMD-PrivateClinics]" ALIAS="Private Clinics" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="442,8,110,216"/>
+    <TABLE NAME="[BMD-ProductFeedback]" ALIAS="Products Feedback" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,246,110,175"/>
+    <TABLE NAME="[BMD-Products]" ALIAS="Products" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,246,110,182"/>
+    <TABLE NAME="[BMD-Rel_Bricks_Branches]" ALIAS="Bricks Branches" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,718,110,160"/>
+    <TABLE NAME="[BMD-Rel_Bricks_Users]" ALIAS="Bricks Users" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,482,110,160"/>
+    <TABLE NAME="[BMD-Rel_Distributors_Products]" ALIAS="Distributors Products" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="612,482,110,160"/>
+    <TABLE NAME="[BMD-Rel_Govs_Cities]" ALIAS=" Governorates Cities" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,718,110,160"/>
+    <TABLE NAME="[BMD-Rel_Pharmacy_Distributors]" ALIAS="Pharmacies Distributors" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="649,217,110,160"/>
+    <TABLE NAME="[BMD-Rel_Pharmacy_MedicalAccounts]" ALIAS="Pharmacies Medical Accounts" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,482,110,160"/>
+    <TABLE NAME="[BMD-Rel_Pharmacy_Physcians]" ALIAS="Pharmacies Physcians" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,482,110,160"/>
+    <TABLE NAME="[BMD-Rel_Physicians_MedicalAccounts]" ALIAS="Physicians Medical Accounts" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,246,110,160"/>
+    <TABLE NAME="[BMD-Rel_Products_Users]" ALIAS="Products Users" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,482,110,160"/>
+    <TABLE NAME="[GNR-GeneralCode]" ALIAS="General Codes" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,482,110,160"/>
+    <TABLE NAME="[GNR-SubCode]" ALIAS="SubCodes" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,482,110,160"/>
+  </TABLES>
+  <LINKS>
+    <LINK TABLE1="Distributors" TABLE2="Distributor Branches" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="DistributorID" EXPR2="DistributorID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Physicians Scores" TABLE2="Physicians" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Physicians Medical Accounts" TABLE2="Physicians" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Physicians Medical Accounts" TABLE2="Medical Accounts" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="MedAccountID" EXPR2="MedicalAccountID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Medical Accounts" TABLE2="Bricks" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies" TABLE2="Bricks" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies Distributors" TABLE2="Distributors" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="DistributorID" EXPR2="DistributorID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies Distributors" TABLE2="Pharmacies Physcians" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PharmacyID" EXPR2="PharmacyID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies Physcians" TABLE2="Physicians" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Distributors Products" TABLE2="Distributors" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="DistributorID" EXPR2="DistributorID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Distributors Products" TABLE2="Products" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="ProductID" EXPR2="ProductID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Products Feedback" TABLE2="Products" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="ProductID" EXPR2="ProductID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Products Users" TABLE2="Products" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="ProductID" EXPR2="ProductID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Products Users" TABLE2="Employees" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="EmpID" EXPR2="EmpID" OP="="/>
+    </LINK>
+    <LINK TABLE1="SubCodes" TABLE2="General Codes" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="GID" EXPR2="GID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks Users" TABLE2="Bricks" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks Users" TABLE2="Employees" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="EmpID" EXPR2="EmpID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks Branches" TABLE2="Distributor Branches" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BranchID" EXPR2="BranchID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks Branches" TABLE2="Bricks" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies Medical Accounts" TABLE2="Pharmacies" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PharmacyID" EXPR2="PharmacyID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies Medical Accounts" TABLE2="Medical Accounts" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="MedicalAccountID" EXPR2="MedicalAccountID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Private Clinics" TABLE2="Bricks" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Private Clinics" TABLE2="Physicians" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+  </LINKS>
+  <ENTITIES MAXID="0">
+    <ENTITY NAME="Bricks">
+      <ATTR ID="BMD-Bricks.BrickID" KIND="Data" EXPR="BrickID" CAPTION="Brick ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Bricks.BrickName" KIND="Data" EXPR="BrickName" CAPTION="Brick Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Categories">
+      <ATTR ID="BMD-Categories.CategoryID" KIND="Data" EXPR="CategoryID" CAPTION="Category ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Categories.CategoryName" KIND="Data" EXPR="CategoryName" CAPTION="Category Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Distributors Branches">
+      <ATTR ID="BMD-Distributor_Branches.BranchID" KIND="Data" EXPR="BranchID" CAPTION="Branch ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="Distributor" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [DistributorID]
+      ,[Name]
+  FROM [BMD-Distributors]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.BranchName" KIND="Data" EXPR="BranchName" CAPTION="Branch Name" TYPE="WideString" SIZE="250" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor Branches">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.BranchAddress" KIND="Data" EXPR="BranchAddress" CAPTION="Branch Address" TYPE="WideString" SIZE="250" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor Branches">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Distributors">
+      <ATTR ID="BMD-Distributors.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="Distributor ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributors.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Employees">
+      <ATTR ID="BMD-Employees.EmpID" KIND="Data" EXPR="EmpID" CAPTION="Employee ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.UserName" KIND="Data" EXPR="UserName" CAPTION="User Name" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.EmpName" KIND="Data" EXPR="EmpName" CAPTION="Employee Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.LoweredEmpName" KIND="Data" EXPR="LoweredEmpName" CAPTION="Lowered Employee Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.TitleID" KIND="Data" EXPR="TitleID" CAPTION="Title" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=3</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Employees.Active" KIND="Data" EXPR="Active" CAPTION="Active" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="String" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Medical Accounts">
+      <ATTR ID="BMD-MedicalAccounts.MedicalAccountID" KIND="Data" EXPR="MedicalAccountID" CAPTION="Medical Account ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.BrickID" KIND="Data" EXPR="BrickID" CAPTION="Brick" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [BrickID]
+      ,[BrickName]
+  FROM [BMD-Bricks]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.SubordinationID" KIND="Data" EXPR="SubordinationID" CAPTION="Subordination" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=9</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.GovID" KIND="Data" EXPR="GovID" CAPTION="Governorate" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=5</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.CityID" KIND="Data" EXPR="CityID" CAPTION="City" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=6</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Area" KIND="Data" EXPR="Area" CAPTION="Area" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Address" KIND="Data" EXPR="Address" CAPTION="Address" TYPE="WideString" SIZE="1000" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Phone" KIND="Data" EXPR="Phone" CAPTION="Phone" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="Postal Code" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.ICUNO" KIND="Data" EXPR="ICUNO" CAPTION="Intensive Care Unit NO" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.No_Medically_Served_Pts" KIND="Data" EXPR="No_Medically_Served_Pts" CAPTION="No Medically Served Points" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.RX_Financial_Limits" KIND="Data" EXPR="RX_Financial_Limits" CAPTION="RX Financial Limits" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Monthly_Financial_Limits" KIND="Data" EXPR="Monthly_Financial_Limits" CAPTION="Monthly Financial Limits" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Annual_Financial_Limits" KIND="Data" EXPR="Annual_Financial_Limits" CAPTION="Annual Financial Limits" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Delivery_Internal" KIND="Data" EXPR="Drug_Delivery_Internal" CAPTION="Drug Delivery Internal" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Delivery_External" KIND="Data" EXPR="Drug_Delivery_External" CAPTION="Drug Delivery External" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Purchase_Direct_Orders" KIND="Data" EXPR="Drug_Purchase_Direct_Orders" CAPTION="Drug Purchase Direct Orders" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Purchase_Tender" KIND="Data" EXPR="Drug_Purchase_Tender" CAPTION="Drug Purchase Tender" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Total_RX_General_No_Day" KIND="Data" EXPR="Total_RX_General_No_Day" CAPTION="Total RX General No Day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Total_RX_General_No_Week" KIND="Data" EXPR="Total_RX_General_No_Week" CAPTION="Total RX General No Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Total_RX_General_No_Month" KIND="Data" EXPR="Total_RX_General_No_Month" CAPTION="Total RX General No Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacies">
+      <ATTR ID="BMD-Pharmacies.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="Pharmacy ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.BrickID" KIND="Data" EXPR="BrickID" CAPTION="Brick ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [BrickID]
+      ,[BrickName]
+  FROM [BMD-Bricks]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.PharmacistName" KIND="Data" EXPR="PharmacistName" CAPTION="Pharmacist Name" TYPE="WideString" SIZE="100" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.GovID" KIND="Data" EXPR="GovID" CAPTION="Governorate" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=5</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.CityID" KIND="Data" EXPR="CityID" CAPTION="City" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=6</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Area" KIND="Data" EXPR="Area" CAPTION="Area" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Address" KIND="Data" EXPR="Address" CAPTION="Address" TYPE="WideString" SIZE="1000" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Phone1" KIND="Data" EXPR="Phone1" CAPTION="Phone1" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Phone2" KIND="Data" EXPR="Phone2" CAPTION="Phone2" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="Postal Code" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="String" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Physicians">
+      <ATTR ID="BMD-Physicians.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="Physician ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.PhysicianName" KIND="Data" EXPR="PhysicianName" CAPTION="Physician Name" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.AKA" KIND="Data" EXPR="AKA" CAPTION="AKA" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.TitleID" KIND="Data" EXPR="TitleID" CAPTION="Title" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=1</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.SpecialityID" KIND="Data" EXPR="SpecialityID" CAPTION="Speciality" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=2</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.PrivateClinic" KIND="Data" EXPR="PrivateClinic" CAPTION="Has Private Clinic" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Email" KIND="Data" EXPR="Email" CAPTION="Email" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="Postal Code" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="String" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Physicians Scores">
+      <ATTR ID="BMD-PhysicianScore.ScoreID" KIND="Data" EXPR="ScoreID" CAPTION="Score ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="Physician" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [PhysicianID]
+      ,[PhysicianName]
+  FROM [BMD-Physicians]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Potential" KIND="Data" EXPR="Potential" CAPTION="Potential" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Grade" KIND="Data" EXPR="Grade" CAPTION="Grade" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Inference" KIND="Data" EXPR="Inference" CAPTION="Inference" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Additional" KIND="Data" EXPR="Additional" CAPTION="Additional" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.ScoreDate" KIND="Data" EXPR="ScoreDate" CAPTION="Score Date" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.StrScoreDate" KIND="Data" EXPR="StrScoreDate" CAPTION="StrScoreDate" TYPE="WideString" SIZE="10" QUOTE="False" UIC="False" UIR="False" TABLE="Physicians Scores">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Total" KIND="Data" EXPR="Total" CAPTION="Total" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Scores">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Private Clinics">
+      <ATTR ID="BMD-PrivateClinics.PrivateClinicID" KIND="Data" EXPR="PrivateClinicID" CAPTION="Private Clinic ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.BrickID" KIND="Data" EXPR="BrickID" CAPTION="Brick" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [BrickID]
+      ,[BrickName]
+  FROM [BMD-Bricks]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="Physician" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [PhysicianID]
+      ,[PhysicianName]
+  FROM [BMD-Physicians]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.GovID" KIND="Data" EXPR="GovID" CAPTION="Governorate" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=5</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.CityID" KIND="Data" EXPR="CityID" CAPTION="City" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=6</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Area" KIND="Data" EXPR="Area" CAPTION="Area" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Address" KIND="Data" EXPR="Address" CAPTION="Address" TYPE="WideString" SIZE="1000" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Phone1" KIND="Data" EXPR="Phone1" CAPTION="Phone1" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Phone2" KIND="Data" EXPR="Phone2" CAPTION="Phone2" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="Postal Code" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Email" KIND="Data" EXPR="Email" CAPTION="Email" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="String" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="Private Clinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Products Feedback">
+      <ATTR ID="BMD-ProductFeedback.ProductFeedbackID" KIND="Data" EXPR="ProductFeedbackID" CAPTION="Product Feedback ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.ProductID" KIND="Data" EXPR="ProductID" CAPTION="Product" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [ProductID]
+      ,[ProductName]
+  FROM [BMD-Products]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.MedicalAccountID" KIND="Data" EXPR="MedicalAccountID" CAPTION="Medical Account" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [MedicalAccountID]
+      ,[Name]
+  FROM [BMD-MedicalAccounts]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Group_Total_Average_day" KIND="Data" EXPR="Group_Total_Average_day" CAPTION="Group Total verage Per Day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Group_Total_Average_Week" KIND="Data" EXPR="Group_Total_Average_Week" CAPTION="Group Total Average Per Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Group_Total_Average_Month" KIND="Data" EXPR="Group_Total_Average_Month" CAPTION="Group Total Average Per Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Competitors_Average_Day" KIND="Data" EXPR="Product_Competitors_Average_Day" CAPTION="Product Competitors Average Per Day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Competitors_Average_Week" KIND="Data" EXPR="Product_Competitors_Average_Week" CAPTION="Product Competitors Average Per Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Competitors_Average_Month" KIND="Data" EXPR="Product_Competitors_Average_Month" CAPTION="Product Competitors Average Per Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Total_Day" KIND="Data" EXPR="Product_Total_Day" CAPTION="Product Total Per Day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Total_Week" KIND="Data" EXPR="Product_Total_Week" CAPTION="Product Total Per Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Total_Month" KIND="Data" EXPR="Product_Total_Month" CAPTION="Product Total Per Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Feedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Products">
+      <ATTR ID="BMD-Products.ProductID" KIND="Data" EXPR="ProductID" CAPTION="Product ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.ProductName" KIND="Data" EXPR="ProductName" CAPTION="Product Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.FormID" KIND="Data" EXPR="FormID" CAPTION="Form" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=8</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Products.Composition" KIND="Data" EXPR="Composition" CAPTION="Composition" TYPE="WideString" SIZE="1073741823" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Indications" KIND="Data" EXPR="Indications" CAPTION="Indications" TYPE="WideString" SIZE="1073741823" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Dosage" KIND="Data" EXPR="Dosage" CAPTION="Dosage" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.PackSizes" KIND="Data" EXPR="PackSizes" CAPTION="Pack Size" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Price" KIND="Data" EXPR="Price" CAPTION="Price" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.DosageUnit" KIND="Data" EXPR="DosageUnit" CAPTION="Dosage Unit" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.PackSizesUnit" KIND="Data" EXPR="PackSizesUnit" CAPTION="Pack Size Unit" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.CID" KIND="Data" EXPR="CID" CAPTION="Category" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [CategoryID]
+      ,[CategoryName]
+  FROM [BMD-Categories]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Bricks Branches">
+      <ATTR ID="BMD-Rel_Bricks_Branches.BranchID" KIND="Data" EXPR="BranchID" CAPTION="Branch" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [BranchID]
+      ,[BranchName]
+  FROM [BMD-Distributor_Branches]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Branches.BrickID" KIND="Data" EXPR="BrickID" CAPTION="Brick" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [BrickID]
+      ,[BrickName]
+  FROM [BMD-Bricks]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Bricks Users">
+      <ATTR ID="BMD-Rel_Bricks_Users.BrickID" KIND="Data" EXPR="BrickID" CAPTION="Brick" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [BrickID]
+      ,[BrickName]
+  FROM [BMD-Bricks]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Users.EmpID" KIND="Data" EXPR="EmpID" CAPTION="Employee" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [EmpID]
+      ,[EmpName]
+  FROM [BMD-Employees]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Distributors Products">
+      <ATTR ID="BMD-Rel_Distributors_Products.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="Distributor" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [DistributorID]
+      ,[Name]
+  FROM [BMD-Distributors]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Distributors_Products.ProductID" KIND="Data" EXPR="ProductID" CAPTION="Product" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="CUSTOM">
+            <DATA>SELECT [ProductID]
+      ,[ProductName]
+  FROM [BMD-Products]</DATA>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Governorates Cities">
+      <ATTR ID="BMD-Rel_Govs_Cities.GovID" KIND="Data" EXPR="GovID" CAPTION="Governorate" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE=" Governorates Cities">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=5</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Govs_Cities.CityID" KIND="Data" EXPR="CityID" CAPTION="City" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE=" Governorates Cities">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [SID]
+      ,[SubCode]
+  FROM [GNR-SubCode]
+Where GID=6</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacies Distributors">
+      <ATTR ID="BMD-Rel_Pharmacy_Distributors.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="Pharmacy" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [PharmacyID]
+      ,[Name]
+  FROM [BMD-Pharmacies]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Distributors.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="Distributor" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [DistributorID]
+      ,[Name]
+  FROM [BMD-Distributors]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacies Medical Accounts">
+      <ATTR ID="BMD-Rel_Pharmacy_MedicalAccounts.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="Pharmacy" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [PharmacyID]
+      ,[Name]
+  FROM [BMD-Pharmacies]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_MedicalAccounts.MedicalAccountID" KIND="Data" EXPR="MedicalAccountID" CAPTION="Medical Account" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [MedicalAccountID]
+      ,[Name]
+  FROM [BMD-MedicalAccounts]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacies Physcians">
+      <ATTR ID="BMD-Rel_Pharmacy_Physcians.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="Pharmacy" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies Physcians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [PharmacyID]
+      ,[Name]
+  FROM [BMD-Pharmacies]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Physcians.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="Physician" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies Physcians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [PhysicianID]
+      ,[PhysicianName]
+  FROM [BMD-Physicians]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Physicians Medical Accounts">
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="Physician" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [PhysicianID]
+      ,[PhysicianName]
+  FROM [BMD-Physicians]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.MedAccountID" KIND="Data" EXPR="MedAccountID" CAPTION="Medical Account" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Medical Accounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [MedicalAccountID]
+      ,[Name]
+  FROM [BMD-MedicalAccounts]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.PrescribingCapable" KIND="Data" EXPR="PrescribingCapable" CAPTION="Prescribing Capable" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Medical Accounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.Internal" KIND="Data" EXPR="Internal" CAPTION="Internal" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Medical Accounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.Consultant" KIND="Data" EXPR="Consultant" CAPTION="Consultant" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians Medical Accounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Products Users">
+      <ATTR ID="BMD-Rel_Products_Users.ProductID" KIND="Data" EXPR="ProductID" CAPTION="Product" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [ProductID]
+      ,[ProductName]
+  FROM [BMD-Products]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Products_Users.EmpID" KIND="Data" EXPR="EmpID" CAPTION="Employee" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [EmpID]
+      ,[EmpName]
+  FROM [BMD-Employees]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="General Codes">
+      <ATTR ID="GNR-GeneralCode.GID" KIND="Data" EXPR="GID" CAPTION="General ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="General Codes">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-GeneralCode.GeneralCode" KIND="Data" EXPR="GeneralCode" CAPTION="General Code" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="General Codes">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="SubCodes">
+      <ATTR ID="GNR-SubCode.SID" KIND="Data" EXPR="SID" CAPTION="Subcode ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="SubCodes">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-SubCode.SubCode" KIND="Data" EXPR="SubCode" CAPTION="Subcode" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="SubCodes">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-SubCode.GID" KIND="Data" EXPR="GID" CAPTION="General Code" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="SubCodes">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS>
+          <DEFAULT TYPE="SQLLIST">
+            <SQL>SELECT [GID]
+      ,[GeneralCode]
+  FROM [GNR-GeneralCode]</SQL>
+          </DEFAULT>
+        </EDITORS>
+      </ATTR>
+    </ENTITY>
+  </ENTITIES>
+</DATAMODEL>

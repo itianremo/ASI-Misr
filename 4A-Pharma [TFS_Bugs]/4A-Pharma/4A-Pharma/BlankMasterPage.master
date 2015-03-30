@@ -1,0 +1,22 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="BlankMasterPage.master.cs" Inherits="BlankMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>::4A-Pharma BMD::</title>
+    <link rel="SHORTCUT ICON" href="favicon.ico">
+    <link href="~/Styles/MainStyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="margin: 0; padding: 0;" bgcolor="#f2f4ef">
+    <form id="form1" runat="server">
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+    </div>
+    </form>
+</body>
+</html>

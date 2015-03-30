@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="dsReportCalls" targetNamespace="http://www.tempuri.org/dsReportCalls.xsd" xmlns:mstns="http://www.tempuri.org/dsReportCalls.xsd" xmlns="http://www.tempuri.org/dsReportCalls.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="dsReportCalls" msdata:IsDataSet="true" msdata:Locale="ar-EG">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="REP_Calls">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RepCallIId" type="xs:int" />
+              <xs:element name="cAssemblyName" type="xs:string" minOccurs="0" />
+              <xs:element name="FileID" type="xs:int" minOccurs="0" />
+              <xs:element name="RepCallDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="RCTypeName" type="xs:string" minOccurs="0" />
+              <xs:element name="RCMethodName" type="xs:string" minOccurs="0" />
+              <xs:element name="RCRetType" type="xs:int" minOccurs="0" />
+              <xs:element name="RCArgs" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:REP_Calls" />
+      <xs:field xpath="mstns:RepCallIId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

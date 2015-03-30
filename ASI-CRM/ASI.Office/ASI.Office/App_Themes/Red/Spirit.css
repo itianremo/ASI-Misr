@@ -1,0 +1,119 @@
+﻿body
+{
+}
+[class^="sprite-"], [class*=" sprite-"]
+{
+	display: inline-block; /*width: 14px;   height: 14px;*/ /**margin-right: .3em;      vertical-align: text-top;*/
+	line-height: 27px;
+	background-image: url("images/UsersTabs.png"); /*background-position: 14px 14px;*/
+	background-repeat: no-repeat; /*margin-top: 1px;*/
+	outline: none;
+}
+
+/* White icons with optional class, or on hover/active states of certain elements */
+.icon-white, .nav-tabs > .active > a > [class^="sprite-"], .nav-tabs > .active > a > [class*=" sprite-"], a:hover > [class^="sprite-"], a:hover > [class*=" sprite-"], .nav-pills > .active > a > [class^="sprite-"], .nav-pills > .active > a > [class*=" sprite-"], .nav-list > .active > a > [class^="sprite-"], .nav-list > .active > a > [class*=" sprite-"], .navbar-inverse .nav > .active > a > [class^="sprite-"], .navbar-inverse .nav > .active > a > [class*=" sprite-"], .dropdown-menu > li > a:hover > [class^="sprite-"], .dropdown-menu > li > a:hover > [class*=" sprite-"], .dropdown-menu > .active > a > [class^="sprite-"], .dropdown-menu > .active > a > [class*=" sprite-"]
+{
+	background-image: url("images/UsersTabs-over.png");
+}
+
+.sprite-AccountDetails
+{
+	background-position: 0 0;
+	width: 120px;
+	height: 27px;
+}
+.sprite-Accounts
+{
+	background-position: -130px 0;
+	width: 120px;
+	height: 27px;
+}
+.sprite-Calls
+{
+	background-position: -260px 0;
+	width: 70px;
+	height: 27px;
+}
+.sprite-ContactDetails
+{
+	background-position: -340px 0;
+	width: 120px;
+	height: 27px;
+}
+.sprite-Contacts
+{
+	background-position: -470px 0;
+	width: 120px;
+	height: 27px;
+}
+.sprite-CustomerSupport
+{
+	background-position: -600px 0;
+	width: 135px;
+	height: 27px;
+}
+.sprite-Email
+{
+	background-position: -745px 0;
+	width: 70px;
+	height: 27px;
+}
+.sprite-Home
+{
+	background-position: -825px 0;
+	width: 70px;
+	height: 27px;
+}
+.sprite-Manage
+{
+	background-position: -905px 0;
+	width: 93px;
+	height: 27px;
+}
+.sprite-Registration
+{
+	background-position: -1008px 0;
+	width: 100px;
+	height: 27px;
+}
+.sprite-Webinars
+{
+	background-position: -1118px 0;
+	width: 90px;
+	height: 27px;
+}
+
+
+
+
+/*.UsersTabs{background: url(images/csg-50746cdc2db25.png) no-repeat top left;}*/
+
+[class^="SignIn"], [class*=" SignIn"]
+{
+	display: inline-block;
+	line-height: 22px;
+	background-image: url("images/Spirit-SignIn.png");
+	background-repeat: no-repeat;
+	outline:none;
+}
+
+.SignIn:link
+{
+	background-position: -176px 0;
+	width: 87px;
+	height: 22px;
+}
+
+.SignIn:hover
+{
+	background-position: -88px 0;
+	width: 87px;
+	height: 22px;
+}
+.SignIn:active
+{
+	background-position: 0 0;
+	width: 87px;
+	height: 22px;
+}
+

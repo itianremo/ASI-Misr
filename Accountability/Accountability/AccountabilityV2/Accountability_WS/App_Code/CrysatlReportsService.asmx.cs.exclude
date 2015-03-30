@@ -1,0 +1,289 @@
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Web;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using TSN.ERP.Presentation;
+using TSN.ERP.Reporting;
+using TSN.ERP.Reporting.CrysatlReports;
+using TSN.ERP.SharedComponents;
+
+namespace ReportingPresentation
+{
+	/// <summary>
+	/// Summary description for CrysatlReportsService.
+	/// </summary>
+	public class CrysatlReportsService : ERPMasterService
+	{
+		protected CrysatlReportsManager CRReportsManager;
+		protected ReportsManager ReportsManagerObject;
+		protected FilesManager FileClass;
+		public CrysatlReportsService()
+		{
+			//CODEGEN: This call is required by the ASP.NET Web Services Designer
+			InitializeComponent();
+		}
+
+		#region Component Designer generated code
+		
+		//Required by the Web Services Designer 
+		private IContainer components = null;
+				
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+		}
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		protected override void Dispose( bool disposing )
+		{
+			if (CRReportsManager != null)
+				//CRReportsManager.Dispose();
+				CRReportsManager=null;
+			if (ReportsManagerObject!= null)
+				//ReportsManagerObject.Dispose();
+				ReportsManagerObject=null;
+			if (FileClass != null)
+				//FileClass.Dispose();
+				FileClass=null;
+			if(disposing && components != null)
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);		
+		}
+		
+		#endregion
+
+		#region Report Mangment
+
+		[WebMethod (Description = ""
+			 ,EnableSession = true) , SoapHeader("Authenticator")]
+		public ReportInfo GetDefaultReportInfo(int ReportId)
+		{
+			LoadCrysatlReportsManager();
+			return CRReportsManager.GetReportDefaultInfo(ReportId);
+		}
+		[WebMethod (Description = ""
+			 ,EnableSession = true) , SoapHeader("Authenticator")]
+		public int SetDefaultReportInfo(int ReportId,ReportInfo NewReportInfo)
+		{
+			LoadCrysatlReportsManager();
+			return CRReportsManager.SetReportInfo(ReportId, NewReportInfo);
+		}
+
+		[WebMethod (Description = "Loads a Report, that after being executed on the COM+ Server"
+			 ,EnableSession = true) , SoapHeader("Authenticator")]
+		public byte[] LoadReport(int ReportFileId)
+		{
+			object[] dummy = new object[0];
+			LoadCrysatlReportsManager();
+			return CRReportsManager.LoadReport(ReportFileId,dummy);
+		}
+
+		[WebMethod (Description = "Loads a Report, that after being executed on the COM+ Server"
+			 ,EnableSession = true , MessageName = "ListReportsByParameters" ) , SoapHeader("Authenticator")]
+		public byte[] LoadReport( int ReportFileId , object[] Parameters )
+		{
+			LoadCrysatlReportsManager();
+			return CRReportsManager.LoadReport(ReportFileId,Parameters);
+		}
+
+		[WebMethod (Description = "Loads a Report, that after being executed on the COM+ Server"
+			 ,EnableSession = true , MessageName = "ListReportsByDsParameters" ) , SoapHeader("Authenticator")]
+		public byte[] LoadReport( int ReportFileId ,DataSet Parameters )
+		{
+			LoadCrysatlReportsManager();
+			return CRReportsManager.LoadReport(ReportFileId ,Parameters);
+		}
+
+
+		[WebMethod (Description = ""
+			 ,EnableSession = true) , SoapHeader("Authenticator")]
+		public DataSet ListReportsInfo()
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ListReportsInfo();
+		}
+
+		[WebMethod (Description = ""
+			 ,EnableSession = true, MessageName = "ListReportsInfoByQuery") , SoapHeader("Authenticator")]
+		public DataSet ListReportsInfo(string Filter)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ListReportsInfo(Filter);
+		}
+
+		[WebMethod (Description = ""
+			 ,EnableSession = true, MessageName = "") , SoapHeader("Authenticator")]
+		public int AddReportInfo(DataSet NewReports)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.AddReportInfo(NewReports);
+		}
+
+		[WebMethod (Description = ""
+			 ,EnableSession = true, MessageName = "") , SoapHeader("Authenticator")]
+		public int DeleteReportInfo(DataSet DeletedReports)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.DeleteReportInfo(DeletedReports);
+		}
+		//		[WebMethod (Description = ""
+		//			 ,EnableSession = true, MessageName = "") , SoapHeader("Authenticator")]
+		//		public DataSet LatestReportsData()
+		//		{
+		//			LoadReportsManager();
+		//			return ReportsManagerObject.LatestReportsDataSet();
+		//		}
+		[WebMethod (Description = ""
+			 ,EnableSession = true, MessageName = "") , SoapHeader("Authenticator")]
+		public int UpdateReportsData(DataSet ModifiedReports)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.UpdateReportInfo(ModifiedReports);
+		}
+		[WebMethod (Description = ""
+			 ,EnableSession = true, MessageName = "") , SoapHeader("Authenticator")]
+		public int DeleteReportsData(DataSet DeletedReports)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.UpdateReportInfo(DeletedReports);
+		}
+
+
+		#region ListReportParameters
+		[WebMethod (Description = ""  ,EnableSession = true, MessageName = "") , SoapHeader("Authenticator")]
+		public DataSet ListReportParameters( int ReportFileID )
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ListReportParameters( ReportFileID );
+		}
+
+		#endregion
+
+		#endregion
+		
+		#region ReportBodyMangment
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public bool UpdateReportBody(int FileID, byte[] MStream)
+		{
+			LoadFilesManager();
+			return FileClass.UpdateFileContent(FileID,MStream);
+		}
+
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public byte[] LoadReportBody(int FileID)
+		{
+			LoadFilesManager();
+			return FileClass.LoadFileBody(FileID);
+		}
+
+
+		#endregion
+		
+		#region Loading Bussines Objects 
+		protected void LoadFilesManager()
+		{
+			//FileClass = (FilesManager)GetInstance("TSN.ERP.SharedComponents.FilesManager","TSN.ERP.SharedComponents");
+			FileClass = new FilesManager();
+			FileClass.JoinSession(Token);
+		}
+		private void LoadCrysatlReportsManager()
+		{
+			//CRReportsManager = (CrysatlReportsManager)GetInstance("TSN.ERP.Reporting.CrysatlReports.CrysatlReportsManager","TSN.ERP.Reporting");
+			CRReportsManager = new CrysatlReportsManager();
+			CRReportsManager.JoinSession(Token);
+		}
+		private void LoadReportsManager()
+		{	 
+			//ReportsManagerObject = (ReportsManager) GetInstance("TSN.ERP.Reporting.ReportsManager","TSN.ERP.Reporting");
+			ReportsManagerObject = new ReportsManager();
+			ReportsManagerObject.JoinSession(Token);
+		}
+		#endregion
+
+		#region Methods Info 
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public DataSet ListRegisterdAssemblies()
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ListRegisterdAssemblies();
+		}
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public DataSet ListAssemblyCalls(string  AssemblyName)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ListAssemblyCalls(AssemblyName);
+		} 
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public int AddReportCalls(DataSet NewCalls)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.AddReportCalls(NewCalls);
+		}
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public int AddReportParms(DataSet NewReportParms)
+		{
+			LoadReportsManager();
+			return  ReportsManagerObject.AddReportParms(NewReportParms);
+		}
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public string[] GetReportDataSource(int ReportID)
+		{
+			LoadCrysatlReportsManager();
+			return CRReportsManager.GetReportDataSource(ReportID);
+		}
+		[WebMethod (Description = "" , EnableSession = true) , SoapHeader("Authenticator")]
+		public DataSet ListCallParamaters(string AssemblyName, string TypeName ,string CallName)
+		{
+			LoadReportsManager();
+			return null;
+		}
+		#endregion
+		
+
+
+		
+
+		[WebMethod (Description = ""
+			 ,EnableSession = true) , SoapHeader("Authenticator")]
+		public ReportInfo LoadReportRunInfo(int ReportID)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.LoadReportRunInfo( ReportID);
+		}
+		[WebMethod (Description = ""
+			 ,EnableSession = true) , SoapHeader("Authenticator")]
+		public DataSet ParmSelectionList(int ReportID , int ParmdID)
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ParmSelectionList(ReportID,ParmdID);
+		}
+
+		[WebMethod (Description = ""
+			,EnableSession = true) , SoapHeader("Authenticator")]
+		public DataSet ListTablesInfo()
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ListTableInfo();
+		}
+		[WebMethod (Description = ""
+			 ,EnableSession = true) , SoapHeader("Authenticator")]
+
+		public DataSet ListEntities()
+		{
+			LoadReportsManager();
+			return ReportsManagerObject.ListEntities();
+		}
+		
+	}
+}

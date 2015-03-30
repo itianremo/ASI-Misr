@@ -1,0 +1,765 @@
+@import url("E:%5Cwork%5CAccountabilty%5CCSS%20for%20accountability%5CAcc1.css");
+
+html               
+{
+  /*  scrollbar-face-color: #10618C;                   /* change colors of scroll bar  */
+/*    scrollbar-shadow-color: #ffffff;
+    scrollbar-highlight-color: #ffffff ;
+    scrollbar-3dlight-color: #12618C;
+    scrollbar-darkshadow-color: #12618C;
+    scrollbar-track-color: #A7B0B2;
+    scrollbar-arrow-color: #000000; */
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	background-color: #c8d3e1;
+	/*background-color: #94A6AD;*/
+	/*background-color: #e6e6e6;*/
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+.RegularText {
+	font-family: Verdana ;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+
+.tabtext {
+	font-family: Verdana ;
+	font-size: 11px;
+	/*font-weight: bold;*/
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.tabselectedtext {
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #993300;
+	text-decoration: none;
+}
+
+
+.selectedTap {
+	background:#D7D5D5 url(cssimages/SelectedTab.gif) no-repeat;
+	color:#6c000a;
+	text-align:center;
+	border:0px solid #000;
+	width:106px;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+	height:37px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0px;
+}
+.unselectedTap {
+	background:#D7D5D5 url(cssimages/UnselectedTab.gif) no-repeat;
+	color:#FFFFFF;
+	text-align:center;
+	border:0px solid #000;
+	width:106px;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+	height:37px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0px;
+}
+
+.toptd {
+    background-image:url(cssimages/topbanner.gif)    /* background image for top td  */
+	
+}
+
+.bgsublinks {
+	background-image: url(cssimages/Sublinksbar.gif);
+	
+}
+
+.bgtoplinks {
+
+	background-image: url(cssimages/BGcontenttabs.gif);
+}
+
+.bgrightToplinks {
+
+	background-image: url(cssimages/Rightcontenttabs.gif);
+}
+
+.bgleftRToplinks {
+
+	background-image: url(cssimages/Leftcontenttabs.gif);
+}
+
+
+.toptdhome{                                 /* background image for split td home page only  */
+    background-image:url(cssimages/topbannerhome.gif) 
+}
+
+
+.secondtd {                            /* background color for second td  */
+	background-color: #8ba8c9;
+	border-bottom-width: 5px;
+	border-bottom-color: #868c8d;
+	border-bottom-style: solid;
+}
+
+.secondtdpic {                      /* photo in second td on home page only */
+	background-color: #8ba8c9;
+	background-attachment: fixed;
+	background-image: url(cssimages/employeespic.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-bottom-width: 5px;
+	border-bottom-color: #868c8d;
+	border-bottom-style: solid;
+}
+
+
+.thirdtd {                        /* background color for third td*/
+	background-color: #10618c;
+}
+
+
+ 
+ 
+ .slectedtopnav {
+    color: #044476;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+	font-size:13px;
+	text-decoration: none;
+}
+
+
+.unslectedtopnav {
+    color: #3d107b;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+	font-size:13px;
+	text-decoration: none;
+}
+
+
+
+.selectedsublinks {                      /* slected sub navigation links style */
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	/*color: #a4331c;*/
+	color: #993300;
+	text-decoration: none;
+	cursor : hand;
+}
+ 
+
+.unselectedsublinks {                 /* unslected sub navigation links style */
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	color: #3d3d3d;
+	text-decoration: none;
+	cursor : hand;
+}
+
+.p {                                  /* paragraph style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+
+.whitelabels {              /* white labels for data gride in home page style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+
+.Accountabiltylabel {                     /* top accountability label in all pages style */
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: normal;
+	color: #4b4b4b;
+	text-decoration: none;
+}
+
+
+
+.formslabels {                                  /* forms labels */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #044476;
+	text-decoration: none;
+	letter-spacing: 1px;
+	/*text-align: left;*/
+}
+
+
+
+.smalllabels {                /* small labels for forms like (city,State,zip) style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #003366;
+	text-decoration: none;
+}
+
+
+.labelarea {                   /* lable address bar for any top part like( Employee's information)*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #737373;
+	align = center;
+	border: 1px solid #000000;
+	padding: 5px 70px 5px 70px;
+}
+
+
+ /*  slected buttons style */
+.slectedbutton {      color:#003366;text-align:center;font-weight:bolder;font-family: Arial, Helvetica, sans-serif;font-size: 11px;background-color: #FFFFFF;background-repeat: repeat-x;border: 1px solid #003366;/*width:80;*/}
+
+
+.unslectedbutton {             /*  unslected buttons style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+
+
+.inputtext {            /* input text style */
+	margin-bottom: 1.5px;
+	width:auto;
+	color: #003366;
+	background-color: #EEEEEE;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	/*font-style: italic;*/
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+
+.textarea {                 /* textarea style */
+	margin-bottom: 1.5px;
+	width: auto;
+	color:Black;
+	background-color: #EEEEEE;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	/*font-style: italic;*/
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: none;
+	/*scrollbar-face-color: #12618C;
+    scrollbar-shadow-color: #ffffff;
+    scrollbar-highlight-color: #ffffff;
+    scrollbar-3dlight-color: #12618C;
+    scrollbar-darkshadow-color: #12618C;
+    scrollbar-track-color: #12618C;
+    scrollbar-arrow-color: #fff;*/
+}
+
+
+
+.textlist {                 /* text list style */
+	margin-bottom: 1.5px;
+	width: auto;
+	color: #666666;
+	background-color: #EEEEEE;
+	border: 1px solid #7F9DB9;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: none;
+	scrollbar-face-color: #12618C;
+    scrollbar-shadow-color: #ffffff;
+    scrollbar-highlight-color: #ffffff;
+    scrollbar-3dlight-color: #12618C;
+    scrollbar-darkshadow-color: #12618C;
+    scrollbar-track-color: #12618C;
+    scrollbar-arrow-color: #ffffff;
+}
+
+
+.gridheader {                /* grid header styel */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color: #fafafa;
+	margin: 1px;
+	padding: 2px;
+	width: 668px;
+	border: 1px solid #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+.griditem{                        /* grid item style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	display: block;
+	width: 668px;
+	border: 1px solid #000000;
+	background-color: #c7c7c7;
+}
+
+
+.gridalternativeitem {             /* grid alternative item style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color: #dadada;
+	margin: 1px;
+	padding: 2px;
+	width: 668px;
+	border: 1px solid #000000;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+
+
+.gridcodedlabel {                /* grid coded label style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color: #fafafa;
+	margin: 1px;
+	padding: 2px;
+	width: 668px;
+	border: 1px solid #000000;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+
+
+.gridpager {                       /* grid pager style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color: #fafafa;
+	margin: 1px;
+	padding: 2px;
+	width: 668px;
+	border: 1px solid #000000;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+
+.acctotal {                       /* total header in the accountability sheet */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.blueBorder  /* blue border*/
+{
+BORDER-RIGHT: #003366 1px solid; 
+BORDER-TOP: #003366 1px solid; 
+BORDER-LEFT: #003366 1px solid; 
+BORDER-BOTTOM: #003366 1px solid 
+}
+fieldset
+{
+border: 1px solid  #08609E;
+width: 400px;
+/*background:#657809;*/
+}
+
+
+
+.headertd   /* dark blue */
+{ 
+	background:#10618C
+	url("go/images/grddarkblue.gif") 
+	repeat-x; color:#FFF;  text-align:center; border-top:0px None #FFF;border-bottom:0px None #FFF;	
+	font-weight:bolder;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.headerFont   /* dark blue */
+{ 
+	font-weight:bolder;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.yellowtd   /* count based tasks */
+{ 
+	background:#F9F402
+	url("go/images/grdyellow.gif") 
+	repeat-x; color:#000;  text-align:center; border-top:1px solid #000;	
+}
+
+.whitetd   /* hour based tasks */
+{ 
+	background:#D7DBDD
+	url("go/images/grdwhite.gif") 
+	repeat-x; color:#000;  text-align:center; border:1px solid #000;	
+}
+
+.bluetd   /* responsibilities */
+{ 
+	background:#02CECF     
+	url("go/images/grdblue.gif") 
+	repeat-x; color:#000; text-align:center; border:1px solid #000;	
+}
+
+.greentd   /* projects */
+{ 
+	background: #7DC525   
+	url("go/images/grdgreen.gif") 
+	repeat-x; color:#000;  text-align:center; border:1px solid #000;	
+}
+
+.orangetd   /* projects */
+{ 
+	background:#ED8641  
+	url("go/images/grdorange.gif") 
+	repeat-x; color:#000;  text-align:center; border-top:1px solid #000;	
+}
+
+.graytd   /* projects */
+{ 
+	background:#595959      
+	url("go/images/grdgray.gif") 
+	repeat-x; color:#000;  text-align:center; border-top:1px solid #FFF;	
+	color : #fff;
+}
+
+.nantasks   /* uncountable tasks */
+{ 
+	background:#FFFFFF
+	color:#FF0000;  text-align:center; border-top:1px solid #FFF;	
+}
+
+.bsnormaltd {
+    background:#d7dbdd   
+    url("go/images/grdnormal.gif") 	repeat-x;    
+	color:#000;
+	padding:2px;
+	text-align:center;
+	border:0px None #fff; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+
+ }
+
+.bsalternativetd {
+    background:#c8c6c7      
+    url("go/images/grdalternate.gif") 	 repeat-x;
+	color:#000;
+	padding:2px;
+	text-align:center;
+	border:0px None #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+ }
+
+ .bsFootertd {
+   background:#a1a0a0      
+    url("go/images/grdfooter.gif") 	repeat-x;
+	color:#000;
+	font-weight:bold;
+	padding:2px;
+	text-align:center;
+	border:0px None #fff;
+	border-width:None;
+	border-color:White;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+		 
+}
+
+.selectedheadertd   /* selected day */
+{ 
+	background:#10618C
+	url("go/images/grddarkblue.gif") 
+	repeat-x; color:#F9F402;  text-align:center; border-top:2px solid #FFF;border-bottom:2px solid #FFF;	
+	font-weight:bolder;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+/*-------Accountability style sheet----------------------------------------------------*/
+.normaltask   /* white */
+{
+	background:#D7DBDD    
+    url("go/images/grdwhite.gif") 	 repeat-x;
+	color:#000;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+.counttask   /* yellow */
+{
+	background:#F9F402      
+    url("go/images/grdyellow.gif") 	 repeat-x;
+	color:#000;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+.nctask   /* font only is red, bg is white */
+{
+	background:#D7DBDD    
+    url("go/images/grdwhite.gif") 	 repeat-x;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color:#FF0000;
+}
+
+.completetask   /* font only is red, bg is white */
+{
+	background-color : #B27FA8;
+	/*Commented for later usage to use background image instead of color(original case that did not admired from Rod)
+	background:#B27FA8   
+    url("go/images/grdviolet.gif") 	 repeat-x;
+	color:#000000;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	-----------------------------------------------------------*/	
+}
+
+.resp   /* font only is red, bg is white */
+{
+	background:#02CECF  url("go/images/grdblue.gif") repeat-x;
+	color:#000; text-align:center; font-size:13px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px; 
+}
+
+.offday_offday  /*  orange */
+{
+	background-color : #ED8641;
+	text-align:center; 
+	/*Commented for later usage to use background image instead of color(original case that did not admired from Rod)
+	background:#ED8641  url("go/images/grdorange.gif") repeat-x; 
+	color:#000;  text-align:center; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px; 
+	-----------------------------------------------------------*/
+}
+
+.offday  /*  orange */
+{
+	background:#ED8641  url("go/images/grdorange.gif") repeat-x; 
+	color:#000;  text-align:center; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px; 
+}
+
+.project   /* font only is red, bg is white */
+{
+	background: #7DC525   
+	url("go/images/grdgreen.gif") 
+	repeat-x; color:#000;  text-align:center; font-size:13px 
+}
+
+.selectedcell
+{
+	/*background:#595959  
+	url("go/images/grdgray.gif") 
+	repeat-x; color:#fff;  text-align:center; 
+	font-weight:bold;*/
+
+	border-color:#000000;
+	border-width:2px;
+	border-style:solid;
+	background:#AEB9EC;
+	border-spacing:1px;
+	color:#000000;  text-align:center; 
+	font-weight:bold;
+	font-size:12px;
+}
+
+.selectedrow   /* projects */
+{ 
+	
+	color:#fff; 
+	text-align:center; 
+	font-weight:bold;
+	
+}
+
+.errmsg
+{
+	font-size: 14px;
+	color: red;
+}
+.stdDeleteBtn
+{
+	background-image: url(Go/images/standardDelete.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	border-bottom-style: none;
+	background-color:White;
+}
+.stdSaveBtn
+{
+	background-image: url(Go/images/standardSave.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	border-bottom-style: none;
+	background-color:White;
+}
+.stdNewBtn
+{
+	background-image: url(Go/images/standardNew.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	border-bottom-style: none;
+	background-color:White;
+}
+.stdEditbtn
+{
+	background-image: url(Go/images/Editbutton.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	background-color: white;
+	border-bottom-style: none;
+}
+.stdCompleteBtn
+{
+	background-image: url(Go/images/standardComplete.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	border-bottom-style: none;
+	background-color:White;
+}
+.stdFindBtn
+{
+	background-image: url(Go/images/Findbutton.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	background-color: white;
+	border-bottom-style: none;
+}
+.stdCancelBtn
+{
+	background-image: url(Go/images/cancelbutton.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	background-color: white;
+	border-bottom-style: none;
+}
+.stdAddBtn
+{
+	background-image: url(Go/images/Addbutton.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	background-color: white;
+	border-bottom-style: none;
+}
+.stdRemoveBtn
+{
+	background-image: url(Go/images/Removebutton.gif);
+	width: 30px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 30px;
+	background-color: white;
+	border-bottom-style: none;
+}
+
+
+ .gridLink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #044476;
+	text-decoration: none;
+/*	text-align: center;*/
+	
+}
+
+.invisableButton
+{
+	visibility:hidden;
+	}

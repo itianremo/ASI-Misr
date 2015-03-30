@@ -1,0 +1,209 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59733546-6EA8-47C8-8C10-CEB150231C7E}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TSN.ERP.Engine</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TSN.ERP.Engine</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Name>Accessibility</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="TSN.ERP.Security, Version=1.0.3412.29232, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\TSN.ERP.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="TSN.ERP.XML, Version=1.0.3412.29188, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\TSN.ERP.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="TSNLogin, Version=1.0.2.0, Culture=neutral, PublicKeyToken=184900f9afa3b481" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="application.config" />
+    <None Include="application.manifest" />
+    <None Include="Configurations\application.config" />
+    <None Include="Data\dsKeyManager.xsx">
+      <DependentUpon>dsKeyManager.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsServer.xsx">
+      <DependentUpon>dsServer.xsd</DependentUpon>
+    </None>
+    <None Include="TSN.ERP.Engine.snk" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AtrERPMethodType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BussinesComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BussinesObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BussinesObjectsContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collections\BussinesComponentsCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collections\SessionCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\dsKeyManager.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsKeyManager.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsServer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsServer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ERPError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IServer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrimaryKeyManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ResourcePool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SecurityManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Server.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServerShell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Session.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SessionShell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SettingsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="BussinesComponent.resx">
+      <DependentUpon>BussinesComponent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimaryKeyManager.resx">
+      <DependentUpon>PrimaryKeyManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Configurations\ConnectionStrings.xml" />
+    <Content Include="ConnectionStrings.xml" />
+    <Content Include="Data\dsKeyManager.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsKeyManager.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsServer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsServer.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

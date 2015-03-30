@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xs:schema id="dsXML" targetNamespace="http://tempuri.org/001-002-003.xsd" xmlns:mstns="http://tempuri.org/001-002-003.xsd" xmlns="http://tempuri.org/001-002-003.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="RETURNDATA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="OVERVIEW_CONTENT" type="xs:string" minOccurs="0" />
+        <xs:element name="DATA" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ITEM_DATA" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ITEMID" type="xs:string" minOccurs="0" />
+                    <xs:element name="ITEMPARENT" type="xs:string" minOccurs="0" />
+                    <xs:element name="ITEM_NAME" type="xs:string" minOccurs="0" />
+                    <xs:element name="ITEM_DESCRIPTION" type="xs:string" minOccurs="0" />
+                    <xs:element name="IMAGENAME" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="MODULEID" form="unqualified" type="xs:string" />
+            <xs:attribute name="LINKID" form="unqualified" type="xs:string" />
+            <xs:attribute name="FUNCTIONALITYID" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dsXML" msdata:IsDataSet="true" msdata:EnforceConstraints="False">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="RETURNDATA" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

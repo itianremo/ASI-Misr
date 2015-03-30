@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>Allows you to create new chart and you have the choice to show the chart by Departments Hierarchy, Job titles, Teams or Projects.</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="005" FUNCTIONALITYID="012">
+    <ITEM_DATA>
+      <ITEMID>0</ITEMID>
+      <ITEMPARENT>
+      </ITEMPARENT>
+      <ITEM_NAME>
+      </ITEM_NAME>
+      <ITEM_DESCRIPTION>
+      </ITEM_DESCRIPTION>
+      <IMAGENAME>
+      </IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

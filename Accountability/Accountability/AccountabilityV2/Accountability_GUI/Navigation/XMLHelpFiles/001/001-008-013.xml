@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>Use this screen to enter the data for locations that might be used in the system, you can enter Countries, States or providences and cities.  The information you enter through this screen will be available for reuse through the rest of the system, whenever you enter and address or need to specify a location.</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="008" FUNCTIONALITYID="013">
+    <ITEM_DATA>
+      <ITEMID>1</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add country</ITEM_NAME>
+      <ITEM_DESCRIPTION>Enter the country name in the text box to the left of the countries list, and then click the save button to add your bew entry </ITEM_DESCRIPTION>
+      <IMAGENAME>standardSave.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add City</ITEM_NAME>
+      <ITEM_DESCRIPTION>Select the country you want to add the city to, a test box will apear nar the states list , type in the name of the state you want to add, clcik on the save button to the left of the text box</ITEM_DESCRIPTION>
+      <IMAGENAME>standardSave.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>3</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add State</ITEM_NAME>
+      <ITEM_DESCRIPTION>Select the Country you want to add the State to, a text box will apear near the states list , type in the name of the state you want to add, clcik on the save button to the left of the text box</ITEM_DESCRIPTION>
+      <IMAGENAME>standardSave.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>4</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Country</ITEM_NAME>
+      <ITEM_DESCRIPTION>Select the country you want to delete and then click , the delete button that will appear to the lright of the countries list, the country will not be deleted if your system is stores addresses related to this country</ITEM_DESCRIPTION>
+      <IMAGENAME>imgdelete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>5</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete State</ITEM_NAME>
+      <ITEM_DESCRIPTION>Select the State you want to delete and then click , the delete button that will appear to the lright of the States list, the State will not be deleted if your system is stores addresses related to this State</ITEM_DESCRIPTION>
+      <IMAGENAME>imgdelete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>6</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete City</ITEM_NAME>
+      <ITEM_DESCRIPTION>Select the city you want to delete and then click , the delete button that will appear to the right of the cities list, the city will not be deleted if your system is stores addresses related to it</ITEM_DESCRIPTION>
+      <IMAGENAME>imgdelete.gif</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

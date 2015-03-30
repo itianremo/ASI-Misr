@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="dsEmail" targetNamespace="http://www.tempuri.org/dsEmail.xsd" xmlns:mstns="http://www.tempuri.org/dsEmail.xsd" xmlns="http://www.tempuri.org/dsEmail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="dsEmail" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="GEN_Emails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmailID" type="xs:int" />
+              <xs:element name="ContactEmail" type="xs:string" />
+              <xs:element name="ContactID" type="xs:int" minOccurs="0" />
+              <xs:element name="EmailType" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GEN_Emails" />
+      <xs:field xpath="mstns:EmailID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

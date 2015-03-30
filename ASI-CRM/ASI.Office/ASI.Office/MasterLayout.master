@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterLayout.master.cs"
+	Inherits="MasterLayout" %>
+
+<%--<%@ Register TagPrefix="obspl" Namespace="OboutInc.Splitter2" Assembly="obout_Splitter2_NET" %>--%>
+<%@ Register Src="Controls/UserTabs.ascx" TagName="UserTabs" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link rel="SHORTCUT ICON" href="Images/favicon.ico" />
+	<script src="Scripts/jquery-latest.js" type="text/javascript"></script>
+	<script src="Scripts/jquery.layout.min-1.2.0.js" type="text/javascript"></script>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<ajaxToolkit:ToolkitScriptManager ID="MasterToolKit" runat="server" ScriptMode="Release">
+	</ajaxToolkit:ToolkitScriptManager>
+	<div class="ui-layout-north">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr bgcolor="#000000">
+				<td align="left" background="Images/bg.jpg" rowspan="2" style="width: 57px" valign="middle">
+					&nbsp;
+					<img src="Images/logo.gif" alt="ASI CRM" />
+				</td>
+				<td align="left" background="Images/accountDetails_01.jpg" colspan="5" style="height: 35px">
+					<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Tahoma" Font-Size="13px"
+						ForeColor="White" Text="Applied Science International - Home" />
+				</td>
+				<td align="right" background="Images/accountDetails_01.jpg" style="height: 35px">
+					<img alt="Help" class="HandOverCursor" onclick="javascript:window.open('ASIHelp/index.htm','_new')"
+						onmouseout="this.src='Images/accountDetails_05.jpg'" onmouseover="this.src='Images/accountDetails_select_05.jpg'"
+						src="Images/accountDetails_05.jpg" width="28" />
+					<asp:ImageButton ID="imgbtnSignOut" runat="server" AlternateText="Sign Out" ImageUrl="Images/CloseBut_normal.jpg"
+						OnClick="imgbtnSignOut_Click" />
+				</td>
+			</tr>
+			<tr>
+				<td align="left" background="Images/accountDetails_07.jpg" colspan="1">
+				</td>
+				<td align="left" background="Images/accountDetails_07.jpg" colspan="6" valign="top">
+					<uc2:UserTabs ID="ucUserTabs" runat="server" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="ui-layout-center">
+		<div class="ui-layout-north">
+			<asp:ContentPlaceHolder ID="InnerHeader" runat="server" />
+		</div>
+		<div class="ui-layout-center">
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+		</div>
+		<div class="ui-layout-south">
+			<asp:ContentPlaceHolder ID="InnerFooter" runat="server" />
+		</div>
+	</div>
+	<div class="ui-layout-south">
+		<table style="background-image: url(Images/accountDetails_37.jpg); padding: 0; border-spacing: 0;">
+			<tr>
+				<td style="width: 523px;">
+					&nbsp;<asp:Label ID="lblVersionInfo" runat="server" Font-Bold="True" Font-Names="Tahoma"
+						Font-Size="13px" ForeColor="#404040" Text="ASIoffice V031408"></asp:Label>
+				</td>
+				<td style="width: 386px;">
+					&nbsp;<asp:Label ID="Label4" runat="server" Font-Bold="True" Font-Names="Tahoma"
+						Font-Size="13px" ForeColor="#404040" Text="2008 TSN, Inc. © | All Rights Reserved."></asp:Label>
+				</td>
+				<td style="width: 287px;">
+					&nbsp;
+				</td>
+				<td style="width: 103px;">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="PopupDiv" style="z-index: 2; left: 42%; top: 45%; position: absolute; height: 40px;
+		width: auto;">
+		<asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="1">
+			<ProgressTemplate>
+				<span>
+					<img src="images/loading.gif" alt="Loading..." /></span>
+			</ProgressTemplate>
+		</asp:UpdateProgress>
+	</div>
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('body').layout(layoutSettings);
+		});
+		var layoutSettings = {
+
+			defaults: {
+				minHeight: 500
+			, resizable: false
+			, slidable: false
+			, spacing_closed: 0			// HIDE resizer & toggler when 'closed'
+			, spacing_open: 0			// HIDE resizer & toggler when 'closed'
+			, togglerLength_open: 0			// HIDE the toggler button
+			}
+
+		};
+	</script>
+</body>
+</html>

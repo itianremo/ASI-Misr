@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListEmployeeMFGTasks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListEmployeeMFGTasksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListEmployeeMFGTasksResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="SaveMFGTasksSheet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsMFGTasks">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMFGTasksSheetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMFGEmployees">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMFGEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMFGEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMFGAdminEmployees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMFGAdminEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMFGAdminEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserIsMFGAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserIsMFGAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserIsMFGAdminResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserIsMFGAdminOrEmployee">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserIsMFGAdminOrEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserIsMFGAdminOrEmployeeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMFGAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MFGAdminUsrID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMFGAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteMFGAdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMFGAdminEmployees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mfgAdminUsrID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsMFGEmp">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMFGAdminEmployeesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMFGAdmins">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMFGAdminsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMFGAdminsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListEmployeeMFGTasksSoapIn">
+    <wsdl:part name="parameters" element="tns:ListEmployeeMFGTasks" />
+  </wsdl:message>
+  <wsdl:message name="ListEmployeeMFGTasksSoapOut">
+    <wsdl:part name="parameters" element="tns:ListEmployeeMFGTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListEmployeeMFGTasksAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SaveMFGTasksSheetSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMFGTasksSheet" />
+  </wsdl:message>
+  <wsdl:message name="SaveMFGTasksSheetSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMFGTasksSheetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMFGTasksSheetAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMFGEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMFGEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMFGEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMFGEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMFGEmployeesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMFGAdminEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMFGAdminEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetMFGAdminEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMFGAdminEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMFGAdminEmployeesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UserIsMFGAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:UserIsMFGAdmin" />
+  </wsdl:message>
+  <wsdl:message name="UserIsMFGAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:UserIsMFGAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserIsMFGAdminAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UserIsMFGAdminOrEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:UserIsMFGAdminOrEmployee" />
+  </wsdl:message>
+  <wsdl:message name="UserIsMFGAdminOrEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:UserIsMFGAdminOrEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserIsMFGAdminOrEmployeeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMFGAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMFGAdmin" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMFGAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMFGAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMFGAdminAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddMFGAdminEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMFGAdminEmployees" />
+  </wsdl:message>
+  <wsdl:message name="AddMFGAdminEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMFGAdminEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMFGAdminEmployeesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMFGAdminsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMFGAdmins" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMFGAdminsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMFGAdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMFGAdminsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetERPSession" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetERPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MFGAccountabilitySoap">
+    <wsdl:operation name="ListEmployeeMFGTasks">
+      <wsdl:input message="tns:ListEmployeeMFGTasksSoapIn" />
+      <wsdl:output message="tns:ListEmployeeMFGTasksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMFGTasksSheet">
+      <wsdl:input message="tns:SaveMFGTasksSheetSoapIn" />
+      <wsdl:output message="tns:SaveMFGTasksSheetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMFGEmployees">
+      <wsdl:input message="tns:GetAllMFGEmployeesSoapIn" />
+      <wsdl:output message="tns:GetAllMFGEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMFGAdminEmployees">
+      <wsdl:input message="tns:GetMFGAdminEmployeesSoapIn" />
+      <wsdl:output message="tns:GetMFGAdminEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserIsMFGAdmin">
+      <wsdl:input message="tns:UserIsMFGAdminSoapIn" />
+      <wsdl:output message="tns:UserIsMFGAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserIsMFGAdminOrEmployee">
+      <wsdl:input message="tns:UserIsMFGAdminOrEmployeeSoapIn" />
+      <wsdl:output message="tns:UserIsMFGAdminOrEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMFGAdmin">
+      <wsdl:input message="tns:DeleteMFGAdminSoapIn" />
+      <wsdl:output message="tns:DeleteMFGAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMFGAdminEmployees">
+      <wsdl:input message="tns:AddMFGAdminEmployeesSoapIn" />
+      <wsdl:output message="tns:AddMFGAdminEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMFGAdmins">
+      <wsdl:input message="tns:GetAllMFGAdminsSoapIn" />
+      <wsdl:output message="tns:GetAllMFGAdminsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <wsdl:input message="tns:GetERPSessionSoapIn" />
+      <wsdl:output message="tns:GetERPSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MFGAccountabilitySoap" type="tns:MFGAccountabilitySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListEmployeeMFGTasks">
+      <soap:operation soapAction="http://tempuri.org/ListEmployeeMFGTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListEmployeeMFGTasksAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMFGTasksSheet">
+      <soap:operation soapAction="http://tempuri.org/SaveMFGTasksSheet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveMFGTasksSheetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMFGEmployees">
+      <soap:operation soapAction="http://tempuri.org/GetAllMFGEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllMFGEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMFGAdminEmployees">
+      <soap:operation soapAction="http://tempuri.org/GetMFGAdminEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMFGAdminEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserIsMFGAdmin">
+      <soap:operation soapAction="http://tempuri.org/UserIsMFGAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UserIsMFGAdminAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserIsMFGAdminOrEmployee">
+      <soap:operation soapAction="http://tempuri.org/UserIsMFGAdminOrEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UserIsMFGAdminOrEmployeeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMFGAdmin">
+      <soap:operation soapAction="http://tempuri.org/DeleteMFGAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteMFGAdminAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMFGAdminEmployees">
+      <soap:operation soapAction="http://tempuri.org/AddMFGAdminEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddMFGAdminEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMFGAdmins">
+      <soap:operation soapAction="http://tempuri.org/GetAllMFGAdmins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllMFGAdminsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MFGAccountabilitySoap12" type="tns:MFGAccountabilitySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListEmployeeMFGTasks">
+      <soap12:operation soapAction="http://tempuri.org/ListEmployeeMFGTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListEmployeeMFGTasksAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMFGTasksSheet">
+      <soap12:operation soapAction="http://tempuri.org/SaveMFGTasksSheet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveMFGTasksSheetAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMFGEmployees">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMFGEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllMFGEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMFGAdminEmployees">
+      <soap12:operation soapAction="http://tempuri.org/GetMFGAdminEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMFGAdminEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserIsMFGAdmin">
+      <soap12:operation soapAction="http://tempuri.org/UserIsMFGAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UserIsMFGAdminAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserIsMFGAdminOrEmployee">
+      <soap12:operation soapAction="http://tempuri.org/UserIsMFGAdminOrEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UserIsMFGAdminOrEmployeeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMFGAdmin">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMFGAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteMFGAdminAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMFGAdminEmployees">
+      <soap12:operation soapAction="http://tempuri.org/AddMFGAdminEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddMFGAdminEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMFGAdmins">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMFGAdmins" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllMFGAdminsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap12:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MFGAccountability">
+    <wsdl:port name="MFGAccountabilitySoap" binding="tns:MFGAccountabilitySoap">
+      <soap:address location="http://localhost/Accountability_WS/MFGAccountability.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MFGAccountabilitySoap12" binding="tns:MFGAccountabilitySoap12">
+      <soap12:address location="http://localhost/Accountability_WS/MFGAccountability.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

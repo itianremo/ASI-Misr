@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>By job title module you can manage all job titles and responsibilities associated with each one by adding, editing or deleting any job title or responsibility.
+</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="004" FUNCTIONALITYID="001">
+    <ITEM_DATA>
+      <ITEMID>1</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Job Title</ITEM_NAME>
+      <ITEM_DESCRIPTION>If there is a new job title in your organization so you can add this title in job titles table by pressing on the add button at the button of the job titles table,
+Job title form will appears fill in the job title's name text and the description then press on save button to save data you filled or cancel to turn to main window.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>standardNew.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit Job Title</ITEM_NAME>
+      <ITEM_DESCRIPTION>If i need to change title name or title description? by select the title you need to edit from the job titles table the job title form will appears, make your changes you want then press on the save button or cancel to back to the main widow(job titles window) </ITEM_DESCRIPTION>
+      <IMAGENAME>editJob.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>3</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Job Title</ITEM_NAME>
+      <ITEM_DESCRIPTION>Select a job title from job titles table then press on delete button 
+
+Note: you cannot delete job title if it is related to another entities like it has responsibilities or some employees assigned to this job title  
+</ITEM_DESCRIPTION>
+      <IMAGENAME>imgdelete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>5</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Job Title Responsibility</ITEM_NAME>
+      <ITEM_DESCRIPTION>You can add a new responsibility to any job title by selecting the job title you want to add the new responsibility to, then press add new responsibility at the bottom of  responsibilities table the form of responsibilities details will appears enter the responsibility name and description and then press the save button.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>standardNew.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>6</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit Job Title Responsibility</ITEM_NAME>
+      <ITEM_DESCRIPTION>To edit responsibility select the responsibility from responsibilities table by checking the checkbox and press edit button at the bottom of the table, make your changes and then press save button to save changes or cancel by press cancel button
+</ITEM_DESCRIPTION>
+      <IMAGENAME>editResp.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>7</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Job Title Responsibility</ITEM_NAME>
+      <ITEM_DESCRIPTION>To delete a responsibility or more from responsibilities table by checking the checkboxes of the responsibilities you want to delete and then press delete button 
+
+Note: you cannot delete responsibility if it is related to other entities like there is an employee who has assigned tasks under this responsibility.
+
+
+</ITEM_DESCRIPTION>
+      <IMAGENAME>delResp.JPG</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

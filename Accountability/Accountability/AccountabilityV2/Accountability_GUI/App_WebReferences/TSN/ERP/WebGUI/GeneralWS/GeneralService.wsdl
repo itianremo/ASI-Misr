@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noteBody" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNoteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ListAllNotes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListAllNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAllNotesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="noteID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListNoteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noteDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateNoteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noteDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteNoteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddManagerNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noteBody" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="noteDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddManagerNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddManagerNoteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAllManagersNotes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListAllManagersNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAllManagersNotesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListManagerNoteByNoteID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="noteID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListManagerNoteByNoteIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListManagerNoteByNoteIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListManagerNoteByFilterString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filterString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListManagerNoteByFilterStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListManagerNoteByFilterStringResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateManagerNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noteDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateManagerNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateManagerNoteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteManagerNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noteDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteManagerNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteManagerNoteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFileInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFileInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFileInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFileInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListFileInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListFileInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListSingleFileInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListSingleFileInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListSingleFileInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFileInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFileInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditFileInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFileInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFileContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MStream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFileContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFileContentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFileBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFileBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadFileBodyResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mGetMaxFileID">
+        <s:complexType />
+      </s:element>
+      <s:element name="mGetMaxFileIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mGetMaxFileIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNote" />
+  </wsdl:message>
+  <wsdl:message name="AddNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListAllNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAllNotes" />
+  </wsdl:message>
+  <wsdl:message name="ListAllNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAllNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAllNotesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:ListNote" />
+  </wsdl:message>
+  <wsdl:message name="ListNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:ListNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateNote" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteNote" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddManagerNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:AddManagerNote" />
+  </wsdl:message>
+  <wsdl:message name="AddManagerNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:AddManagerNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddManagerNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListAllManagersNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAllManagersNotes" />
+  </wsdl:message>
+  <wsdl:message name="ListAllManagersNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAllManagersNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAllManagersNotesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListManagerNoteByNoteIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ListManagerNoteByNoteID" />
+  </wsdl:message>
+  <wsdl:message name="ListManagerNoteByNoteIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ListManagerNoteByNoteIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListManagerNoteByNoteIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListManagerNoteByFilterStringSoapIn">
+    <wsdl:part name="parameters" element="tns:ListManagerNoteByFilterString" />
+  </wsdl:message>
+  <wsdl:message name="ListManagerNoteByFilterStringSoapOut">
+    <wsdl:part name="parameters" element="tns:ListManagerNoteByFilterStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListManagerNoteByFilterStringAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateManagerNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateManagerNote" />
+  </wsdl:message>
+  <wsdl:message name="UpdateManagerNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateManagerNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateManagerNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteManagerNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteManagerNote" />
+  </wsdl:message>
+  <wsdl:message name="DeleteManagerNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteManagerNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteManagerNoteAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddFileInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddFileInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFileInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListFileInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="ListFileInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListFileInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListSingleFileInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListSingleFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="ListSingleFileInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListSingleFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSingleFileInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EditFileInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:EditFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="EditFileInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:EditFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditFileInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileContentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFileContent" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileContentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFileContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileContentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadFileBodySoapIn">
+    <wsdl:part name="parameters" element="tns:LoadFileBody" />
+  </wsdl:message>
+  <wsdl:message name="LoadFileBodySoapOut">
+    <wsdl:part name="parameters" element="tns:LoadFileBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadFileBodyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="mGetMaxFileIDSoapIn">
+    <wsdl:part name="parameters" element="tns:mGetMaxFileID" />
+  </wsdl:message>
+  <wsdl:message name="mGetMaxFileIDSoapOut">
+    <wsdl:part name="parameters" element="tns:mGetMaxFileIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="mGetMaxFileIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetERPSession" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetERPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GeneralServiceSoap">
+    <wsdl:operation name="AddNote">
+      <wsdl:input message="tns:AddNoteSoapIn" />
+      <wsdl:output message="tns:AddNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAllNotes">
+      <wsdl:input message="tns:ListAllNotesSoapIn" />
+      <wsdl:output message="tns:ListAllNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNote">
+      <wsdl:input message="tns:ListNoteSoapIn" />
+      <wsdl:output message="tns:ListNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNote">
+      <wsdl:input message="tns:UpdateNoteSoapIn" />
+      <wsdl:output message="tns:UpdateNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <wsdl:input message="tns:DeleteNoteSoapIn" />
+      <wsdl:output message="tns:DeleteNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddManagerNote">
+      <wsdl:input message="tns:AddManagerNoteSoapIn" />
+      <wsdl:output message="tns:AddManagerNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAllManagersNotes">
+      <wsdl:input message="tns:ListAllManagersNotesSoapIn" />
+      <wsdl:output message="tns:ListAllManagersNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListManagerNoteByNoteID">
+      <wsdl:input message="tns:ListManagerNoteByNoteIDSoapIn" />
+      <wsdl:output message="tns:ListManagerNoteByNoteIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListManagerNoteByFilterString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Manager Note Bu UserID and Week Start Date</wsdl:documentation>
+      <wsdl:input message="tns:ListManagerNoteByFilterStringSoapIn" />
+      <wsdl:output message="tns:ListManagerNoteByFilterStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerNote">
+      <wsdl:input message="tns:UpdateManagerNoteSoapIn" />
+      <wsdl:output message="tns:UpdateManagerNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManagerNote">
+      <wsdl:input message="tns:DeleteManagerNoteSoapIn" />
+      <wsdl:output message="tns:DeleteManagerNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFileInfo">
+      <wsdl:input message="tns:AddFileInfoSoapIn" />
+      <wsdl:output message="tns:AddFileInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFileInfo">
+      <wsdl:input message="tns:ListFileInfoSoapIn" />
+      <wsdl:output message="tns:ListFileInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFileInfo">
+      <wsdl:input name="ListSingleFileInfo" message="tns:ListSingleFileInfoSoapIn" />
+      <wsdl:output name="ListSingleFileInfo" message="tns:ListSingleFileInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFileInfo">
+      <wsdl:input message="tns:EditFileInfoSoapIn" />
+      <wsdl:output message="tns:EditFileInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFileInfo">
+      <wsdl:input message="tns:DeleteFileInfoSoapIn" />
+      <wsdl:output message="tns:DeleteFileInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileContent">
+      <wsdl:input message="tns:UpdateFileContentSoapIn" />
+      <wsdl:output message="tns:UpdateFileContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadFileBody">
+      <wsdl:input message="tns:LoadFileBodySoapIn" />
+      <wsdl:output message="tns:LoadFileBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetMaxFileID">
+      <wsdl:input message="tns:mGetMaxFileIDSoapIn" />
+      <wsdl:output message="tns:mGetMaxFileIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <wsdl:input message="tns:GetERPSessionSoapIn" />
+      <wsdl:output message="tns:GetERPSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeneralServiceSoap" type="tns:GeneralServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNote">
+      <soap:operation soapAction="http://tempuri.org/AddNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllNotes">
+      <soap:operation soapAction="http://tempuri.org/ListAllNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListAllNotesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListNote">
+      <soap:operation soapAction="http://tempuri.org/ListNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNote">
+      <soap:operation soapAction="http://tempuri.org/UpdateNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <soap:operation soapAction="http://tempuri.org/DeleteNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddManagerNote">
+      <soap:operation soapAction="http://tempuri.org/AddManagerNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddManagerNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllManagersNotes">
+      <soap:operation soapAction="http://tempuri.org/ListAllManagersNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListAllManagersNotesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListManagerNoteByNoteID">
+      <soap:operation soapAction="http://tempuri.org/ListManagerNoteByNoteID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListManagerNoteByNoteIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListManagerNoteByFilterString">
+      <soap:operation soapAction="http://tempuri.org/ListManagerNoteByFilterString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListManagerNoteByFilterStringAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerNote">
+      <soap:operation soapAction="http://tempuri.org/UpdateManagerNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateManagerNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManagerNote">
+      <soap:operation soapAction="http://tempuri.org/DeleteManagerNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteManagerNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFileInfo">
+      <soap:operation soapAction="http://tempuri.org/AddFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFileInfo">
+      <soap:operation soapAction="http://tempuri.org/ListFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFileInfo">
+      <soap:operation soapAction="http://tempuri.org/ListSingleFileInfo" style="document" />
+      <wsdl:input name="ListSingleFileInfo">
+        <soap:body use="literal" />
+        <soap:header message="tns:ListSingleFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListSingleFileInfo">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFileInfo">
+      <soap:operation soapAction="http://tempuri.org/EditFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EditFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFileInfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileContent">
+      <soap:operation soapAction="http://tempuri.org/UpdateFileContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateFileContentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFileBody">
+      <soap:operation soapAction="http://tempuri.org/LoadFileBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadFileBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetMaxFileID">
+      <soap:operation soapAction="http://tempuri.org/mGetMaxFileID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:mGetMaxFileIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GeneralServiceSoap12" type="tns:GeneralServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNote">
+      <soap12:operation soapAction="http://tempuri.org/AddNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllNotes">
+      <soap12:operation soapAction="http://tempuri.org/ListAllNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListAllNotesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListNote">
+      <soap12:operation soapAction="http://tempuri.org/ListNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNote">
+      <soap12:operation soapAction="http://tempuri.org/UpdateNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <soap12:operation soapAction="http://tempuri.org/DeleteNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddManagerNote">
+      <soap12:operation soapAction="http://tempuri.org/AddManagerNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddManagerNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllManagersNotes">
+      <soap12:operation soapAction="http://tempuri.org/ListAllManagersNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListAllManagersNotesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListManagerNoteByNoteID">
+      <soap12:operation soapAction="http://tempuri.org/ListManagerNoteByNoteID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListManagerNoteByNoteIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListManagerNoteByFilterString">
+      <soap12:operation soapAction="http://tempuri.org/ListManagerNoteByFilterString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListManagerNoteByFilterStringAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerNote">
+      <soap12:operation soapAction="http://tempuri.org/UpdateManagerNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateManagerNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManagerNote">
+      <soap12:operation soapAction="http://tempuri.org/DeleteManagerNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteManagerNoteAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFileInfo">
+      <soap12:operation soapAction="http://tempuri.org/AddFileInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFileInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListFileInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFileInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListSingleFileInfo" style="document" />
+      <wsdl:input name="ListSingleFileInfo">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListSingleFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListSingleFileInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFileInfo">
+      <soap12:operation soapAction="http://tempuri.org/EditFileInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EditFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFileInfo">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFileInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteFileInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileContent">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFileContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateFileContentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFileBody">
+      <soap12:operation soapAction="http://tempuri.org/LoadFileBody" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadFileBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetMaxFileID">
+      <soap12:operation soapAction="http://tempuri.org/mGetMaxFileID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:mGetMaxFileIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap12:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralService">
+    <wsdl:port name="GeneralServiceSoap" binding="tns:GeneralServiceSoap">
+      <soap:address location="http://localhost/Accountability_WS/GeneralService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GeneralServiceSoap12" binding="tns:GeneralServiceSoap12">
+      <soap12:address location="http://localhost/Accountability_WS/GeneralService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

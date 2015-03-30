@@ -1,0 +1,306 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+using Office.DAL;
+using System.Collections;
+using System.Web.UI.WebControls.WebParts;
+using System.Threading;
+
+
+public partial class Home : Office.BLL.HomeBLL
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        CheckUserSession();
+        if (!IsPostBack)
+        {
+            lblVersionInfo.Text = GetVersionInfo();
+
+            //
+
+            Thread tid1 = new Thread(new ThreadStart(BindOpenTasks));
+            Thread tid2 = new Thread(new ThreadStart(BindTopAccounts));
+            Thread tid3 = new Thread(new ThreadStart(BindMyCalls));
+            Thread tid4 = new Thread(new ThreadStart(BindCustomerSupport));
+            tid1.Start();
+            tid2.Start();
+            tid3.Start();
+            tid4.Start();
+
+
+            //
+            wpOpenTasks.WebParts[0].Title = "My Open Tasks";
+            wpCalls.WebParts[0].Title = "My Calls";
+            wpTopAccounts.WebParts[0].Title = "Top Accounts";
+            wpCS.WebParts[0].Title = "Customer Support";
+            
+            
+            
+            //ViewState["ASIURL"] = ConfigurationManager.AppSettings["ELSData.DataService"].ToString();
+            //ViewState["ASIWSUserName"] = ConfigurationManager.AppSettings["UserNameELS"].ToString();
+            //ViewState["ASIWSPassword"] = ConfigurationManager.AppSettings["PasswordELS"].ToString();
+        }
+
+        string CurrentPage = "Home";
+        //////
+        ucUserTabs.CurrentPage = CurrentPage;
+        ucUserTabs.btnAccountsEvent += new EventHandler(ucUserTabs_btnAccountsEvent);
+        ucUserTabs.btnAccountListsEvent += new EventHandler(ucUserTabs_btnAccountListsEvent);
+        ucUserTabs.btnContantsEvent += new EventHandler(ucUserTabs_btnContantsEvent);
+        ucUserTabs.btnContactListsEvent += new EventHandler(ucUserTabs_btnContactListsEvent);
+        ucUserTabs.btnBranchesEvent += new EventHandler(ucUserTabs_btnBranchesEvent);
+        ucUserTabs.btnBranchesDetailsEvent += new EventHandler(ucUserTabs_btnBranchesDetailsEvent);
+        ucUserTabs.btnCallsEvent += new EventHandler(ucUserTabs_btnCallsEvent);
+        ucUserTabs.btnManageApplicationEvent += new EventHandler(ucUserTabs_btnManageApplicationEvent);
+        //////
+        
+        imgbtnSignOut.Attributes.Add("onmouseover", "this.src='Images/CloseBut_pressed.jpg'");
+        imgbtnSignOut.Attributes.Add("onmouseout", "this.src='Images/CloseBut_normal.jpg'");
+
+        display.Attributes.Add("onmouseover", "this.src='Images/Display-o.jpg'");
+        display.Attributes.Add("onmouseout", "this.src='Images/Display-n.jpg'");
+
+        Catalog.Attributes.Add("onmouseover", "this.src='Images/Catalog-o.jpg'");
+        Catalog.Attributes.Add("onmouseout", "this.src='Images/Catalog-n.jpg'");
+
+        Design.Attributes.Add("onmouseover", "this.src='Images/Design-o.jpg'");
+        Design.Attributes.Add("onmouseout", "this.src='Images/Design-n.jpg'");
+    }
+    private static void BindOpenTasks()
+    {
+        gvOpenTasks.DataSource = odsOpenTasks;
+        gvOpenTasks.DataBind();
+
+    }
+    private static void BindTopAccounts()
+    {
+        gvTopAccounts.DataSource = odsTopAccounts;
+        gvTopAccounts.DataBind();
+
+    }
+    private static void BindMyCalls()
+    {
+
+        gvMyCalls.DataSource = odsMyCalls;
+        gvMyCalls.DataBind();
+
+    }
+    private static void BindCustomerSupport()
+    {
+
+        gvCS.DataSource = odsCS;
+        gvCS.DataBind();
+    }
+
+    private void ucUserTabs_btnAccountsEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("Accounts.aspx");
+    }
+
+    private void ucUserTabs_btnAccountListsEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("AccountLists.aspx");
+    }
+
+    private void ucUserTabs_btnContantsEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("Contacts.aspx");
+    }
+
+    private void ucUserTabs_btnContactListsEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("ContactLists.aspx");
+    }
+
+    private void ucUserTabs_btnBranchesEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("Branches.aspx");
+    }
+
+    private void ucUserTabs_btnBranchesDetailsEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("BranchDetails.aspx");
+    }
+
+    private void ucUserTabs_btnCallsEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("CallsManagement.aspx");
+    }
+
+    private void ucUserTabs_btnManageApplicationEvent(object sender, EventArgs e)
+    {
+        Response.Redirect("ManageApplication.aspx");
+    }
+
+    protected void gvOpenTasks_RowCreated(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            e.Row.Cells[0].Attributes["onmouseover"] = "this.style.cursor='hand';this.style.textDecoration='none';";
+            e.Row.Cells[0].Attributes["onmouseout"] = "this.style.textDecoration='none';";
+            ////e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.gvCalls, "Select$" + e.Row.RowIndex);
+            //e.Row.Attributes["ondblclick"] = ClientScript.GetPostBackClientHyperlink(this.gvOpenTasks, "Select$" + e.Row.RowIndex);
+            foreach (TableCell tc in e.Row.Cells)
+            {
+                tc.CssClass = "GridCellStyle";
+            }
+        }
+    }
+
+    protected void gvOpenTasks_Sorting(object sender, GridViewSortEventArgs e)
+    {
+        //Session["CallSortExpression"] = e.SortExpression;
+        ////
+        //OrderBy(e.SortExpression);
+        //LoadSearchPrameters();
+        ////
+        //ViewState["CallID"] = "";
+        //gvCalls.SelectedIndex = -1;
+        //lblTransMsg.Visible = false;
+        ////
+        //BindGridView();
+    }
+
+    protected void imgbtnSignOut_Click(object sender, ImageClickEventArgs e)
+    {
+        SignOut();
+    }
+
+    protected string GetTaskLink(object IsCall, object TaskID, object Site)
+    {
+        if (IsCall != null)
+        {
+            if (Site != null)
+            {
+                if(Site.ToString().ToLower() == "sss")
+                    return "~/CustomerSRequestQuote.aspx?CustomerSupportID=" + TaskID.ToString();
+            }
+            return "~/CustomerSupport.aspx?CustomerSupportID=" + TaskID.ToString();
+        }
+        else
+        {
+            return "~/ContactLists.aspx?ContactID=" + TaskID.ToString();
+        }
+    }
+
+    protected void gvMyCalls_RowCreated(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            e.Row.Cells[0].Attributes["onmouseover"] = "this.style.cursor='hand';this.style.textDecoration='none';";
+            e.Row.Cells[0].Attributes["onmouseout"] = "this.style.textDecoration='none';";
+            ////e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.gvCalls, "Select$" + e.Row.RowIndex);
+            //e.Row.Attributes["ondblclick"] = ClientScript.GetPostBackClientHyperlink(this.gvOpenTasks, "Select$" + e.Row.RowIndex);
+            foreach (TableCell tc in e.Row.Cells)
+            {
+                tc.CssClass = "GridCellStyle";
+            }
+        }
+    }
+
+    protected void gvMyCalls_Sorting(object sender, GridViewSortEventArgs e)
+    {
+        //Session["CallSortExpression"] = e.SortExpression;
+        ////
+        //OrderBy(e.SortExpression);
+        //LoadSearchPrameters();
+        ////
+        //ViewState["CallID"] = "";
+        //gvCalls.SelectedIndex = -1;
+        //lblTransMsg.Visible = false;
+        ////
+        //BindGridView();
+    }
+
+    protected void gvTopAccounts_RowCreated(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            //e.Row.Cells[0].Attributes["onmouseover"] = "this.style.cursor='hand';this.style.textDecoration='none';";
+            //e.Row.Cells[0].Attributes["onmouseout"] = "this.style.textDecoration='none';";
+            foreach (TableCell tc in e.Row.Cells)
+            {
+                tc.CssClass = "GridCellStyle";
+            }
+        }
+    }
+
+    protected void gvTopAccounts_Sorting(object sender, GridViewSortEventArgs e)
+    {
+        
+        //Session["CallSortExpression"] = e.SortExpression;
+        ////
+        //OrderBy(e.SortExpression);
+        //LoadSearchPrameters();
+        ////
+        //ViewState["CallID"] = "";
+        //gvCalls.SelectedIndex = -1;
+        //lblTransMsg.Visible = false;
+        ////
+        //BindGridView();
+    }
+
+    protected void ddlCS_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        gvCS.DataBind();
+    }
+
+    protected void gvCS_RowCreated(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            //e.Row.Cells[0].Attributes["onmouseover"] = "this.style.cursor='hand';this.style.textDecoration='none';";
+            //e.Row.Cells[0].Attributes["onmouseout"] = "this.style.textDecoration='none';";
+            foreach (TableCell tc in e.Row.Cells)
+            {
+                tc.CssClass = "GridCellStyle";
+            }
+        }
+    }
+
+    protected void gvCS_Sorting(object sender, GridViewSortEventArgs e)
+    {
+
+        //Session["CallSortExpression"] = e.SortExpression;
+        ////
+        //OrderBy(e.SortExpression);
+        //LoadSearchPrameters();
+        ////
+        //ViewState["CallID"] = "";
+        //gvCalls.SelectedIndex = -1;
+        //lblTransMsg.Visible = false;
+        ////
+        //BindGridView();
+    }
+
+    protected string GetCustomerSupportLink(object CSID)
+    {
+        if (ddlCS.SelectedIndex == 0)
+        {
+            return "~/CustomerSRequestQuote.aspx?CustomerSupportID=" + CSID.ToString();
+        }
+        else
+            return "~/CustomerSupport.aspx?CustomerSupportID=" + CSID.ToString();
+    }
+
+    protected void display_Click(object sender, ImageClickEventArgs e)
+    {
+        WebPartManager1.DisplayMode = WebPartManager.BrowseDisplayMode;
+
+    }
+    protected void Catalog_Click(object sender, ImageClickEventArgs e)
+    {
+        WebPartManager1.DisplayMode = WebPartManager.CatalogDisplayMode;
+    }
+    //protected void Edit_Click(object sender, EventArgs e)
+    //{
+    //    WebPartManager1.DisplayMode = WebPartManager.EditDisplayMode;
+    //}
+    protected void Design_Click(object sender, ImageClickEventArgs e)
+    {
+        WebPartManager1.DisplayMode = WebPartManager.DesignDisplayMode;
+    }
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="mAccessRightsReports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsAdmin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mAccessRightsReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mAccessRightsReportsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mAccessRightsAddModifyReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mAccessRightsAddModifyReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mAccessRightsAddModifyReportResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="mAccessRightsReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:mAccessRightsReports" />
+  </wsdl:message>
+  <wsdl:message name="mAccessRightsReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:mAccessRightsReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="mAccessRightsAddModifyReportSoapIn">
+    <wsdl:part name="parameters" element="tns:mAccessRightsAddModifyReport" />
+  </wsdl:message>
+  <wsdl:message name="mAccessRightsAddModifyReportSoapOut">
+    <wsdl:part name="parameters" element="tns:mAccessRightsAddModifyReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ReportsSoap">
+    <wsdl:operation name="mAccessRightsReports">
+      <wsdl:input message="tns:mAccessRightsReportsSoapIn" />
+      <wsdl:output message="tns:mAccessRightsReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mAccessRightsAddModifyReport">
+      <wsdl:input message="tns:mAccessRightsAddModifyReportSoapIn" />
+      <wsdl:output message="tns:mAccessRightsAddModifyReportSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReportsSoap" type="tns:ReportsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mAccessRightsReports">
+      <soap:operation soapAction="http://tempuri.org/mAccessRightsReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mAccessRightsAddModifyReport">
+      <soap:operation soapAction="http://tempuri.org/mAccessRightsAddModifyReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReportsSoap12" type="tns:ReportsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mAccessRightsReports">
+      <soap12:operation soapAction="http://tempuri.org/mAccessRightsReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mAccessRightsAddModifyReport">
+      <soap12:operation soapAction="http://tempuri.org/mAccessRightsAddModifyReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Reports">
+    <wsdl:port name="ReportsSoap" binding="tns:ReportsSoap">
+      <soap:address location="http://erp/WS-ReportsRW/Reports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReportsSoap12" binding="tns:ReportsSoap12">
+      <soap12:address location="http://erp/WS-ReportsRW/Reports.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

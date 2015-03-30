@@ -1,0 +1,269 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77D1A49B-6D7F-43C3-8F6E-1EF15E9C56AE}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TSN.ERP.Reporting</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TSN.ERP.Reporting</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise">
+      <Name>CrystalDecisions.Enterprise</Name>
+      <HintPath>..\..\..\..\..\..\Program Files\Common Files\Business Objects\3.0\managed\CrystalDecisions.Enterprise.dll</HintPath>
+      <AssemblyFolderKey>hklm\crystal.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="TSN.ERP.Engine, Version=1.0.3412.29496, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="TSN.ERP.Security, Version=1.0.3412.29232, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="TSN.ERP.SharedComponents, Version=1.0.3412.29654, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CrysatlReports\CrysatlReportsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CrysatlReports\Parameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CrysatlReports\ReportInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CrysatlReports\ReportsConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\dsEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEntities.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsRegisteredAssemblies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRegisteredAssemblies.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsRepArguments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRepArguments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsReportCalls.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportCalls.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsReportsInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportsInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsRepParms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRepParms.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsSelectList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSelectList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsTableInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTableInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EntitiesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\RegisteredAssembliesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ReportCallsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ReportParamtersData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ReportsInfoData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\TableInfoData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MethodCall.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReflectionSupport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Data\dsEntities.xsx">
+      <DependentUpon>dsEntities.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsRegisteredAssemblies.xsx">
+      <DependentUpon>dsRegisteredAssemblies.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsRepArguments.xsx">
+      <DependentUpon>dsRepArguments.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsReportCalls.xsx">
+      <DependentUpon>dsReportCalls.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsReportsInfo.xsx">
+      <DependentUpon>dsReportsInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsSelectList.xsx">
+      <DependentUpon>dsSelectList.xsd</DependentUpon>
+    </None>
+    <None Include="TSN.ERP.Reporting.snk" />
+    <Content Include="Data\dsEntities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEntities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsRegisteredAssemblies.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRegisteredAssemblies.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsRepArguments.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRepArguments.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsReportCalls.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportCalls.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsReportsInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportsInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsRepParms.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRepParms.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsSelectList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSelectList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsTableInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTableInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Data\EntitiesData.resx">
+      <DependentUpon>EntitiesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\RegisteredAssembliesData.resx">
+      <DependentUpon>RegisteredAssembliesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ReportCallsData.resx">
+      <DependentUpon>ReportCallsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ReportParamtersData.resx">
+      <DependentUpon>ReportParamtersData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ReportsInfoData.resx">
+      <DependentUpon>ReportsInfoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\TableInfoData.resx">
+      <DependentUpon>TableInfoData.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

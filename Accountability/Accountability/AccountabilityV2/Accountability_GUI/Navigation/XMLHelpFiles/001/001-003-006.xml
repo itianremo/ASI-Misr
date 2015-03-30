@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>Teams module is to manage your teams, it shows you your current teams and all details about it like team name, team leader name , team description and employees in each team also how to add, delete or edit team how to add or delete employees in this team.</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="003" FUNCTIONALITYID="006">
+    <ITEM_DATA>
+      <ITEMID>1</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Team</ITEM_NAME>
+      <ITEM_DESCRIPTION>To create a new team this will be by press 'Create New Team' button at the bottom of the page, team form will appears enter team name, select team leader from the combo box or you can use the search button beside team leader combo to help you finding the team leader and enter team description then press on the save button if you want to cancel and back to your main frame press on cancel button 
+</ITEM_DESCRIPTION>
+      <IMAGENAME>standardNew.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Team</ITEM_NAME>
+      <ITEM_DESCRIPTION>To delete any team just select the team(s) you want to delete from the teams table  by checking the check box near the team name then press the delete button at the bottom of the table.</ITEM_DESCRIPTION>
+      <IMAGENAME>standardDelete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>3</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit Team</ITEM_NAME>
+      <ITEM_DESCRIPTION>By clicking on any team (in the teams table) you can get the team details shown in the team details form , make your changes you want then press on save button. </ITEM_DESCRIPTION>
+      <IMAGENAME>standardSave.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>4</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Employee To Team </ITEM_NAME>
+      <ITEM_DESCRIPTION>How to add employees to my team? You can do that by an easy way by click add an employee at the bottom of the team members table , a list of all employees will appears then select the employees you want to add to your team by checking check boxes you want then press on the 'add employee' button to add the employee(s) you selected to the team.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>Addbutton.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>5</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Remove Employee From Team </ITEM_NAME>
+      <ITEM_DESCRIPTION>You can remove an employee or more by selecting the employees you want to remove by checking the check boxes near their names then press on the remove button at the bottom of the team members table. 
+</ITEM_DESCRIPTION>
+      <IMAGENAME>Removebutton.gif</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

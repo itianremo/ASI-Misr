@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="dsTotalAccSheet" targetNamespace="http://tempuri.org/dsTotalAccSheet.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/dsTotalAccSheet.xsd" xmlns:mstns="http://tempuri.org/dsTotalAccSheet.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="dsTotalAccSheet" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="TotalAccSheet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SunDate" type="xs:date" minOccurs="0" />
+							<xs:element name="MonDate" type="xs:date" minOccurs="0" />
+							<xs:element name="TueDate" type="xs:date" minOccurs="0" />
+							<xs:element name="WedDate" type="xs:date" minOccurs="0" />
+							<xs:element name="ThurDate" type="xs:date" minOccurs="0" />
+							<xs:element name="FriDate" type="xs:date" minOccurs="0" />
+							<xs:element name="SatDate" type="xs:date" minOccurs="0" />
+							<xs:element name="SunTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="MonTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="WedTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="FriTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="SatTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="WeekTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="Month" type="xs:integer" minOccurs="0" />
+							<xs:element name="Week" type="xs:integer" minOccurs="0" />
+							<xs:element name="Year" type="xs:integer" minOccurs="0" />
+							<xs:element name="ThurTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="TuesTotal" type="xs:double" minOccurs="0" />
+							<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+							<xs:element name="Dept" type="xs:string" minOccurs="0" />
+							<xs:element name="Job" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,201 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Src="Controls/TransButtons.ascx" TagName="TransButtons" TagPrefix="uc2" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>::4A-Pharma BMD::</title>
+    <link rel="SHORTCUT ICON" href="favicon.ico">
+    <link href="~/Styles/MainStyleSheet.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" src='JScript/JScript.js'></script>
+
+</head>
+<body style="margin: 0; padding: 0;" bgcolor="#f2f4ef">
+    <form id="form1" runat="server">
+        <div id="container">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <table id="tblPage" style="width: 100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td colspan="3">
+                        <table id="tblhdr" background='<%= ResolveClientUrl("~/Images/banner-bg.jpg")%>'
+                            cellpadding="0" cellspacing="0" style="width: 100%">
+                            <tr>
+                                <td width="75%">
+                                    <img src='<%= ResolveClientUrl("~/Images/banner-left.jpg")%>' /></td>
+                                <td align="center" valign="middle" width="10%">
+                                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="WhitefontStyle" NavigateUrl="~/ChangePassword.aspx" ToolTip="Change Password">Change Password</asp:HyperLink></td>
+                                <td align="center" valign="middle" width="10%">
+                                    <asp:HyperLink ID="lnkChangePassword" runat="server" CssClass="WhitefontStyle" NavigateUrl="~/FMT/FMTPlanning.aspx"
+                                        Target="_self" ToolTip="FMT Module">FMT Module</asp:HyperLink></td>
+                                <td valign="middle" align="left" width="5%">
+                                    <asp:HyperLink ID="lnkLogOff" runat="server" CssClass="WhitefontStyle" NavigateUrl="~/Login.aspx" ToolTip="Log Off">Log Off</asp:HyperLink></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="height: 1px">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 10%" background='<%= ResolveClientUrl("~/Images/MenuBar-BG.jpg")%>'>
+                    </td>
+                    <td style="width: 80%" background='<%= ResolveClientUrl("~/Images/MenuBar-BG.jpg")%>'>
+                        <table id="tblTabs" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnHome" runat="server" AlternateText="Home" CausesValidation="False"
+                                        ImageUrl="Images/Home-n.jpg" PostBackUrl="~/index.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnProducts" runat="server" AlternateText="Products" CausesValidation="False"
+                                        ImageUrl="~/Images/Products-n.jpg" PostBackUrl="~/Products.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnPhysicians" runat="server" AlternateText="Physicians"
+                                        CausesValidation="False" ImageUrl="Images/Physicians-n.jpg" PostBackUrl="~/Physicians.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnMedicalAccounts" runat="server" AlternateText="Medical Accounts"
+                                        CausesValidation="False" ImageUrl="Images/MedicalAccounts-n.jpg" PostBackUrl="~/MedicalAccounts.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnPrivateClinics" runat="server" AlternateText="Private Clinics"
+                                        CausesValidation="False" ImageUrl="~/Images/PrivateClinics-n.jpg" PostBackUrl="~/PrivateClinics.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image6" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnPharmacies" runat="server" AlternateText="Pharmacies"
+                                        CausesValidation="False" ImageUrl="~/Images/Pharmacies-n.jpg" PostBackUrl="~/Pharmacies.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image7" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnDistributors" runat="server" AlternateText="Distributors"
+                                        CausesValidation="False" ImageUrl="~/Images/Distributors-n.jpg" PostBackUrl="~/Distributors.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="spacerUsers" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                </td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnManageUsers" runat="server" AlternateText="Manage Users"
+                                        CausesValidation="False" ImageUrl="~/Images/Users-n.jpg" PostBackUrl="~/BMDUsers.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="spacerManageApp" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnManageApplication" runat="server" AlternateText="Manage Application"
+                                        CausesValidation="False" ImageUrl="~/Images/manage-applications-n.jpg" PostBackUrl="~/ManageApplication.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="spacerReports" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnReports" runat="server" AlternateText="Queries" CausesValidation="False"
+                                        ImageUrl="~/Images/Queries-n.jpg" PostBackUrl="~/Reports.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="spacerTransactions" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnTransactions" runat="server" AlternateText="Transactions"
+                                        CausesValidation="False" ImageUrl="~/Images/Transaction-n.jpg" PostBackUrl="~/TransactionsLog.aspx" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width: 10%" background='<%= ResolveClientUrl("~/Images/MenuBar-BG.jpg")%>'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td style="height: 4px">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <img src='<%= ResolveClientUrl("~/Images/4A-pahrma-logos.jpg")%>' /></td>
+                    <td align="center">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td align="center" style="height: 60px" valign="middle">
+                        <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="1">
+                            <ProgressTemplate>
+                                <asp:ImageButton ID="ImageButton10" ImageUrl="~/Images/ajax-loader2.gif" runat="server" />
+                                <br />
+                                <span style="font-size: 10pt; font-family: Arial">
+                                    <asp:Label ID="lblLoading" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="12px"
+                                        ForeColor="#990000" Text="Loading"></asp:Label></span>
+                            </ProgressTemplate>
+                        </asp:UpdateProgress>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td align="center" valign="middle">
+                        <uc2:TransButtons ID="ucTransButtons" runat="server" />
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Footer">
+            <table width="100%">
+                <tr>
+                    <td align="center" width="25%">
+                        <asp:Label ID="lblVersionInfo" runat="server" Font-Bold="False" Text="Version 1, Build 47"
+                            CssClass="MainfontStyle"></asp:Label></td>
+                    <td colspan="2" align="center" width="45%">
+                        <asp:Label ID="lblASICopyright" runat="server" Font-Bold="False" Text="2010 ASI E, LLC © | All Rights Reserved."
+                            CssClass="MainfontStyle"></asp:Label></td>
+                    <td align="right" width="20%">
+                        <asp:Label ID="lblLoggedUser" runat="server" CssClass="MainfontStyle" Font-Bold="False"
+                            Text="lblLoggedUser"></asp:Label></td>
+                         <td align="center" width="10%">
+                        <asp:Label ID="lblDate" runat="server" Font-Bold="False" Text="Thursday 12-May-2011"
+                            CssClass="MainfontStyle"></asp:Label></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>Here where you can view and manage all your accecced projects
+Project details
+Manage project tasks
+Manage project employees</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="002" FUNCTIONALITYID="002">
+    <ITEM_DATA>
+      <ITEMID>1</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Project Details</ITEM_NAME>
+      <ITEM_DESCRIPTION>You can get project details by selecting a project name from the list of the projects , the project details will apprears 
+project details 
+project tasks
+project employees
+
+Note: you can not manage a completed project anymore.</ITEM_DESCRIPTION>
+      <IMAGENAME>prjDetails.GIF</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Project</ITEM_NAME>
+      <ITEM_DESCRIPTION>You can add project by pressing the add project button , the project form details will appear , fill the required data and then press save</ITEM_DESCRIPTION>
+      <IMAGENAME>standardNew.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>3</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Project</ITEM_NAME>
+      <ITEM_DESCRIPTION>You can delete a project by selecting a project from the projects list and then press on the delete button
+
+Note: you can not delete a project if there is a previous entries for this project like assigned tasks, assigned employees..
+</ITEM_DESCRIPTION>
+      <IMAGENAME>prjDelete.bmp</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>4</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit Project</ITEM_NAME>
+      <ITEM_DESCRIPTION>You can edit a project by clicking on a project from the projects list , the project details will appears make your changed and then press on the edit button
+
+Note: you can not edit a completed project
+         </ITEM_DESCRIPTION>
+      <IMAGENAME>standardSave.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>5</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Complete Project</ITEM_NAME>
+      <ITEM_DESCRIPTION>You can edit a project by clicking on a project name from the projects list , the project details will appears , press on the complete button
+
+Note: if you complete a project all assigned tasks and employees assignments for this project will be deleted if exist.
+
+         </ITEM_DESCRIPTION>
+      <IMAGENAME>standardComplete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>6</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Task To Project</ITEM_NAME>
+      <ITEM_DESCRIPTION>When you select an opened project from the projects list form , all the project details will appears including the project tasks list , you can add task to the project by pressing on the add task button , the task window will be opened , fill all the task details then press save button and then press the back link to return top the project window details m you will find the task has been added to project tasks list.
+
+Note: you can not add task to a completed project.</ITEM_DESCRIPTION>
+      <IMAGENAME>standardNew.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>7</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit Project Task</ITEM_NAME>
+      <ITEM_DESCRIPTION>When you select an opened project from the projects list form, all project details will appears including the project tasks list , you can select a task from the project tasks list and press the edit task button , the task form details will be opened , make your changes and then press save button and then press the back link to return to the project window details.
+
+Note: you can not edit a completed task.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>Editbutton.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>8</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Complete Project Task</ITEM_NAME>
+      <ITEM_DESCRIPTION>When you select an opened project from the projects list form, all project details will appears including the project tasks list , you can complete a task by selecting one from the project tasks list and press the complete  task button.
+
+Note: when you complete a task all the assignments for this task will be completed as well.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>standardComplete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>9</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Project Task</ITEM_NAME>
+      <ITEM_DESCRIPTION>When you select an opened project from the projects list form, all project details will appears including the project tasks list , you can delete a task by selecting one from the project tasks list and press the delete task button.
+
+Note: You can not delete a task if there are any previous daily entries for this task.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>standardDelete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>10</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Employee To Project</ITEM_NAME>
+      <ITEM_DESCRIPTION>When you select a project from the projects list all project details will appears including the project employees, you can add employee to the project by selecting an employee from the combo box wich containing all the employees then press the add buttom near the combo box you will find the employee added to the list.</ITEM_DESCRIPTION>
+      <IMAGENAME>Addbutton.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>11</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Remove Employee From Project</ITEM_NAME>
+      <ITEM_DESCRIPTION>When you select a project from the projects list all project details will appears including the project employees, you can remove any number of employee from the project by selecting the employees from the project employees list and then press the remove button near the combo box you will find the employee disappeared from the list.</ITEM_DESCRIPTION>
+      <IMAGENAME>Removebutton.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>12</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Manage Employee Tasks</ITEM_NAME>
+      <ITEM_DESCRIPTION>To manage the project employees tasks , after selecting a project from projects list , the project details form appears , you can select one employee or more than one from the project employees list and then press the button " Manage Employees Tasks " , a list with all responsibilities and projects tasks appears to manage the employees tasks.
+
+Note: you can not select employees with different job titles.
+</ITEM_DESCRIPTION>
+      <IMAGENAME>manageEmpTask.GIF</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>13</ITEMID>
+      <ITEMPARENT>12</ITEMPARENT>
+      <ITEM_NAME>Assign Task To Employee</ITEM_NAME>
+      <ITEM_DESCRIPTION>After clicking the " Manage Employee Tasks " button in project details form another page will be opened and you will find at the top a list with all employee(s) responsibilities and at the bottom a list of all project tasks , to assign a task to employee(s ) select a responsibility from the responsibilities list and a task (s) from the tasks list and then click on the " Assign Task To Employee " button which is under the tasks list at the bottom of the page  , you will find then the tasks have been assigned to the employee (s) under the selected responsibilities.</ITEM_DESCRIPTION>
+      <IMAGENAME>assTaskToEmp.JPG</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>14</ITEMID>
+      <ITEMPARENT>12</ITEMPARENT>
+      <ITEM_NAME>Complete Employee Assigned Task</ITEM_NAME>
+      <ITEM_DESCRIPTION>To complete an employee task , after selecting an employee from the project employees list and pressed the " Manage Employee Tasks " button another page will be opened containing all employee's responsibilities and tasks assigned to him under each responsibility if exist , to complete one of these assigned tasks , choose the desired task(s) and then press the complete button , the task then will be completed for this employee .
+</ITEM_DESCRIPTION>
+      <IMAGENAME>imgcomplete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>15</ITEMID>
+      <ITEMPARENT>12</ITEMPARENT>
+      <ITEM_NAME>Close Employee Assigned Task</ITEM_NAME>
+      <ITEM_DESCRIPTION>To close an employee task , after selecting an employee from the project employees list and pressed the " Manage Employee Tasks " button another page will be opened containing all employee's responsibilities and tasks assigned to him under each responsibility if exist , to close one of these assigned tasks , choose the desired task(s) and then press the close task button , the task then will be closed for this employee .
+
+Note: if the assigned task contains a previous daily entries in the accountability sheet it will not be deleted and just will be closed else it will be deleted permanently from the system.</ITEM_DESCRIPTION>
+      <IMAGENAME>imgdelete.gif</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

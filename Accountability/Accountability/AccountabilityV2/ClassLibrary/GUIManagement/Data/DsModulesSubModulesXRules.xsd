@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="DsModulesSubModulesXRules" targetNamespace="http://www.tempuri.org/DsModulesSubModulesXRules.xsd"
+	xmlns:mstns="http://www.tempuri.org/DsModulesSubModulesXRules.xsd" xmlns="http://www.tempuri.org/DsModulesSubModulesXRules.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="DsModulesSubModulesXRules" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="SEC_ModulesSubModulesXRules">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MSMID" type="xs:int" />
+							<xs:element name="RuleID" type="xs:int" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:SEC_ModulesSubModulesXRules" />
+			<xs:field xpath="mstns:MSMID" />
+			<xs:field xpath="mstns:RuleID" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

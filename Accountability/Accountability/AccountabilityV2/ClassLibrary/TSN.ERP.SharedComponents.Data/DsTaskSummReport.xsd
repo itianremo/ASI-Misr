@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="DsTaskSummReport" targetNamespace="http://www.tempuri.org/DsTaskSummReport.xsd" xmlns:mstns="http://www.tempuri.org/DsTaskSummReport.xsd" xmlns="http://www.tempuri.org/DsTaskSummReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="DsTaskSummReport" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="GEN_Tasks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="projectID" type="xs:int" minOccurs="0" />
+              <xs:element name="TaskName" type="xs:string" />
+              <xs:element name="SumValue" msdata:ReadOnly="true" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TaskCloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProjectName" type="xs:string" minOccurs="0" />
+              <xs:element name="Fullname" type="xs:string" />
+              <xs:element name="JobName" type="xs:string" />
+              <xs:element name="CEName" type="xs:string" />
+              <xs:element name="AssignmentDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

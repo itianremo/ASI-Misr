@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="DataSetRG" targetNamespace="http://www.tempuri.org/DataSetRG.xsd" xmlns:mstns="http://www.tempuri.org/DataSetRG.xsd" xmlns="http://www.tempuri.org/DataSetRG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="DataSetRG" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="SEC_RuleEntityXRuleGroup">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RuleGroupID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

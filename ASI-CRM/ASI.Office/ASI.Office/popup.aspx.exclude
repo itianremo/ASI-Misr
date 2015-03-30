@@ -1,0 +1,99 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="popup.aspx.cs" Inherits="popup" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" OnAsyncPostBackError="ScriptManager1_AsyncPostBackError">
+    </cc1:ToolkitScriptManager>
+    <div>
+    <img id="imgAddEditNotes" runat="server" src="Images/addorEditnotes.gif" onclick="AddEdit_Note();"
+                                                            onmouseover="src='Images/addorEditnotes_over.png'" onmouseout="src='Images/addorEditnotes.gif'"
+                                                            class="HandOverCursor" alt="Add or Edit Notes" style="vertical-align: middle" />&nbsp;
+    <cc1:PopupControlExtender ID="PopupControlExtender1" runat="server" Position="Bottom"
+                                                            OffsetX="-350" OffsetY="-200" TargetControlID="imgAddEditNotes" PopupControlID="pnlNote" BehaviorID="PopupControlExtender12">
+                                                        </cc1:PopupControlExtender>
+                                                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                                                <ContentTemplate>
+                                                    <asp:Panel ID="pnlNote" runat="server">
+                                                    <div align="center" style="background-color: #dfdfdf; border-right: black thin solid;
+                                                        border-top: black thin solid; border-left: black thin solid; border-bottom: black thin solid;">
+                                                        <div align="center" style="width: 652px; background-color: black; overflow: hidden;
+                                                            height: 20px;">
+                                                            <strong style="font-weight: bold; font-size: 12px; color: white; font-family: Tahoma">
+                                                                Note Entry and Edit</strong>
+                                                        </div>
+                                                        <div style="width: 300px;">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <img id="Img2" src="Images/add.jpg" onclick="Add_Note();" onmouseover="src='Images/orange_mouseover_29.gif'"
+                                                                onmouseout="src='Images/add.jpg'" class="HandOverCursor" alt="Add New Note" />
+                                                            <!-- <img id="Img2" src="Images/edit.jpg" visible="false" onmouseover="src='Images/orange_mouseover_31.gif'" onmouseout="src='Images/edit.jpg'" class="HandOverCursor" alt="Update Note" /> -->
+                                                            <img id="Img5" src="Images/save.jpg" onclick="Save_Note();" onmouseover="src='Images/orange_mouseover_11.gif'"
+                                                                onmouseout="src='Images/save.jpg'" class="HandOverCursor" alt="Save Note" />
+                                                            <img id="Img6" src="Images/cancel_normal.png" onclick="Cancel_Note();" onmouseover="src='Images/cancel_selected.gif'"
+                                                                onmouseout="src='Images/cancel_normal.png'" class="HandOverCursor" alt="Cancel" />
+                                                        </div>
+                                                        <div align="center">
+                                                            <div style="width: 652px">
+                                                                <div style="height: 23px; width: 100px; float: left; font-weight: bold; font-size: 12px;
+                                                                    color: black; font-family: Tahoma;" align="right">
+                                                                    <asp:Label ID="lblEnteredDate" runat="server" Text="Entered:" Visible="false"></asp:Label>&nbsp;</div>
+                                                                <div style="width: 110px; float: left;">
+                                                                    <asp:TextBox ID="txtEnteredDate" runat="server" Width="100%" Visible="false" ReadOnly="True" CssClass="inputs"></asp:TextBox></div>
+                                                                <div style="height: 23px; width: 100px; float: left; font-weight: bold; font-size: 12px;
+                                                                    color: black; font-family: Tahoma;" align="right">
+                                                                    <asp:Label ID="lblEnteredTime" runat="server" Text="Time:" Visible="false"></asp:Label>&nbsp;</div>
+                                                                <div style="width: 110px; float: left;">
+                                                                    <asp:TextBox ID="txtEnteredTime" runat="server" Width="100%" Visible="false" ReadOnly="True" CssClass="inputs"></asp:TextBox></div>
+                                                                <div style="height: 23px; width: 100px; float: left; font-weight: bold; font-size: 12px;
+                                                                    color: black; font-family: Tahoma;" align="right">
+                                                                    <asp:Label ID="lblEnteredBy" runat="server" Text="By:" Visible="false"></asp:Label>&nbsp;</div>
+                                                                <div style="width: 110px; float: left;">
+                                                                    <asp:TextBox ID="txtEnteredBy" runat="server" Width="100%" Visible="false" ReadOnly="True" CssClass="inputs"></asp:TextBox></div>
+                                                            </div>
+                                                            <div style="width: 652px">
+                                                                <div style="height: 23px; width: 100px; float: left; font-weight: bold; font-size: 12px;
+                                                                    color: black; font-family: Tahoma;" align="right">
+                                                                    <asp:Label ID="lblEditDate" runat="server" Text="Edit:" Visible="false"></asp:Label>&nbsp;</div>
+                                                                <div style="width: 110px; float: left;">
+                                                                    <asp:TextBox ID="txtEditDate" runat="server" Width="100%" Visible="false" ReadOnly="True" CssClass="inputs"></asp:TextBox></div>
+                                                                <div style="height: 23px; width: 100px; float: left; font-weight: bold; font-size: 12px;
+                                                                    color: black; font-family: Tahoma;" align="right">
+                                                                    <asp:Label ID="lblEditTime" runat="server" Text="Time:" Visible="false"></asp:Label>&nbsp;</div>
+                                                                <div style="width: 110px; float: left;">
+                                                                    <asp:TextBox ID="txtEditTime" runat="server" Width="100%" Visible="false" ReadOnly="True" CssClass="inputs"></asp:TextBox></div>
+                                                                <div style="height: 23px; width: 100px; float: left; font-weight: bold; font-size: 12px;
+                                                                    color: black; font-family: Tahoma;" align="right">
+                                                                    <asp:Label ID="lblEditBy" runat="server" Text="By:" Visible="false"></asp:Label>&nbsp;</div>
+                                                                <div style="width: 110px; float: left;">
+                                                                    <asp:TextBox ID="txtEditBy" runat="server" Width="100%" Visible="false" ReadOnly="True" CssClass="inputs"></asp:TextBox></div>
+                                                            </div>
+                                                            <div style="width: 652px" align="center">
+                                                                <div style="width: 652px">
+                                                                     &#160; &#160; &#160; &#160; &#160;<asp:Label ID="lblContact" runat="server" Text="Contact:"
+                                                                        ForeColor="Black" Visible="false"></asp:Label>
+                                                                    <asp:TextBox ID="txtContact" runat="server" Width="110px" ReadOnly="True" CssClass="inputs" Visible="false"></asp:TextBox></div>
+                                                                <div style="width: 652px">
+                                                                   
+                                                                    &#160;&#160;
+                                                                </div>
+                                                               
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <asp:HiddenField ID="hdnNote" runat="server" />
+                                                    </asp:Panel>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+    
+    </div>
+    </form>
+</body>
+</html>

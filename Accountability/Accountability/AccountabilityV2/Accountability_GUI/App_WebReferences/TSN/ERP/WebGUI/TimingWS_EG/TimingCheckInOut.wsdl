@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetEmployeeRecordsInPeriod">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeRecordsInPeriodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeRecordsInPeriodResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayTotalWorkingHours">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayTotalWorkingHoursResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDayTotalWorkingHoursResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckInDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckInServiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOutService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckOutDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOutServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckOutServiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Hello">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmpCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckOutDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Break" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="RuleID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInOutAfterMidNight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FirstBreak" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="SecondBreak" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="AfterMidNightTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="TimeMargin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="AfterMidNightNewTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RuleID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CheckOut" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInOutAfterMidNightResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckInAfterMidNight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FirstBreak" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="SecondBreak" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="AfterMidNightTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="TimeMargin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="AfterMidNightNewTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RuleID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CheckIn" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInAfterMidNightResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeeStatusInDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeStatusInDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeStatusInDayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testt">
+        <s:complexType />
+      </s:element>
+      <s:element name="testtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testtResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgBody" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEmployeeRecordsInPeriodSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeRecordsInPeriod" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeRecordsInPeriodSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeRecordsInPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayTotalWorkingHoursSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDayTotalWorkingHours" />
+  </wsdl:message>
+  <wsdl:message name="GetDayTotalWorkingHoursSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDayTotalWorkingHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInService" />
+  </wsdl:message>
+  <wsdl:message name="CheckInServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckOutService" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckOutServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloSoapIn">
+    <wsdl:part name="parameters" element="tns:Hello" />
+  </wsdl:message>
+  <wsdl:message name="HelloSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInOutAfterMidNightSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInOutAfterMidNight" />
+  </wsdl:message>
+  <wsdl:message name="CheckInOutAfterMidNightSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInOutAfterMidNightResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInAfterMidNightSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInAfterMidNight" />
+  </wsdl:message>
+  <wsdl:message name="CheckInAfterMidNightSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInAfterMidNightResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeStatusInDaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeStatusInDay" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeStatusInDaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeStatusInDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="testtSoapIn">
+    <wsdl:part name="parameters" element="tns:testt" />
+  </wsdl:message>
+  <wsdl:message name="testtSoapOut">
+    <wsdl:part name="parameters" element="tns:testtResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TimingCheckInOutSoap">
+    <wsdl:operation name="GetEmployeeRecordsInPeriod">
+      <wsdl:input message="tns:GetEmployeeRecordsInPeriodSoapIn" />
+      <wsdl:output message="tns:GetEmployeeRecordsInPeriodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayTotalWorkingHours">
+      <wsdl:input message="tns:GetDayTotalWorkingHoursSoapIn" />
+      <wsdl:output message="tns:GetDayTotalWorkingHoursSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInService">
+      <wsdl:input message="tns:CheckInServiceSoapIn" />
+      <wsdl:output message="tns:CheckInServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutService">
+      <wsdl:input message="tns:CheckOutServiceSoapIn" />
+      <wsdl:output message="tns:CheckOutServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <wsdl:input message="tns:HelloSoapIn" />
+      <wsdl:output message="tns:HelloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInOutAfterMidNight">
+      <wsdl:input message="tns:CheckInOutAfterMidNightSoapIn" />
+      <wsdl:output message="tns:CheckInOutAfterMidNightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInAfterMidNight">
+      <wsdl:input message="tns:CheckInAfterMidNightSoapIn" />
+      <wsdl:output message="tns:CheckInAfterMidNightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeStatusInDay">
+      <wsdl:input message="tns:GetEmployeeStatusInDaySoapIn" />
+      <wsdl:output message="tns:GetEmployeeStatusInDaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testt">
+      <wsdl:input message="tns:testtSoapIn" />
+      <wsdl:output message="tns:testtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailSoapIn" />
+      <wsdl:output message="tns:SendMailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimingCheckInOutSoap" type="tns:TimingCheckInOutSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeRecordsInPeriod">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeRecordsInPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayTotalWorkingHours">
+      <soap:operation soapAction="http://tempuri.org/GetDayTotalWorkingHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInService">
+      <soap:operation soapAction="http://tempuri.org/CheckInService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutService">
+      <soap:operation soapAction="http://tempuri.org/CheckOutService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <soap:operation soapAction="http://tempuri.org/Hello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInOutAfterMidNight">
+      <soap:operation soapAction="http://tempuri.org/CheckInOutAfterMidNight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInAfterMidNight">
+      <soap:operation soapAction="http://tempuri.org/CheckInAfterMidNight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeStatusInDay">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeStatusInDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testt">
+      <soap:operation soapAction="http://tempuri.org/testt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimingCheckInOutSoap12" type="tns:TimingCheckInOutSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeRecordsInPeriod">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeRecordsInPeriod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayTotalWorkingHours">
+      <soap12:operation soapAction="http://tempuri.org/GetDayTotalWorkingHours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInService">
+      <soap12:operation soapAction="http://tempuri.org/CheckInService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutService">
+      <soap12:operation soapAction="http://tempuri.org/CheckOutService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <soap12:operation soapAction="http://tempuri.org/Hello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInOutAfterMidNight">
+      <soap12:operation soapAction="http://tempuri.org/CheckInOutAfterMidNight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInAfterMidNight">
+      <soap12:operation soapAction="http://tempuri.org/CheckInAfterMidNight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeStatusInDay">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeStatusInDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testt">
+      <soap12:operation soapAction="http://tempuri.org/testt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap12:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimingCheckInOut">
+    <wsdl:port name="TimingCheckInOutSoap" binding="tns:TimingCheckInOutSoap">
+      <soap:address location="http://moawad/TimingWS/TimingCheckInOut.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimingCheckInOutSoap12" binding="tns:TimingCheckInOutSoap12">
+      <soap12:address location="http://moawad/TimingWS/TimingCheckInOut.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

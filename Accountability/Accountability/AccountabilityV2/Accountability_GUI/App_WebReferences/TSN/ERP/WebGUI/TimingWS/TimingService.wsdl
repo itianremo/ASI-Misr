@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EditTimingCompanySettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditTimingCompanySettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditTimingCompanySettingsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ListCompanyTimingSettings">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListCompanyTimingSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCompanyTimingSettingsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditSpecialTiming">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditSpecialTimingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditSpecialTimingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListSpecialTiming">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListSpecialTimingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListSpecialTimingResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCheckInOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCheckInOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCheckInOutResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCheckInOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCheckInOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCheckInOutResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCheckInOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCheckInOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCheckInOutResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCheckInOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCheckInOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCheckInOutResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EditTimingCompanySettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditTimingCompanySettings" />
+  </wsdl:message>
+  <wsdl:message name="EditTimingCompanySettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditTimingCompanySettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditTimingCompanySettingsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListCompanyTimingSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCompanyTimingSettings" />
+  </wsdl:message>
+  <wsdl:message name="ListCompanyTimingSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCompanyTimingSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCompanyTimingSettingsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EditSpecialTimingSoapIn">
+    <wsdl:part name="parameters" element="tns:EditSpecialTiming" />
+  </wsdl:message>
+  <wsdl:message name="EditSpecialTimingSoapOut">
+    <wsdl:part name="parameters" element="tns:EditSpecialTimingResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditSpecialTimingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListSpecialTimingSoapIn">
+    <wsdl:part name="parameters" element="tns:ListSpecialTiming" />
+  </wsdl:message>
+  <wsdl:message name="ListSpecialTimingSoapOut">
+    <wsdl:part name="parameters" element="tns:ListSpecialTimingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSpecialTimingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckInOutSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCheckInOut" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckInOutSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCheckInOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckInOutAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCheckInOutSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCheckInOut" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCheckInOutSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCheckInOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCheckInOutAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddCheckInOutSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCheckInOut" />
+  </wsdl:message>
+  <wsdl:message name="AddCheckInOutSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCheckInOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCheckInOutAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckInOutSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCheckInOut" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckInOutSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCheckInOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckInOutAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetERPSession" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetERPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TimingWSSoap">
+    <wsdl:operation name="EditTimingCompanySettings">
+      <wsdl:input message="tns:EditTimingCompanySettingsSoapIn" />
+      <wsdl:output message="tns:EditTimingCompanySettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCompanyTimingSettings">
+      <wsdl:input message="tns:ListCompanyTimingSettingsSoapIn" />
+      <wsdl:output message="tns:ListCompanyTimingSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSpecialTiming">
+      <wsdl:input message="tns:EditSpecialTimingSoapIn" />
+      <wsdl:output message="tns:EditSpecialTimingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSpecialTiming">
+      <wsdl:input message="tns:ListSpecialTimingSoapIn" />
+      <wsdl:output message="tns:ListSpecialTimingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckInOut">
+      <wsdl:input message="tns:UpdateCheckInOutSoapIn" />
+      <wsdl:output message="tns:UpdateCheckInOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheckInOut">
+      <wsdl:input message="tns:DeleteCheckInOutSoapIn" />
+      <wsdl:output message="tns:DeleteCheckInOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCheckInOut">
+      <wsdl:input message="tns:AddCheckInOutSoapIn" />
+      <wsdl:output message="tns:AddCheckInOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckInOut">
+      <wsdl:input message="tns:GetCheckInOutSoapIn" />
+      <wsdl:output message="tns:GetCheckInOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <wsdl:input message="tns:GetERPSessionSoapIn" />
+      <wsdl:output message="tns:GetERPSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimingWSSoap" type="tns:TimingWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EditTimingCompanySettings">
+      <soap:operation soapAction="http://tempuri.org/EditTimingCompanySettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EditTimingCompanySettingsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCompanyTimingSettings">
+      <soap:operation soapAction="http://tempuri.org/ListCompanyTimingSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListCompanyTimingSettingsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSpecialTiming">
+      <soap:operation soapAction="http://tempuri.org/EditSpecialTiming" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EditSpecialTimingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSpecialTiming">
+      <soap:operation soapAction="http://tempuri.org/ListSpecialTiming" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListSpecialTimingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckInOut">
+      <soap:operation soapAction="http://tempuri.org/UpdateCheckInOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheckInOut">
+      <soap:operation soapAction="http://tempuri.org/DeleteCheckInOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCheckInOut">
+      <soap:operation soapAction="http://tempuri.org/AddCheckInOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckInOut">
+      <soap:operation soapAction="http://tempuri.org/GetCheckInOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimingWSSoap12" type="tns:TimingWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EditTimingCompanySettings">
+      <soap12:operation soapAction="http://tempuri.org/EditTimingCompanySettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EditTimingCompanySettingsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCompanyTimingSettings">
+      <soap12:operation soapAction="http://tempuri.org/ListCompanyTimingSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListCompanyTimingSettingsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSpecialTiming">
+      <soap12:operation soapAction="http://tempuri.org/EditSpecialTiming" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EditSpecialTimingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSpecialTiming">
+      <soap12:operation soapAction="http://tempuri.org/ListSpecialTiming" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListSpecialTimingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckInOut">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCheckInOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheckInOut">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCheckInOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCheckInOut">
+      <soap12:operation soapAction="http://tempuri.org/AddCheckInOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckInOut">
+      <soap12:operation soapAction="http://tempuri.org/GetCheckInOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCheckInOutAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap12:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimingWS">
+    <wsdl:port name="TimingWSSoap" binding="tns:TimingWSSoap">
+      <soap:address location="http://localhost/Accountability_WS/TimingService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimingWSSoap12" binding="tns:TimingWSSoap12">
+      <soap12:address location="http://localhost/Accountability_WS/TimingService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

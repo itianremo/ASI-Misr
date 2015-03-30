@@ -1,0 +1,324 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C4DD055-E72E-4D66-BA32-7886E4D79048}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TSN.ERP.Security</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TSN.ERP.Security</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="TSNLogin, Version=1.0.2.0, Culture=neutral, PublicKeyToken=184900f9afa3b481" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataSetAllUGForRG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAllUGForRG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetAllUserGroups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAllUserGroups.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEntities.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetGroups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGroups.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetLogFile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLogFile.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetRG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetRlEntRlGrp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRlEntRlGrp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetRuleEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRuleEntity.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetRuleGroup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRuleGroup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetRules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetUsersInUsrGrp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsersInUsrGrp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetUsrGroup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsrGroup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataSetUsrGrpRulGrp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsrGrpRulGrp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UsrDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsrDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEntities.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EntitysecurityManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ERPUserSecurityInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RulesDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SecurityManagement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="Data\DataSetAllUGForRG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAllUGForRG.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetAllUserGroups.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAllUserGroups.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetEntities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEntities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetGroups.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGroups.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetLogFile.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLogFile.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetRG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRG.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetRlEntRlGrp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRlEntRlGrp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetRuleEntity.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRuleEntity.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetRuleGroup.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRuleGroup.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetRules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetUser.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUser.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetUsersInUsrGrp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsersInUsrGrp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetUsrGroup.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsrGroup.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DataSetUsrGrpRulGrp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsrGrpRulGrp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\UsrDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsrDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="dsEntities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEntities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="EntitysecurityManager.resx">
+      <DependentUpon>EntitysecurityManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ERPUserSecurityInfo.resx">
+      <DependentUpon>ERPUserSecurityInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityManagement.resx">
+      <DependentUpon>SecurityManagement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="bin\Debug\TSN.ERP.Security.mdx" />
+    <None Include="Data\DataSetAllUGForRG.xsc">
+      <DependentUpon>DataSetAllUGForRG.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetAllUGForRG.xss">
+      <DependentUpon>DataSetAllUGForRG.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetAllUGForRG.xsx">
+      <DependentUpon>DataSetAllUGForRG.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetAllUserGroups.xsx">
+      <DependentUpon>DataSetAllUserGroups.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetGroups.xsx">
+      <DependentUpon>DataSetGroups.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetRlEntRlGrp.xsx">
+      <DependentUpon>DataSetRlEntRlGrp.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetRuleEntity.xsx">
+      <DependentUpon>DataSetRuleEntity.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetRuleGroup.xsx">
+      <DependentUpon>DataSetRuleGroup.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetRules.xsx">
+      <DependentUpon>DataSetRules.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetUser.xsx" />
+    <None Include="Data\DataSetUsrGroup.xsx">
+      <DependentUpon>DataSetUsrGroup.xsd</DependentUpon>
+    </None>
+    <None Include="Data\UsrDS.xsx">
+      <DependentUpon>UsrDS.xsd</DependentUpon>
+    </None>
+    <None Include="TSN.ERP.Security.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

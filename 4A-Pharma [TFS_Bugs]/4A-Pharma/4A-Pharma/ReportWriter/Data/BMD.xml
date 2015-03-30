@@ -1,0 +1,1885 @@
+<?xml version="1.0"?>
+<DATAMODEL Version="3" DefQuery="">
+  <DBPARAMS>
+    <ConnectionString>Provider=SQLNCLI.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=BMD;Data Source=misserver;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=HAMDY;Use Encryption for Data=False;Tag with column collation when possible=False;MARS Connection=False;DataTypeCompatibility=0;Trust Server Certificate=False</ConnectionString>
+  </DBPARAMS>
+  <NAME></NAME>
+  <DESCRIPTION></DESCRIPTION>
+  <OPERATORS>
+    <OPERATOR ID="Equal" CAPTION="is equal to" MAINTEXT="is equal to" EXPR="{expr1} = {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotEqual" CAPTION="is not equal to" MAINTEXT="is not equal to" EXPR="{expr1} &lt;&gt; {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="LessThan" CAPTION="is less than" MAINTEXT="is less than" EXPR="{expr1} &lt; {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="LessOrEqual" CAPTION="is less than or equal to" MAINTEXT="is less than or equal to" EXPR="{expr1} &lt;= {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="GreaterThan" CAPTION="is greater than" MAINTEXT="is greater than" EXPR="{expr1} &gt; {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="GreaterOrEqual" CAPTION="is greater than or equal to" MAINTEXT="is greater than or equal to" EXPR="{expr1} &gt;= {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="IsNull" CAPTION="is null" MAINTEXT="is null" EXPR="{expr1} IS NULL" FORMAT="{expr1}{op}" KIND="Scalar">
+      <TYPES>Unknown,String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,BCD,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="InList" CAPTION="is in list" MAINTEXT="is in list" EXPR="{expr1} IN ({expr2})" FORMAT="{expr1}{op}{expr2}" KIND="List">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotInList" CAPTION="is not in list" MAINTEXT="is not in list" EXPR="NOT ({expr1} in ({expr2}))" FORMAT="{expr1}{op}{expr2}" KIND="List">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Bool,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="StartsWith" CAPTION="starts with" MAINTEXT="starts with" EXPR="{expr1} LIKE {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotStartsWith" CAPTION="does not start with" MAINTEXT="does not start with" EXPR="NOT ({expr1} LIKE {expr2})" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="Contains" CAPTION="contains" MAINTEXT="contains" EXPR="{expr1} LIKE {expr2}" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotContains" CAPTION="does not contain" MAINTEXT="does not contain" EXPR="NOT ({expr1} LIKE {expr2})" FORMAT="{expr1}{op}{expr2}" KIND="Scalar">
+      <TYPES>String,WideString,Memo</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="Between" CAPTION="is between" MAINTEXT="is between" EXPR="{expr1} BETWEEN {expr2} AND {expr3}" FORMAT="{expr1}{op}{expr2} and {expr3}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+    <OPERATOR ID="NotBetween" CAPTION="is not between" MAINTEXT="is not between" EXPR="NOT ({expr1} BETWEEN {expr2} AND {expr3})" FORMAT="{expr1}{op}{expr2} and {expr3}" KIND="Scalar">
+      <TYPES>String,WideString,Byte,Word,Int,Int64,Float,Currency,Date,Time,DateTime,Autoinc,Memo,FixedChar</TYPES>
+      <EXPRS DefType="Unknown"/>
+    </OPERATOR>
+  </OPERATORS>
+  <TABLES>
+    <TABLE NAME="[aspnet_Applications]" ALIAS="aspnet_Applications" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,34,110,160"/>
+    <TABLE NAME="[aspnet_Membership]" ALIAS="aspnet_Membership" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,34,110,160"/>
+    <TABLE NAME="[aspnet_Paths]" ALIAS="aspnet_Paths" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,34,110,160"/>
+    <TABLE NAME="[aspnet_PersonalizationAllUsers]" ALIAS="aspnet_PersonalizationAllUsers" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,34,110,160"/>
+    <TABLE NAME="[aspnet_PersonalizationPerUser]" ALIAS="aspnet_PersonalizationPerUser" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,214,110,160"/>
+    <TABLE NAME="[aspnet_Profile]" ALIAS="aspnet_Profile" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,214,110,160"/>
+    <TABLE NAME="[aspnet_Roles]" ALIAS="aspnet_Roles" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,214,110,160"/>
+    <TABLE NAME="[aspnet_SchemaVersions]" ALIAS="aspnet_SchemaVersions" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="612,34,110,160"/>
+    <TABLE NAME="[aspnet_Users]" ALIAS="aspnet_Users" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,34,110,160"/>
+    <TABLE NAME="[aspnet_UsersInRoles]" ALIAS="aspnet_UsersInRoles" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,34,110,160"/>
+    <TABLE NAME="[aspnet_WebEvent_Events]" ALIAS="aspnet_WebEvent_Events" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,214,110,160"/>
+    <TABLE NAME="[BMD-Bricks]" ALIAS="Bricks" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,690,110,160"/>
+    <TABLE NAME="[BMD-Categories]" ALIAS="Categories" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,214,110,160"/>
+    <TABLE NAME="[BMD-Distributor_Branches]" ALIAS="Distributor_Branches" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="612,214,110,160"/>
+    <TABLE NAME="[BMD-Distributors]" ALIAS="Distributors" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="192,443,130,160"/>
+    <TABLE NAME="[BMD-Employees]" ALIAS="Employees" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="342,443,110,160"/>
+    <TABLE NAME="[BMD-MedicalAccounts]" ALIAS="MedicalAccounts" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="492,443,110,160"/>
+    <TABLE NAME="[BMD-Pharmacies]" ALIAS="Pharmacies" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="642,443,110,160"/>
+    <TABLE NAME="[BMD-Physicians]" ALIAS="Physicians" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="792,443,147,160"/>
+    <TABLE NAME="[BMD-PhysicianScore]" ALIAS="PhysicianScore" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,690,110,160"/>
+    <TABLE NAME="[BMD-PrivateClinics]" ALIAS="PrivateClinics" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,690,110,160"/>
+    <TABLE NAME="[BMD-ProductFeedback]" ALIAS="ProductFeedback" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,214,110,209"/>
+    <TABLE NAME="[BMD-Products]" ALIAS="Products" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,443,140,227"/>
+    <TABLE NAME="[BMD-Rel_Bricks_Branches]" ALIAS="Rel_Bricks_Branches" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,690,110,160"/>
+    <TABLE NAME="[BMD-Rel_Bricks_Users]" ALIAS="Rel_Bricks_Users" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="612,690,110,160"/>
+    <TABLE NAME="[BMD-Rel_Distributors_Products]" ALIAS="Rel_Distributors_Products" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,690,110,160"/>
+    <TABLE NAME="[BMD-Rel_Govs_Cities]" ALIAS="Rel_Govs_Cities" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,690,110,160"/>
+    <TABLE NAME="[BMD-Rel_Pharmacy_Distributors]" ALIAS="Rel_Pharmacy_Distributors" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,937,172,160"/>
+    <TABLE NAME="[BMD-Rel_Pharmacy_MedicalAccounts]" ALIAS="Rel_Pharmacy_MedicalAccounts" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="224,937,124,160"/>
+    <TABLE NAME="[BMD-Rel_Pharmacy_Physcians]" ALIAS="Rel_Pharmacy_Physcians" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="388,937,137,160"/>
+    <TABLE NAME="[BMD-Rel_Physicians_MedicalAccounts]" ALIAS="Rel_Physicians_MedicalAccounts" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="565,937,110,160"/>
+    <TABLE NAME="[BMD-Transactions]" ALIAS="Transactions" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="715,937,110,160"/>
+    <TABLE NAME="[FMT-Plan]" ALIAS="Plan" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="865,937,110,160"/>
+    <TABLE NAME="[FMT-PlanModules]" ALIAS="PlanModules" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,1184,110,160"/>
+    <TABLE NAME="[FMT-PlanSubModules]" ALIAS="PlanSubModules" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,1184,110,160"/>
+    <TABLE NAME="[FMT-VisitItems]" ALIAS="VisitItems" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,1184,110,160"/>
+    <TABLE NAME="[FMT-Visits]" ALIAS="Visits" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,1184,110,160"/>
+    <TABLE NAME="[GNR-GeneralCode]" ALIAS="GeneralCode" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="612,1184,110,160"/>
+    <TABLE NAME="[GNR-SubCode]" ALIAS="SubCode" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,1184,110,160"/>
+    <TABLE NAME="[REP_ApplicationsXUsersRules]" ALIAS="REP_ApplicationsXUsersRules" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,1184,110,160"/>
+    <TABLE NAME="[REP_Reports]" ALIAS="REP_Reports" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,1431,110,160"/>
+    <TABLE NAME="[REP_ReportTypes]" ALIAS="REP_ReportTypes" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,1431,110,160"/>
+    <TABLE NAME="[REP_ReportUsers]" ALIAS="REP_ReportUsers" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,1431,110,160"/>
+    <TABLE NAME="[REP_Rules]" ALIAS="REP_Rules" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,1431,110,160"/>
+    <TABLE NAME="[sysdiagrams]" ALIAS="sysdiagrams" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="612,1431,110,160"/>
+    <TABLE NAME="[vw_aspnet_Applications]" ALIAS="vw_aspnet_Applications" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,1431,110,160"/>
+    <TABLE NAME="[vw_aspnet_MembershipUsers]" ALIAS="vw_aspnet_MembershipUsers" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,1431,110,160"/>
+    <TABLE NAME="[vw_aspnet_Profiles]" ALIAS="vw_aspnet_Profiles" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="12,1678,110,160"/>
+    <TABLE NAME="[vw_aspnet_Roles]" ALIAS="vw_aspnet_Roles" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="162,1678,110,160"/>
+    <TABLE NAME="[vw_aspnet_Users]" ALIAS="vw_aspnet_Users" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="312,1678,110,160"/>
+    <TABLE NAME="[vw_aspnet_UsersInRoles]" ALIAS="vw_aspnet_UsersInRoles" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="462,1678,110,160"/>
+    <TABLE NAME="[vw_aspnet_WebPartState_Paths]" ALIAS="vw_aspnet_WebPartState_Paths" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="612,1678,110,160"/>
+    <TABLE NAME="[vw_aspnet_WebPartState_Shared]" ALIAS="vw_aspnet_WebPartState_Shared" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="762,1678,110,160"/>
+    <TABLE NAME="[vw_aspnet_WebPartState_User]" ALIAS="vw_aspnet_WebPartState_User" SCHEMA="dbo" DB="BMD" HINTS="" DSGNLAYOUT="912,1678,110,160"/>
+  </TABLES>
+  <LINKS>
+    <LINK TABLE1="Products" TABLE2="ProductFeedback" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="ProductID" EXPR2="ProductID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Physicians" TABLE2="PhysicianScore" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Physicians" TABLE2="Rel_Physicians_MedicalAccounts" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Physicians" TABLE2="Rel_Pharmacy_Physcians" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Physicians" TABLE2="PrivateClinics" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PhysicianID" EXPR2="PhysicianID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies" TABLE2="Rel_Pharmacy_Physcians" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PharmacyID" EXPR2="PharmacyID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies" TABLE2="Rel_Pharmacy_MedicalAccounts" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PharmacyID" EXPR2="PharmacyID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks" TABLE2="Pharmacies" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Pharmacies" TABLE2="Rel_Pharmacy_Distributors" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="PharmacyID" EXPR2="PharmacyID" OP="="/>
+    </LINK>
+    <LINK TABLE1="MedicalAccounts" TABLE2="Rel_Pharmacy_MedicalAccounts" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="MedicalAccountID" EXPR2="MedicalAccountID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks" TABLE2="MedicalAccounts" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks" TABLE2="PrivateClinics" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Bricks" TABLE2="Rel_Bricks_Branches" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BrickID" EXPR2="BrickID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Distributor_Branches" TABLE2="Rel_Bricks_Branches" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="BranchID" EXPR2="BranchID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Distributors" TABLE2="Distributor_Branches" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="DistributorID" EXPR2="DistributorID" OP="="/>
+    </LINK>
+    <LINK TABLE1="Distributors" TABLE2="Rel_Pharmacy_Distributors" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="DistributorID" EXPR2="DistributorID" OP="="/>
+    </LINK>
+    <LINK TABLE1="MedicalAccounts" TABLE2="Rel_Physicians_MedicalAccounts" TYPE="Inner">
+      <CONDITION TYPE="FF" EXPR1="MedicalAccountID" EXPR2="MedicalAccountID" OP="="/>
+    </LINK>
+  </LINKS>
+  <ENTITIES MAXID="0">
+    <ENTITY NAME="Applications">
+      <ATTR ID="aspnet_Applications.ApplicationName" KIND="Data" EXPR="ApplicationName" CAPTION="ApplicationName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Applications.LoweredApplicationName" KIND="Data" EXPR="LoweredApplicationName" CAPTION="LoweredApplicationName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Applications.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Applications.Description" KIND="Data" EXPR="Description" CAPTION="Description" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Membership">
+      <ATTR ID="aspnet_Membership.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.Password" KIND="Data" EXPR="Password" CAPTION="Password" TYPE="WideString" SIZE="128" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.PasswordFormat" KIND="Data" EXPR="PasswordFormat" CAPTION="PasswordFormat" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.PasswordSalt" KIND="Data" EXPR="PasswordSalt" CAPTION="PasswordSalt" TYPE="WideString" SIZE="128" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.MobilePIN" KIND="Data" EXPR="MobilePIN" CAPTION="MobilePIN" TYPE="WideString" SIZE="16" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.Email" KIND="Data" EXPR="Email" CAPTION="Email" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.LoweredEmail" KIND="Data" EXPR="LoweredEmail" CAPTION="LoweredEmail" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.PasswordQuestion" KIND="Data" EXPR="PasswordQuestion" CAPTION="PasswordQuestion" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.PasswordAnswer" KIND="Data" EXPR="PasswordAnswer" CAPTION="PasswordAnswer" TYPE="WideString" SIZE="128" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.IsApproved" KIND="Data" EXPR="IsApproved" CAPTION="IsApproved" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.IsLockedOut" KIND="Data" EXPR="IsLockedOut" CAPTION="IsLockedOut" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.CreateDate" KIND="Data" EXPR="CreateDate" CAPTION="CreateDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.LastLoginDate" KIND="Data" EXPR="LastLoginDate" CAPTION="LastLoginDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.LastPasswordChangedDate" KIND="Data" EXPR="LastPasswordChangedDate" CAPTION="LastPasswordChangedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.LastLockoutDate" KIND="Data" EXPR="LastLockoutDate" CAPTION="LastLockoutDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.FailedPasswordAttemptCount" KIND="Data" EXPR="FailedPasswordAttemptCount" CAPTION="FailedPasswordAttemptCount" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.FailedPasswordAttemptWindowStart" KIND="Data" EXPR="FailedPasswordAttemptWindowStart" CAPTION="FailedPasswordAttemptWindowStart" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.FailedPasswordAnswerAttemptCount" KIND="Data" EXPR="FailedPasswordAnswerAttemptCount" CAPTION="FailedPasswordAnswerAttemptCount" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.FailedPasswordAnswerAttemptWindowStart" KIND="Data" EXPR="FailedPasswordAnswerAttemptWindowStart" CAPTION="FailedPasswordAnswerAttemptWindowStart" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Membership.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="WideString" SIZE="1073741823" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Membership">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Paths">
+      <ATTR ID="aspnet_Paths.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Paths.PathId" KIND="Data" EXPR="PathId" CAPTION="PathId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Paths.Path" KIND="Data" EXPR="Path" CAPTION="Path" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Paths.LoweredPath" KIND="Data" EXPR="LoweredPath" CAPTION="LoweredPath" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="PersonalizationAllUsers">
+      <ATTR ID="aspnet_PersonalizationAllUsers.PathId" KIND="Data" EXPR="PathId" CAPTION="PathId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationAllUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_PersonalizationAllUsers.PageSettings" KIND="Data" EXPR="PageSettings" CAPTION="PageSettings" TYPE="Unknown" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationAllUsers">
+        <OPERATORS>IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_PersonalizationAllUsers.LastUpdatedDate" KIND="Data" EXPR="LastUpdatedDate" CAPTION="LastUpdatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationAllUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="PersonalizationPerUser">
+      <ATTR ID="aspnet_PersonalizationPerUser.Id" KIND="Data" EXPR="Id" CAPTION="Id" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationPerUser">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_PersonalizationPerUser.PathId" KIND="Data" EXPR="PathId" CAPTION="PathId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationPerUser">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_PersonalizationPerUser.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationPerUser">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_PersonalizationPerUser.PageSettings" KIND="Data" EXPR="PageSettings" CAPTION="PageSettings" TYPE="Unknown" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationPerUser">
+        <OPERATORS>IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_PersonalizationPerUser.LastUpdatedDate" KIND="Data" EXPR="LastUpdatedDate" CAPTION="LastUpdatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_PersonalizationPerUser">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Profile">
+      <ATTR ID="aspnet_Profile.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Profile">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Profile.PropertyNames" KIND="Data" EXPR="PropertyNames" CAPTION="PropertyNames" TYPE="WideString" SIZE="1073741823" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Profile">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Profile.PropertyValuesString" KIND="Data" EXPR="PropertyValuesString" CAPTION="PropertyValuesString" TYPE="WideString" SIZE="1073741823" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Profile">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Profile.PropertyValuesBinary" KIND="Data" EXPR="PropertyValuesBinary" CAPTION="PropertyValuesBinary" TYPE="Unknown" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Profile">
+        <OPERATORS>IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Profile.LastUpdatedDate" KIND="Data" EXPR="LastUpdatedDate" CAPTION="LastUpdatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Profile">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Roles">
+      <ATTR ID="aspnet_Roles.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Roles.RoleId" KIND="Data" EXPR="RoleId" CAPTION="RoleId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Roles.RoleName" KIND="Data" EXPR="RoleName" CAPTION="RoleName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Roles.LoweredRoleName" KIND="Data" EXPR="LoweredRoleName" CAPTION="LoweredRoleName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Roles.Description" KIND="Data" EXPR="Description" CAPTION="Description" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="SchemaVersions">
+      <ATTR ID="aspnet_SchemaVersions.Feature" KIND="Data" EXPR="Feature" CAPTION="Feature" TYPE="WideString" SIZE="128" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_SchemaVersions">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_SchemaVersions.CompatibleSchemaVersion" KIND="Data" EXPR="CompatibleSchemaVersion" CAPTION="CompatibleSchemaVersion" TYPE="WideString" SIZE="128" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_SchemaVersions">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_SchemaVersions.IsCurrentVersion" KIND="Data" EXPR="IsCurrentVersion" CAPTION="IsCurrentVersion" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_SchemaVersions">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Users">
+      <ATTR ID="aspnet_Users.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Users.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Users.UserName" KIND="Data" EXPR="UserName" CAPTION="UserName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Users.LoweredUserName" KIND="Data" EXPR="LoweredUserName" CAPTION="LoweredUserName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Users.MobileAlias" KIND="Data" EXPR="MobileAlias" CAPTION="MobileAlias" TYPE="WideString" SIZE="16" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Users.IsAnonymous" KIND="Data" EXPR="IsAnonymous" CAPTION="IsAnonymous" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Users">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_Users.LastActivityDate" KIND="Data" EXPR="LastActivityDate" CAPTION="LastActivityDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_Users">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="UsersInRoles">
+      <ATTR ID="aspnet_UsersInRoles.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_UsersInRoles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_UsersInRoles.RoleId" KIND="Data" EXPR="RoleId" CAPTION="RoleId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_UsersInRoles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="WebEvent_Events">
+      <ATTR ID="aspnet_WebEvent_Events.EventId" KIND="Data" EXPR="EventId" CAPTION="EventId" TYPE="String" SIZE="32" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.EventTimeUtc" KIND="Data" EXPR="EventTimeUtc" CAPTION="EventTimeUtc" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.EventTime" KIND="Data" EXPR="EventTime" CAPTION="EventTime" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.EventType" KIND="Data" EXPR="EventType" CAPTION="EventType" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.EventSequence" KIND="Data" EXPR="EventSequence" CAPTION="EventSequence" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.EventOccurrence" KIND="Data" EXPR="EventOccurrence" CAPTION="EventOccurrence" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.EventCode" KIND="Data" EXPR="EventCode" CAPTION="EventCode" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.EventDetailCode" KIND="Data" EXPR="EventDetailCode" CAPTION="EventDetailCode" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.Message" KIND="Data" EXPR="Message" CAPTION="Message" TYPE="WideString" SIZE="1024" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.ApplicationPath" KIND="Data" EXPR="ApplicationPath" CAPTION="ApplicationPath" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.ApplicationVirtualPath" KIND="Data" EXPR="ApplicationVirtualPath" CAPTION="ApplicationVirtualPath" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.MachineName" KIND="Data" EXPR="MachineName" CAPTION="MachineName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.RequestUrl" KIND="Data" EXPR="RequestUrl" CAPTION="RequestUrl" TYPE="WideString" SIZE="1024" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.ExceptionType" KIND="Data" EXPR="ExceptionType" CAPTION="ExceptionType" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="aspnet_WebEvent_Events.Details" KIND="Data" EXPR="Details" CAPTION="Details" TYPE="WideString" SIZE="1073741823" QUOTE="False" UIC="True" UIR="True" TABLE="aspnet_WebEvent_Events">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Bricks">
+      <ATTR ID="BMD-Bricks.BrickID" KIND="Data" EXPR="BrickID" CAPTION="BrickID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Bricks.BrickName" KIND="Data" EXPR="BrickName" CAPTION="BrickName" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Bricks.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Bricks.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Bricks.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Bricks.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Bricks">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Categories">
+      <ATTR ID="BMD-Categories.CategoryID" KIND="Data" EXPR="CategoryID" CAPTION="CategoryID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Categories.CategoryName" KIND="Data" EXPR="CategoryName" CAPTION="CategoryName" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Categories.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Categories.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Categories.CreatDate" KIND="Data" EXPR="CreatDate" CAPTION="CreatDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Categories.EditDate" KIND="Data" EXPR="EditDate" CAPTION="EditDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Categories">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Distributor Branches">
+      <ATTR ID="BMD-Distributor_Branches.BranchID" KIND="Data" EXPR="BranchID" CAPTION="BranchID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="DistributorID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.BranchName" KIND="Data" EXPR="BranchName" CAPTION="BranchName" TYPE="WideString" SIZE="250" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.BranchAddress" KIND="Data" EXPR="BranchAddress" CAPTION="BranchAddress" TYPE="WideString" SIZE="250" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributor_Branches.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributor_Branches">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Distributors">
+      <ATTR ID="BMD-Distributors.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="DistributorID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributors.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributors.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Distributors.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Distributors">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Employees">
+      <ATTR ID="BMD-Employees.EmpID" KIND="Data" EXPR="EmpID" CAPTION="EmpID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.UserName" KIND="Data" EXPR="UserName" CAPTION="UserName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.EmpName" KIND="Data" EXPR="EmpName" CAPTION="EmpName" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.LoweredEmpName" KIND="Data" EXPR="LoweredEmpName" CAPTION="LoweredEmpName" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.TitleID" KIND="Data" EXPR="TitleID" CAPTION="TitleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.Active" KIND="Data" EXPR="Active" CAPTION="Active" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.NID" KIND="Data" EXPR="NID" CAPTION="NID" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="WideString" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Employees.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Employees">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="MedicalAccounts">
+      <ATTR ID="BMD-MedicalAccounts.MedicalAccountID" KIND="Data" EXPR="MedicalAccountID" CAPTION="MedicalAccountID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.BrickID" KIND="Data" EXPR="BrickID" CAPTION="BrickID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.SubordinationID" KIND="Data" EXPR="SubordinationID" CAPTION="SubordinationID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.GovID" KIND="Data" EXPR="GovID" CAPTION="GovID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.CityID" KIND="Data" EXPR="CityID" CAPTION="CityID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Area" KIND="Data" EXPR="Area" CAPTION="Area" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Address" KIND="Data" EXPR="Address" CAPTION="Address" TYPE="WideString" SIZE="1000" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Phone" KIND="Data" EXPR="Phone" CAPTION="Phone" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="PostalCode" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.ICUNO" KIND="Data" EXPR="ICUNO" CAPTION="ICUNO" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.No_Medically_Served_Pts" KIND="Data" EXPR="No_Medically_Served_Pts" CAPTION="No_Medically_Served_Pts" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.RX_Financial_Limits" KIND="Data" EXPR="RX_Financial_Limits" CAPTION="RX_Financial_Limits" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Monthly_Financial_Limits" KIND="Data" EXPR="Monthly_Financial_Limits" CAPTION="Monthly_Financial_Limits" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Annual_Financial_Limits" KIND="Data" EXPR="Annual_Financial_Limits" CAPTION="Annual_Financial_Limits" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Delivery_Internal" KIND="Data" EXPR="Drug_Delivery_Internal" CAPTION="Drug_Delivery_Internal" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Delivery_External" KIND="Data" EXPR="Drug_Delivery_External" CAPTION="Drug_Delivery_External" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Purchase_Direct_Orders" KIND="Data" EXPR="Drug_Purchase_Direct_Orders" CAPTION="Drug_Purchase_Direct_Orders" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Drug_Purchase_Tender" KIND="Data" EXPR="Drug_Purchase_Tender" CAPTION="Drug_Purchase_Tender" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Total_RX_General_No_Day" KIND="Data" EXPR="Total_RX_General_No_Day" CAPTION="Total_RX_General_No_Day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Total_RX_General_No_Week" KIND="Data" EXPR="Total_RX_General_No_Week" CAPTION="Total_RX_General_No_Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Total_RX_General_No_Month" KIND="Data" EXPR="Total_RX_General_No_Month" CAPTION="Total_RX_General_No_Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-MedicalAccounts.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="MedicalAccounts">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacies">
+      <ATTR ID="BMD-Pharmacies.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="PharmacyID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.BrickID" KIND="Data" EXPR="BrickID" CAPTION="BrickID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.PharmacistName" KIND="Data" EXPR="PharmacistName" CAPTION="PharmacistName" TYPE="WideString" SIZE="100" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.GovID" KIND="Data" EXPR="GovID" CAPTION="GovID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.CityID" KIND="Data" EXPR="CityID" CAPTION="CityID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Area" KIND="Data" EXPR="Area" CAPTION="Area" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Address" KIND="Data" EXPR="Address" CAPTION="Address" TYPE="WideString" SIZE="1000" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Phone1" KIND="Data" EXPR="Phone1" CAPTION="Phone1" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Phone2" KIND="Data" EXPR="Phone2" CAPTION="Phone2" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="PostalCode" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="WideString" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Pharmacies.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Pharmacies">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Physicians">
+      <ATTR ID="BMD-Physicians.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="PhysicianID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.PhysicianName" KIND="Data" EXPR="PhysicianName" CAPTION="PhysicianName" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.AKA" KIND="Data" EXPR="AKA" CAPTION="AKA" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.TitleID" KIND="Data" EXPR="TitleID" CAPTION="TitleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.SpecialityID" KIND="Data" EXPR="SpecialityID" CAPTION="SpecialityID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.PrivateClinic" KIND="Data" EXPR="PrivateClinic" CAPTION="PrivateClinic" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Email" KIND="Data" EXPR="Email" CAPTION="Email" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="PostalCode" TYPE="WideString" SIZE="150" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="WideString" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Physicians.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Physicians">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="PhysicianScore">
+      <ATTR ID="BMD-PhysicianScore.ScoreID" KIND="Data" EXPR="ScoreID" CAPTION="ScoreID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="PhysicianID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Potential" KIND="Data" EXPR="Potential" CAPTION="Potential" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Grade" KIND="Data" EXPR="Grade" CAPTION="Grade" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Inference" KIND="Data" EXPR="Inference" CAPTION="Inference" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Additional" KIND="Data" EXPR="Additional" CAPTION="Additional" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.ScoreDate" KIND="Data" EXPR="ScoreDate" CAPTION="ScoreDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.StrScoreDate" KIND="Data" EXPR="StrScoreDate" CAPTION="StrScoreDate" TYPE="WideString" SIZE="10" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Total" KIND="Data" EXPR="Total" CAPTION="Total" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PhysicianScore.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PhysicianScore">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="PrivateClinics">
+      <ATTR ID="BMD-PrivateClinics.PrivateClinicID" KIND="Data" EXPR="PrivateClinicID" CAPTION="PrivateClinicID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Name" KIND="Data" EXPR="Name" CAPTION="Name" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.BrickID" KIND="Data" EXPR="BrickID" CAPTION="BrickID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="PhysicianID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.GovID" KIND="Data" EXPR="GovID" CAPTION="GovID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.CityID" KIND="Data" EXPR="CityID" CAPTION="CityID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Area" KIND="Data" EXPR="Area" CAPTION="Area" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Address" KIND="Data" EXPR="Address" CAPTION="Address" TYPE="WideString" SIZE="1000" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Phone1" KIND="Data" EXPR="Phone1" CAPTION="Phone1" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Phone2" KIND="Data" EXPR="Phone2" CAPTION="Phone2" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Mobile" KIND="Data" EXPR="Mobile" CAPTION="Mobile" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.PostalCode" KIND="Data" EXPR="PostalCode" CAPTION="PostalCode" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Email" KIND="Data" EXPR="Email" CAPTION="Email" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="WideString" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-PrivateClinics.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PrivateClinics">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="ProductFeedback">
+      <ATTR ID="BMD-ProductFeedback.ProductFeedbackID" KIND="Data" EXPR="ProductFeedbackID" CAPTION="ProductFeedbackID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.ProductID" KIND="Data" EXPR="ProductID" CAPTION="ProductID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.MedicalAccountID" KIND="Data" EXPR="MedicalAccountID" CAPTION="MedicalAccountID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Group_Total_Average_day" KIND="Data" EXPR="Group_Total_Average_day" CAPTION="Group_Total_Average_day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Group_Total_Average_Week" KIND="Data" EXPR="Group_Total_Average_Week" CAPTION="Group_Total_Average_Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Group_Total_Average_Month" KIND="Data" EXPR="Group_Total_Average_Month" CAPTION="Group_Total_Average_Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Competitors_Average_Day" KIND="Data" EXPR="Product_Competitors_Average_Day" CAPTION="Product_Competitors_Average_Day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Competitors_Average_Week" KIND="Data" EXPR="Product_Competitors_Average_Week" CAPTION="Product_Competitors_Average_Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Competitors_Average_Month" KIND="Data" EXPR="Product_Competitors_Average_Month" CAPTION="Product_Competitors_Average_Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Total_Day" KIND="Data" EXPR="Product_Total_Day" CAPTION="Product_Total_Day" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Total_Week" KIND="Data" EXPR="Product_Total_Week" CAPTION="Product_Total_Week" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Product_Total_Month" KIND="Data" EXPR="Product_Total_Month" CAPTION="Product_Total_Month" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-ProductFeedback.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="ProductFeedback">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Products">
+      <ATTR ID="BMD-Products.ProductID" KIND="Data" EXPR="ProductID" CAPTION="ProductID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.ProductName" KIND="Data" EXPR="ProductName" CAPTION="ProductName" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.FormID" KIND="Data" EXPR="FormID" CAPTION="FormID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Composition" KIND="Data" EXPR="Composition" CAPTION="Composition" TYPE="WideString" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Indications" KIND="Data" EXPR="Indications" CAPTION="Indications" TYPE="WideString" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Dosage" KIND="Data" EXPR="Dosage" CAPTION="Dosage" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.PackSizes" KIND="Data" EXPR="PackSizes" CAPTION="PackSizes" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Price" KIND="Data" EXPR="Price" CAPTION="Price" TYPE="Float" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.DosageUnit" KIND="Data" EXPR="DosageUnit" CAPTION="DosageUnit" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.PackSizesUnit" KIND="Data" EXPR="PackSizesUnit" CAPTION="PackSizesUnit" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.CID" KIND="Data" EXPR="CID" CAPTION="CID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.CreatedDate" KIND="Data" EXPR="CreatedDate" CAPTION="CreatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Products.ModifiedDate" KIND="Data" EXPR="ModifiedDate" CAPTION="ModifiedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Products">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Bricks Branches">
+      <ATTR ID="BMD-Rel_Bricks_Branches.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Branches.BranchID" KIND="Data" EXPR="BranchID" CAPTION="BranchID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Branches.BrickID" KIND="Data" EXPR="BrickID" CAPTION="BrickID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Branches.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Branches">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Branches.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Branches">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Bricks Users">
+      <ATTR ID="BMD-Rel_Bricks_Users.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Users.BrickID" KIND="Data" EXPR="BrickID" CAPTION="BrickID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Users.EmpID" KIND="Data" EXPR="EmpID" CAPTION="EmpID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Users.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Users">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Bricks_Users.ExpireDate" KIND="Data" EXPR="ExpireDate" CAPTION="ExpireDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Bricks_Users">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Distributors Products">
+      <ATTR ID="BMD-Rel_Distributors_Products.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Distributors_Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Distributors_Products.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="DistributorID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Distributors_Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Distributors_Products.ProductID" KIND="Data" EXPR="ProductID" CAPTION="ProductID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Distributors_Products">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Distributors_Products.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Distributors_Products">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Distributors_Products.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Distributors_Products">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Govs Cities">
+      <ATTR ID="BMD-Rel_Govs_Cities.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Govs_Cities">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Govs_Cities.GovID" KIND="Data" EXPR="GovID" CAPTION="GovID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Govs_Cities">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Govs_Cities.CityID" KIND="Data" EXPR="CityID" CAPTION="CityID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Govs_Cities">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Govs_Cities.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Govs_Cities">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Govs_Cities.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Govs_Cities">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacy Distributors">
+      <ATTR ID="BMD-Rel_Pharmacy_Distributors.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Distributors.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="PharmacyID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Distributors.DistributorID" KIND="Data" EXPR="DistributorID" CAPTION="DistributorID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Distributors.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Distributors">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Distributors.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Distributors">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacy MedicalAccounts">
+      <ATTR ID="BMD-Rel_Pharmacy_MedicalAccounts.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_MedicalAccounts.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="PharmacyID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_MedicalAccounts.MedicalAccountID" KIND="Data" EXPR="MedicalAccountID" CAPTION="MedicalAccountID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_MedicalAccounts.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Pharmacy Physcians">
+      <ATTR ID="BMD-Rel_Pharmacy_Physcians.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Physcians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Physcians.PharmacyID" KIND="Data" EXPR="PharmacyID" CAPTION="PharmacyID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Physcians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Physcians.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="PhysicianID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Physcians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Pharmacy_Physcians.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Pharmacy_Physcians">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Physicians MedicalAccounts">
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.RxID" KIND="Data" EXPR="RxID" CAPTION="RxID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Physicians_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.PhysicianID" KIND="Data" EXPR="PhysicianID" CAPTION="PhysicianID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Physicians_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.MedicalAccountID" KIND="Data" EXPR="MedicalAccountID" CAPTION="MedicalAccountID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Physicians_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.PrescribingCapable" KIND="Data" EXPR="PrescribingCapable" CAPTION="PrescribingCapable" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Physicians_MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.Internal" KIND="Data" EXPR="Internal" CAPTION="Internal" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Physicians_MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.Consultant" KIND="Data" EXPR="Consultant" CAPTION="Consultant" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Physicians_MedicalAccounts">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Rel_Physicians_MedicalAccounts.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Rel_Physicians_MedicalAccounts">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Transactions">
+      <ATTR ID="BMD-Transactions.TransID" KIND="Data" EXPR="TransID" CAPTION="TransID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransRequestDate" KIND="Data" EXPR="TransRequestDate" CAPTION="TransRequestDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransRequestByEmpID" KIND="Data" EXPR="TransRequestByEmpID" CAPTION="TransRequestByEmpID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransType" KIND="Data" EXPR="TransType" CAPTION="TransType" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransModule" KIND="Data" EXPR="TransModule" CAPTION="TransModule" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransModuleRefID" KIND="Data" EXPR="TransModuleRefID" CAPTION="TransModuleRefID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransModuleNewID" KIND="Data" EXPR="TransModuleNewID" CAPTION="TransModuleNewID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransStatus" KIND="Data" EXPR="TransStatus" CAPTION="TransStatus" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransCommitDate" KIND="Data" EXPR="TransCommitDate" CAPTION="TransCommitDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="BMD-Transactions.TransCommitByEmpID" KIND="Data" EXPR="TransCommitByEmpID" CAPTION="TransCommitByEmpID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Transactions">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Plan">
+      <ATTR ID="FMT-Plan.PlanID" KIND="Data" EXPR="PlanID" CAPTION="PlanID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.PlanDate" KIND="Data" EXPR="PlanDate" CAPTION="PlanDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.EmpID" KIND="Data" EXPR="EmpID" CAPTION="EmpID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.Commit" KIND="Data" EXPR="Commit" CAPTION="Commit" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.CommitDate" KIND="Data" EXPR="CommitDate" CAPTION="CommitDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.CommitBy" KIND="Data" EXPR="CommitBy" CAPTION="CommitBy" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.StartPoint" KIND="Data" EXPR="StartPoint" CAPTION="StartPoint" TYPE="String" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.StartTime" KIND="Data" EXPR="StartTime" CAPTION="StartTime" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Plan.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Plan">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="PlanModules">
+      <ATTR ID="FMT-PlanModules.ModuleID" KIND="Data" EXPR="ModuleID" CAPTION="ModuleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PlanModules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-PlanModules.ModuleName" KIND="Data" EXPR="ModuleName" CAPTION="ModuleName" TYPE="String" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="PlanModules">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="PlanSubModules">
+      <ATTR ID="FMT-PlanSubModules.SubModuleID" KIND="Data" EXPR="SubModuleID" CAPTION="SubModuleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PlanSubModules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-PlanSubModules.VisitID" KIND="Data" EXPR="VisitID" CAPTION="VisitID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PlanSubModules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-PlanSubModules.ModuleID" KIND="Data" EXPR="ModuleID" CAPTION="ModuleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PlanSubModules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-PlanSubModules.SubModuleRefID" KIND="Data" EXPR="SubModuleRefID" CAPTION="SubModuleRefID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="PlanSubModules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="VisitItems">
+      <ATTR ID="FMT-VisitItems.VisitItemID" KIND="Data" EXPR="VisitItemID" CAPTION="VisitItemID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="VisitItems">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-VisitItems.VisitID" KIND="Data" EXPR="VisitID" CAPTION="VisitID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="VisitItems">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-VisitItems.ItemType" KIND="Data" EXPR="ItemType" CAPTION="ItemType" TYPE="String" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="VisitItems">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-VisitItems.ItemCodeID" KIND="Data" EXPR="ItemCodeID" CAPTION="ItemCodeID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="VisitItems">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Visits">
+      <ATTR ID="FMT-Visits.VisitID" KIND="Data" EXPR="VisitID" CAPTION="VisitID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.PlanID" KIND="Data" EXPR="PlanID" CAPTION="PlanID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.ModuleID" KIND="Data" EXPR="ModuleID" CAPTION="ModuleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.ModuleRefID" KIND="Data" EXPR="ModuleRefID" CAPTION="ModuleRefID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.VisitFeedBack" KIND="Data" EXPR="VisitFeedBack" CAPTION="VisitFeedBack" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.VisitTypeID" KIND="Data" EXPR="VisitTypeID" CAPTION="VisitTypeID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.PM" KIND="Data" EXPR="PM" CAPTION="PM" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.OtherDetails" KIND="Data" EXPR="OtherDetails" CAPTION="OtherDetails" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="FMT-Visits.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="Visits">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="GeneralCode">
+      <ATTR ID="GNR-GeneralCode.GID" KIND="Data" EXPR="GID" CAPTION="GID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="GeneralCode">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-GeneralCode.GeneralCode" KIND="Data" EXPR="GeneralCode" CAPTION="GeneralCode" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="GeneralCode">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-GeneralCode.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="GeneralCode">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-GeneralCode.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="GeneralCode">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="SubCode">
+      <ATTR ID="GNR-SubCode.SID" KIND="Data" EXPR="SID" CAPTION="SID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="SubCode">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-SubCode.SubCode" KIND="Data" EXPR="SubCode" CAPTION="SubCode" TYPE="WideString" SIZE="255" QUOTE="False" UIC="True" UIR="True" TABLE="SubCode">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-SubCode.GID" KIND="Data" EXPR="GID" CAPTION="GID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="SubCode">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-SubCode.Commited" KIND="Data" EXPR="Commited" CAPTION="Commited" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="SubCode">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="GNR-SubCode.Deleted" KIND="Data" EXPR="Deleted" CAPTION="Deleted" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="SubCode">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="ApplicationsUsersRules">
+      <ATTR ID="REP_ApplicationsXUsersRules.ContactID" KIND="Data" EXPR="ContactID" CAPTION="ContactID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ApplicationsXUsersRules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_ApplicationsXUsersRules.RoleID" KIND="Data" EXPR="RoleID" CAPTION="RoleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ApplicationsXUsersRules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_ApplicationsXUsersRules.App_ID" KIND="Data" EXPR="App_ID" CAPTION="App_ID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ApplicationsXUsersRules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Reports">
+      <ATTR ID="REP_Reports.REP_RepID" KIND="Data" EXPR="REP_RepID" CAPTION="REP_RepID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepName" KIND="Data" EXPR="REP_RepName" CAPTION="REP_RepName" TYPE="WideString" SIZE="60" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepDescription" KIND="Data" EXPR="REP_RepDescription" CAPTION="REP_RepDescription" TYPE="WideString" SIZE="500" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_Project" KIND="Data" EXPR="REP_Project" CAPTION="REP_Project" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_Module" KIND="Data" EXPR="REP_Module" CAPTION="REP_Module" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepBlob" KIND="Data" EXPR="REP_RepBlob" CAPTION="REP_RepBlob" TYPE="Unknown" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepSql" KIND="Data" EXPR="REP_RepSql" CAPTION="REP_RepSql" TYPE="String" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepSqlWhere" KIND="Data" EXPR="REP_RepSqlWhere" CAPTION="REP_RepSqlWhere" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepSqlSort" KIND="Data" EXPR="REP_RepSqlSort" CAPTION="REP_RepSqlSort" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepDate" KIND="Data" EXPR="REP_RepDate" CAPTION="REP_RepDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepIsActive" KIND="Data" EXPR="REP_RepIsActive" CAPTION="REP_RepIsActive" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepRemarks" KIND="Data" EXPR="REP_RepRemarks" CAPTION="REP_RepRemarks" TYPE="WideString" SIZE="500" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_RepType" KIND="Data" EXPR="REP_RepType" CAPTION="REP_RepType" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_Creator" KIND="Data" EXPR="REP_Creator" CAPTION="REP_Creator" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.REP_XmlFileText" KIND="Data" EXPR="REP_XmlFileText" CAPTION="REP_XmlFileText" TYPE="String" SIZE="2147483647" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Reports.IsReportWriter" KIND="Data" EXPR="IsReportWriter" CAPTION="IsReportWriter" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Reports">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="ReportTypes">
+      <ATTR ID="REP_ReportTypes.REP_TypeID" KIND="Data" EXPR="REP_TypeID" CAPTION="REP_TypeID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ReportTypes">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_ReportTypes.REP_Type" KIND="Data" EXPR="REP_Type" CAPTION="REP_Type" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ReportTypes">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_ReportTypes.REP_TypeDesc" KIND="Data" EXPR="REP_TypeDesc" CAPTION="REP_TypeDesc" TYPE="WideString" SIZE="250" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ReportTypes">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="ReportUsers">
+      <ATTR ID="REP_ReportUsers.REP_RepID" KIND="Data" EXPR="REP_RepID" CAPTION="REP_RepID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ReportUsers">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_ReportUsers.ContactID" KIND="Data" EXPR="ContactID" CAPTION="ContactID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ReportUsers">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_ReportUsers.RoleID" KIND="Data" EXPR="RoleID" CAPTION="RoleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_ReportUsers">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="Rules">
+      <ATTR ID="REP_Rules.RuleID" KIND="Data" EXPR="RuleID" CAPTION="RuleID" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Rules">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="REP_Rules.RuleDesc" KIND="Data" EXPR="RuleDesc" CAPTION="RuleDesc" TYPE="WideString" SIZE="50" QUOTE="False" UIC="True" UIR="True" TABLE="REP_Rules">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="sysdiagrams">
+      <ATTR ID="sysdiagrams.name" KIND="Data" EXPR="name" CAPTION="name" TYPE="WideString" SIZE="128" QUOTE="False" UIC="True" UIR="True" TABLE="sysdiagrams">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="sysdiagrams.principal_id" KIND="Data" EXPR="principal_id" CAPTION="principal_id" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="sysdiagrams">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="sysdiagrams.diagram_id" KIND="Data" EXPR="diagram_id" CAPTION="diagram_id" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="sysdiagrams">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="sysdiagrams.version" KIND="Data" EXPR="version" CAPTION="version" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="sysdiagrams">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="sysdiagrams.definition" KIND="Data" EXPR="definition" CAPTION="definition" TYPE="Unknown" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="sysdiagrams">
+        <OPERATORS>IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_Applications">
+      <ATTR ID="vw_aspnet_Applications.ApplicationName" KIND="Data" EXPR="ApplicationName" CAPTION="ApplicationName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Applications.LoweredApplicationName" KIND="Data" EXPR="LoweredApplicationName" CAPTION="LoweredApplicationName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Applications.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Applications.Description" KIND="Data" EXPR="Description" CAPTION="Description" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Applications">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_MembershipUsers">
+      <ATTR ID="vw_aspnet_MembershipUsers.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.PasswordFormat" KIND="Data" EXPR="PasswordFormat" CAPTION="PasswordFormat" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.MobilePIN" KIND="Data" EXPR="MobilePIN" CAPTION="MobilePIN" TYPE="WideString" SIZE="16" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.Email" KIND="Data" EXPR="Email" CAPTION="Email" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.LoweredEmail" KIND="Data" EXPR="LoweredEmail" CAPTION="LoweredEmail" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.PasswordQuestion" KIND="Data" EXPR="PasswordQuestion" CAPTION="PasswordQuestion" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.PasswordAnswer" KIND="Data" EXPR="PasswordAnswer" CAPTION="PasswordAnswer" TYPE="WideString" SIZE="128" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.IsApproved" KIND="Data" EXPR="IsApproved" CAPTION="IsApproved" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.IsLockedOut" KIND="Data" EXPR="IsLockedOut" CAPTION="IsLockedOut" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.CreateDate" KIND="Data" EXPR="CreateDate" CAPTION="CreateDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.LastLoginDate" KIND="Data" EXPR="LastLoginDate" CAPTION="LastLoginDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.LastPasswordChangedDate" KIND="Data" EXPR="LastPasswordChangedDate" CAPTION="LastPasswordChangedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.LastLockoutDate" KIND="Data" EXPR="LastLockoutDate" CAPTION="LastLockoutDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.FailedPasswordAttemptCount" KIND="Data" EXPR="FailedPasswordAttemptCount" CAPTION="FailedPasswordAttemptCount" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.FailedPasswordAttemptWindowStart" KIND="Data" EXPR="FailedPasswordAttemptWindowStart" CAPTION="FailedPasswordAttemptWindowStart" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.FailedPasswordAnswerAttemptCount" KIND="Data" EXPR="FailedPasswordAnswerAttemptCount" CAPTION="FailedPasswordAnswerAttemptCount" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.FailedPasswordAnswerAttemptWindowStart" KIND="Data" EXPR="FailedPasswordAnswerAttemptWindowStart" CAPTION="FailedPasswordAnswerAttemptWindowStart" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.Comment" KIND="Data" EXPR="Comment" CAPTION="Comment" TYPE="WideString" SIZE="1073741823" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.UserName" KIND="Data" EXPR="UserName" CAPTION="UserName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.MobileAlias" KIND="Data" EXPR="MobileAlias" CAPTION="MobileAlias" TYPE="WideString" SIZE="16" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.IsAnonymous" KIND="Data" EXPR="IsAnonymous" CAPTION="IsAnonymous" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_MembershipUsers.LastActivityDate" KIND="Data" EXPR="LastActivityDate" CAPTION="LastActivityDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_MembershipUsers">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_Profiles">
+      <ATTR ID="vw_aspnet_Profiles.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Profiles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Profiles.LastUpdatedDate" KIND="Data" EXPR="LastUpdatedDate" CAPTION="LastUpdatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Profiles">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Profiles.DataSize" KIND="Data" EXPR="DataSize" CAPTION="DataSize" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Profiles">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_Roles">
+      <ATTR ID="vw_aspnet_Roles.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Roles.RoleId" KIND="Data" EXPR="RoleId" CAPTION="RoleId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Roles.RoleName" KIND="Data" EXPR="RoleName" CAPTION="RoleName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Roles.LoweredRoleName" KIND="Data" EXPR="LoweredRoleName" CAPTION="LoweredRoleName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Roles.Description" KIND="Data" EXPR="Description" CAPTION="Description" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Roles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_Users">
+      <ATTR ID="vw_aspnet_Users.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Users.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Users.UserName" KIND="Data" EXPR="UserName" CAPTION="UserName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Users.LoweredUserName" KIND="Data" EXPR="LoweredUserName" CAPTION="LoweredUserName" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Users.MobileAlias" KIND="Data" EXPR="MobileAlias" CAPTION="MobileAlias" TYPE="WideString" SIZE="16" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Users">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Users.IsAnonymous" KIND="Data" EXPR="IsAnonymous" CAPTION="IsAnonymous" TYPE="Bool" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Users">
+        <OPERATORS>Equal,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_Users.LastActivityDate" KIND="Data" EXPR="LastActivityDate" CAPTION="LastActivityDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_Users">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_UsersInRoles">
+      <ATTR ID="vw_aspnet_UsersInRoles.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_UsersInRoles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_UsersInRoles.RoleId" KIND="Data" EXPR="RoleId" CAPTION="RoleId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_UsersInRoles">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_WebPartState_Paths">
+      <ATTR ID="vw_aspnet_WebPartState_Paths.ApplicationId" KIND="Data" EXPR="ApplicationId" CAPTION="ApplicationId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_Paths.PathId" KIND="Data" EXPR="PathId" CAPTION="PathId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_Paths.Path" KIND="Data" EXPR="Path" CAPTION="Path" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_Paths.LoweredPath" KIND="Data" EXPR="LoweredPath" CAPTION="LoweredPath" TYPE="WideString" SIZE="256" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_Paths">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_WebPartState_Shared">
+      <ATTR ID="vw_aspnet_WebPartState_Shared.PathId" KIND="Data" EXPR="PathId" CAPTION="PathId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_Shared">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_Shared.DataSize" KIND="Data" EXPR="DataSize" CAPTION="DataSize" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_Shared">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_Shared.LastUpdatedDate" KIND="Data" EXPR="LastUpdatedDate" CAPTION="LastUpdatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_Shared">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+    <ENTITY NAME="vw_aspnet_WebPartState_User">
+      <ATTR ID="vw_aspnet_WebPartState_User.PathId" KIND="Data" EXPR="PathId" CAPTION="PathId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_User">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_User.UserId" KIND="Data" EXPR="UserId" CAPTION="UserId" TYPE="String" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_User">
+        <OPERATORS>StartsWith,Contains,Equal,NotStartsWith,NotContains,NotEqual</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_User.DataSize" KIND="Data" EXPR="DataSize" CAPTION="DataSize" TYPE="Int" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_User">
+        <OPERATORS>Equal,Between,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+      <ATTR ID="vw_aspnet_WebPartState_User.LastUpdatedDate" KIND="Data" EXPR="LastUpdatedDate" CAPTION="LastUpdatedDate" TYPE="DateTime" SIZE="0" QUOTE="False" UIC="True" UIR="True" TABLE="vw_aspnet_WebPartState_User">
+        <OPERATORS>Between,Equal,LessThan,LessOrEqual,GreaterThan,GreaterOrEqual,NotBetween,NotEqual,IsNull</OPERATORS>
+        <EDITORS/>
+      </ATTR>
+    </ENTITY>
+  </ENTITIES>
+</DATAMODEL>

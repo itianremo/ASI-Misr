@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1test" targetNamespace="http://tempuri.org/DataSet1test.xsd" xmlns:mstns="http://tempuri.org/DataSet1test.xsd" xmlns="http://tempuri.org/DataSet1test.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TestAccountability_dataConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="TestAccountability_dataConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TSN.ERP.SharedComponents.Properties.Settings.GlobalReference.Default.TestAccountability_dataConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+          <DbSource ConnectionRef="TestAccountability_dataConnectionString (Settings)" DbObjectName="TestAccountability_data.dbo.GEN_City" DbObjectType="Table" GenerateShortCommands="True" GeneratorSourceName="GetCities" MethodsParameterType="CLR" Modifier="Public" Name="GetCities" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy" UserSourceName="GetCities">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="True">
+                <CommandText>SELECT     CityID, StateCode, CityName
+FROM         GEN_City</CommandText>
+                <Parameters>
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1test" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1test" msprop:Generator_DataSetName="DataSet1test">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GEN_City" msprop:Generator_UserTableName="GEN_City" msprop:Generator_RowDeletedName="GEN_CityRowDeleted" msprop:Generator_TableClassName="GEN_CityDataTable" msprop:Generator_RowChangedName="GEN_CityRowChanged" msprop:Generator_RowClassName="GEN_CityRow" msprop:Generator_RowChangingName="GEN_CityRowChanging" msprop:Generator_RowEvArgName="GEN_CityRowChangeEvent" msprop:Generator_RowEvHandlerName="GEN_CityRowChangeEventHandler" msprop:Generator_TablePropName="GEN_City" msprop:Generator_TableVarName="tableGEN_City" msprop:Generator_RowDeletingName="GEN_CityRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CityID" msprop:Generator_UserColumnName="CityID" msprop:Generator_ColumnPropNameInRow="CityID" msprop:Generator_ColumnVarNameInTable="columnCityID" msprop:Generator_ColumnPropNameInTable="CityIDColumn" type="xs:int" />
+              <xs:element name="StateCode" msprop:Generator_UserColumnName="StateCode" msprop:Generator_ColumnPropNameInRow="StateCode" msprop:Generator_ColumnVarNameInTable="columnStateCode" msprop:Generator_ColumnPropNameInTable="StateCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CityName" msprop:Generator_UserColumnName="CityName" msprop:Generator_ColumnPropNameInRow="CityName" msprop:Generator_ColumnVarNameInTable="columnCityName" msprop:Generator_ColumnPropNameInTable="CityNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TablePropName="DataTable1" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Column1" msprop:Generator_UserColumnName="Column1" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnVarNameInTable="columnColumn1" msprop:Generator_ColumnPropNameInTable="Column1Column" type="xs:string" />
+              <xs:element name="Column2" msprop:Generator_UserColumnName="Column2" msprop:Generator_ColumnPropNameInRow="Column2" msprop:Generator_ColumnVarNameInTable="columnColumn2" msprop:Generator_ColumnPropNameInTable="Column2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Column3" msprop:Generator_UserColumnName="Column3" msprop:Generator_ColumnPropNameInRow="Column3" msprop:Generator_ColumnVarNameInTable="columnColumn3" msprop:Generator_ColumnPropNameInTable="Column3Column" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GEN_City" />
+      <xs:field xpath="mstns:CityID" />
+    </xs:unique>
+    <xs:unique name="DataTable1Key1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:Column1" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

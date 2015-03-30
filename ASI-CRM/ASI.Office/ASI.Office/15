@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .style1
+        {
+            text-align: center;
+        }
+        .style2
+        {
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .style3
+        {
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        .style4
+        {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="style1">
+        The Steel Network, Inc. Application for Credit </h1>
+    <p class="style3">
+        Please Complete &amp; Return the Credit Application </p>
+    <p class="style3">
+        with a Copy of your Sales Tax Exemption &amp; Reseller Certificate </p>
+    <p class="style2">
+        (Please Type or Print) </p>
+    <p>
+        &nbsp;</p>
+    <p class="style4">
+        AccountName abcd </p>
+    <p class="style4">
+        Phone 123 </p>
+    <p class="style4">
+        Fax 200 </p>
+    <p class="style4">
+        City giza </p>
+    <p class="style4">
+        State vvv </p>
+    <p class="style4">
+        ZipCode 02131 </p>
+    <p class="style4">
+        Email  </p>
+    <p class="style4">
+        WebSite http://google.com</p>
+    
+</body>
+</html>

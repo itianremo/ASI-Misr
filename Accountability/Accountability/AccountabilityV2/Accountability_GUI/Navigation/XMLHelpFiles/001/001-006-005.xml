@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>List of days off In the company like vacations, weekends etc……</OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="006" FUNCTIONALITYID="005">
+    <ITEM_DATA>
+      <ITEMID>1</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add Day Off</ITEM_NAME>
+      <ITEM_DESCRIPTION>To add a day off use this button as shown in the picture, when you press on this button a form of Day Off details will appear enter the Day Off type and the description then press on Add button , the Day off then will be added to the table.</ITEM_DESCRIPTION>
+      <IMAGENAME>standardNew.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Delete Day Off</ITEM_NAME>
+      <ITEM_DESCRIPTION>To delete a day off select it from the table by checking on the check box of it then press on delete button.</ITEM_DESCRIPTION>
+      <IMAGENAME>imgdelete.gif</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>3</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit Day Off</ITEM_NAME>
+      <ITEM_DESCRIPTION>To edit a day off select it from the table by  clicking on the day off link, you will find the details of the day off appears in the form , make your changes you want then press on update button.</ITEM_DESCRIPTION>
+      <IMAGENAME>standardSave.gif</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

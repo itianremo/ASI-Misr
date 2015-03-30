@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListChartsInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListChartsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListChartsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ListChartsInfoByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChartID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListChartsInfoByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListChartsInfoByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListChartsInfobyQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListChartsInfobyQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListChartsInfobyQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddChartsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewCharts">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddChartsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddChartsInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyChartsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifedChartsData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyChartsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyChartsInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyChartDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChartDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyChartDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyChartDescriptionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateChartBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MStream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateChartBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateChartBodyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadChartBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadChartBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadChartBodyResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListChartsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListChartsInfo" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListChartsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfoByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ListChartsInfoByID" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfoByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ListChartsInfoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfoByIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfobyQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ListChartsInfobyQuery" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfobyQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ListChartsInfobyQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListChartsInfobyQueryAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddChartsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddChartsInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddChartsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddChartsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddChartsInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ModifyChartsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyChartsInfo" />
+  </wsdl:message>
+  <wsdl:message name="ModifyChartsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyChartsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyChartsInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ModifyChartDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyChartDescription" />
+  </wsdl:message>
+  <wsdl:message name="ModifyChartDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyChartDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyChartDescriptionAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChartBodySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateChartBody" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChartBodySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateChartBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChartBodyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadChartBodySoapIn">
+    <wsdl:part name="parameters" element="tns:LoadChartBody" />
+  </wsdl:message>
+  <wsdl:message name="LoadChartBodySoapOut">
+    <wsdl:part name="parameters" element="tns:LoadChartBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadChartBodyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetERPSession" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetERPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrgnizationChartsMangmentServiceSoap">
+    <wsdl:operation name="ListChartsInfo">
+      <wsdl:input message="tns:ListChartsInfoSoapIn" />
+      <wsdl:output message="tns:ListChartsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListChartsInfo">
+      <wsdl:input name="ListChartsInfoByID" message="tns:ListChartsInfoByIDSoapIn" />
+      <wsdl:output name="ListChartsInfoByID" message="tns:ListChartsInfoByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListChartsInfo">
+      <wsdl:input name="ListChartsInfobyQuery" message="tns:ListChartsInfobyQuerySoapIn" />
+      <wsdl:output name="ListChartsInfobyQuery" message="tns:ListChartsInfobyQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddChartsInfo">
+      <wsdl:input message="tns:AddChartsInfoSoapIn" />
+      <wsdl:output message="tns:AddChartsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyChartsInfo">
+      <wsdl:input message="tns:ModifyChartsInfoSoapIn" />
+      <wsdl:output message="tns:ModifyChartsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyChartDescription">
+      <wsdl:input message="tns:ModifyChartDescriptionSoapIn" />
+      <wsdl:output message="tns:ModifyChartDescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChartBody">
+      <wsdl:input message="tns:UpdateChartBodySoapIn" />
+      <wsdl:output message="tns:UpdateChartBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadChartBody">
+      <wsdl:input message="tns:LoadChartBodySoapIn" />
+      <wsdl:output message="tns:LoadChartBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <wsdl:input message="tns:GetERPSessionSoapIn" />
+      <wsdl:output message="tns:GetERPSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrgnizationChartsMangmentServiceSoap" type="tns:OrgnizationChartsMangmentServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListChartsInfo">
+      <soap:operation soapAction="http://tempuri.org/ListChartsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListChartsInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListChartsInfo">
+      <soap:operation soapAction="http://tempuri.org/ListChartsInfoByID" style="document" />
+      <wsdl:input name="ListChartsInfoByID">
+        <soap:body use="literal" />
+        <soap:header message="tns:ListChartsInfoByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListChartsInfoByID">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListChartsInfo">
+      <soap:operation soapAction="http://tempuri.org/ListChartsInfobyQuery" style="document" />
+      <wsdl:input name="ListChartsInfobyQuery">
+        <soap:body use="literal" />
+        <soap:header message="tns:ListChartsInfobyQueryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListChartsInfobyQuery">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChartsInfo">
+      <soap:operation soapAction="http://tempuri.org/AddChartsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddChartsInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyChartsInfo">
+      <soap:operation soapAction="http://tempuri.org/ModifyChartsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ModifyChartsInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyChartDescription">
+      <soap:operation soapAction="http://tempuri.org/ModifyChartDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ModifyChartDescriptionAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChartBody">
+      <soap:operation soapAction="http://tempuri.org/UpdateChartBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateChartBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadChartBody">
+      <soap:operation soapAction="http://tempuri.org/LoadChartBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadChartBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrgnizationChartsMangmentServiceSoap12" type="tns:OrgnizationChartsMangmentServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListChartsInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListChartsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListChartsInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListChartsInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListChartsInfoByID" style="document" />
+      <wsdl:input name="ListChartsInfoByID">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListChartsInfoByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListChartsInfoByID">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListChartsInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListChartsInfobyQuery" style="document" />
+      <wsdl:input name="ListChartsInfobyQuery">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListChartsInfobyQueryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListChartsInfobyQuery">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChartsInfo">
+      <soap12:operation soapAction="http://tempuri.org/AddChartsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddChartsInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyChartsInfo">
+      <soap12:operation soapAction="http://tempuri.org/ModifyChartsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ModifyChartsInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyChartDescription">
+      <soap12:operation soapAction="http://tempuri.org/ModifyChartDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ModifyChartDescriptionAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChartBody">
+      <soap12:operation soapAction="http://tempuri.org/UpdateChartBody" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateChartBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadChartBody">
+      <soap12:operation soapAction="http://tempuri.org/LoadChartBody" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadChartBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap12:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrgnizationChartsMangmentService">
+    <wsdl:port name="OrgnizationChartsMangmentServiceSoap" binding="tns:OrgnizationChartsMangmentServiceSoap">
+      <soap:address location="http://localhost/Accountability_WS/OrgnizationChartsMangmentService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrgnizationChartsMangmentServiceSoap12" binding="tns:OrgnizationChartsMangmentServiceSoap12">
+      <soap12:address location="http://localhost/Accountability_WS/OrgnizationChartsMangmentService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

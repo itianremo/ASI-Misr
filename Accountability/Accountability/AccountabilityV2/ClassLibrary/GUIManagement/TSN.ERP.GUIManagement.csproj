@@ -1,0 +1,270 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00F01AE1-4659-4CDA-A775-4216249C2FAE}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TSN.ERP.GUIManagement</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TSN.ERP.GUIManagement</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="TSN.ERP.Engine, Version=1.0.3412.29496, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="TSN.ERP.Security, Version=1.0.3412.29232, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DsFunctionalities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsFunctionalities.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsGenModules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsGenModules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsGenSubModules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsGenSubModules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsLinks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsLinks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsModules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsModules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsModulesSubModulesXRules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsModulesSubModulesXRules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsModulesXSubModules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsModulesXSubModules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsUserLinks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsUserLinks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsUserModules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsUserModules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FunctionalitiesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\GenModulesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\GenSubModulesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\LinksData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ModulesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ModulesSubModulesXRulesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ModulesXSubModulesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUIManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SecurityGUIManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Data\DsFunctionalities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsFunctionalities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsGenModules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsGenModules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsGenSubModules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsGenSubModules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsLinks.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsLinks.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsModules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsModules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsModulesSubModulesXRules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsModulesSubModulesXRules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsModulesXSubModules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsModulesXSubModules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsUserLinks.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsUserLinks.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsUserModules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsUserModules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Data\DsFunctionalities.xsx">
+      <DependentUpon>DsFunctionalities.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsGenModules.xsx">
+      <DependentUpon>DsGenModules.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsGenSubModules.xsx">
+      <DependentUpon>DsGenSubModules.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsLinks.xsx">
+      <DependentUpon>DsLinks.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsModules.xsx">
+      <DependentUpon>DsModules.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsModulesSubModulesXRules.xsx">
+      <DependentUpon>DsModulesSubModulesXRules.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsModulesXSubModules.xsx">
+      <DependentUpon>DsModulesXSubModules.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsUserLinks.xsx">
+      <DependentUpon>DsUserLinks.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsUserModules.xsx">
+      <DependentUpon>DsUserModules.xsd</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Data\FunctionalitiesData.resx">
+      <DependentUpon>FunctionalitiesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\GenModulesData.resx">
+      <DependentUpon>GenModulesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\GenSubModulesData.resx">
+      <DependentUpon>GenSubModulesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\LinksData.resx">
+      <DependentUpon>LinksData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ModulesData.resx">
+      <DependentUpon>ModulesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ModulesSubModulesXRulesData.resx">
+      <DependentUpon>ModulesSubModulesXRulesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ModulesXSubModulesData.resx">
+      <DependentUpon>ModulesXSubModulesData.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

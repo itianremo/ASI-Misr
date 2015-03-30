@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="DATA" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DATA" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="HEADER">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEFAULTID" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CONNECTIONDATA">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" />
+							<xs:element name="NAME" type="xs:string" minOccurs="1" />
+							<xs:element name="PASSWORD" type="xs:string" minOccurs="1" />
+							<xs:element name="SERVER" type="xs:string" minOccurs="1" />
+							<xs:element name="DATABASE" type="xs:string" minOccurs="1" />
+							<xs:element name="DBMS" type="xs:string" minOccurs="1" />
+							<xs:element name="AUTHENTICATION" type="xs:int" minOccurs="1" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="DATAKey1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//CONNECTIONDATA" />
+			<xs:field xpath="ID" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

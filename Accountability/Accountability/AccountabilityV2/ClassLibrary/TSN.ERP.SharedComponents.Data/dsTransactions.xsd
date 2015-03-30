@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="dsTransactions" targetNamespace="http://www.tempuri.org/dsTransactions.xsd" xmlns:mstns="http://www.tempuri.org/dsTransactions.xsd" xmlns="http://www.tempuri.org/dsTransactions.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="dsTransactions" msdata:IsDataSet="true" msdata:Locale="ar-EG">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="GEN_Transactions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransID" type="xs:int" />
+              <xs:element name="UserID" type="xs:int" minOccurs="0" />
+              <xs:element name="TransTime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GEN_Transactions" />
+      <xs:field xpath="mstns:TransID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

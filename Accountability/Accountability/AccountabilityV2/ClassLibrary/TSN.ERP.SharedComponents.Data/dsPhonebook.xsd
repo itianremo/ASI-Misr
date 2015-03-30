@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="dsPhonebook" targetNamespace="http://www.tempuri.org/dsPhonebook.xsd" xmlns:mstns="http://www.tempuri.org/dsPhonebook.xsd"
+	xmlns="http://www.tempuri.org/dsPhonebook.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="dsPhonebook" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="GEN_Phonebook">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PhoneBookID" type="xs:int" />
+							<xs:element name="ContactID" type="xs:int" minOccurs="0" />
+							<xs:element name="AreaCode" type="xs:string" minOccurs="0" />
+							<xs:element name="CountryCode" type="xs:string" minOccurs="0" />
+							<xs:element name="PhoneZone" type="xs:string" minOccurs="0" />
+							<xs:element name="PhoneNumber" type="xs:string" />
+							<xs:element name="PhoneType" type="xs:string" />
+							<xs:element name="PrimaryPhoneBook" type="xs:boolean" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:GEN_Phonebook" />
+			<xs:field xpath="mstns:PhoneBookID" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\Accountability_GUI\", "Accountability_GUI", "{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		Debug.AspNetCompiler.VirtualPath = "/Accountability_GUI"
+		Debug.AspNetCompiler.PhysicalPath = "Accountability_GUI\"
+		Debug.AspNetCompiler.TargetPath = "..\Publish\AccountabilityV2.0\Build 14\Accountability_GUI\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Accountability_GUI"
+		Release.AspNetCompiler.PhysicalPath = "Accountability_GUI\"
+		Release.AspNetCompiler.TargetPath = "..\Publish\AccountabilityV2.0\Build 14\Accountability_GUI\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1264"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\Accountability_WS\", "Accountability_WS", "{080DF22E-9189-45D4-97AB-96F64C52AE50}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		Debug.AspNetCompiler.VirtualPath = "/Accountability_WS"
+		Debug.AspNetCompiler.PhysicalPath = "Accountability_WS\"
+		Debug.AspNetCompiler.TargetPath = "..\Publish\AccountabilityV2.0\Build 14\Accountability_WS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Accountability_WS"
+		Release.AspNetCompiler.PhysicalPath = "Accountability_WS\"
+		Release.AspNetCompiler.TargetPath = "..\Publish\AccountabilityV2.0\Build 14\Accountability_WS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1366"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://misserver1:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = Accountability_GUI
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = Accountability_GUI\\
+		SccProjectEnlistmentChoice1 = 2
+		SccWebProject2 = true
+		SccProjectUniqueName2 = Accountability_WS
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = Accountability_WS\\
+		SccProjectEnlistmentChoice2 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Half|.NET = Half|.NET
+		Half|Any CPU = Half|Any CPU
+		Half|Mixed Platforms = Half|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Debug|.NET.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Debug|.NET.Build.0 = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Half|.NET.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Half|.NET.Build.0 = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Half|Any CPU.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Half|Mixed Platforms.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Half|Mixed Platforms.Build.0 = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Release|.NET.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Release|.NET.Build.0 = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{D9B97F6E-AB2F-4227-A06F-C9DC8BE44482}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Debug|.NET.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Debug|.NET.Build.0 = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Half|.NET.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Half|.NET.Build.0 = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Half|Any CPU.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Half|Mixed Platforms.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Half|Mixed Platforms.Build.0 = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Release|.NET.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Release|.NET.Build.0 = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{080DF22E-9189-45D4-97AB-96F64C52AE50}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

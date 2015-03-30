@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="odaAccountability.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 535</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="con1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 498</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="oleDbInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO GEN_AccDailyEntries(TransID, NoteID, AssignmentD, AccountabilityValue, AccountabilityDate) VALUES (?, ?, ?, ?, ?); SELECT TransID, NoteID, AssignmentD, AccountabilityValue, AccountabilityDate FROM GEN_AccDailyEntries WHERE (TransID = ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="oleDbUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE GEN_AccDailyEntries SET TransID = ?, NoteID = ?, AssignmentD = ?, AccountabilityValue = ?, AccountabilityDate = ? WHERE (TransID = ?) AND (AccountabilityDate = ?) AND (AccountabilityValue = ?) AND (AssignmentD = ?) AND (NoteID = ? OR ? IS NULL AND NoteID IS NULL); SELECT TransID, NoteID, AssignmentD, AccountabilityValue, AccountabilityDate FROM GEN_AccDailyEntries WHERE (TransID = ?)</value>
+  </data>
+  <metadata name="dsAccDailyEntries1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 387</value>
+  </metadata>
+  <metadata name="odaAccSheet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 461</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="oleDbSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT GEN_AccDailyEntries.AssignmentD, SUM(GEN_AccDailyEntries.AccountabilityValue) AS AccountabilityValue, GEN_AccDailyEntries.AccountabilityDate, GEN_Assignments.ContactID FROM GEN_AccDailyEntries INNER JOIN GEN_Assignments ON GEN_AccDailyEntries.AssignmentD = GEN_Assignments.AssignmentD WHERE (GEN_AccDailyEntries.AccountabilityDate &lt;= ?) AND (GEN_AccDailyEntries.AccountabilityDate &gt;= ?) GROUP BY GEN_AccDailyEntries.AssignmentD, GEN_AccDailyEntries.AccountabilityDate, GEN_Assignments.ContactID HAVING (GEN_Assignments.ContactID = ?)</value>
+  </data>
+  <metadata name="odcAccDaily.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 424</value>
+  </metadata>
+  <metadata name="odcProjectEntriesByRespons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 313</value>
+  </metadata>
+  <data name="odcProjectEntriesByRespons.CommandText" xml:space="preserve">
+    <value>SELECT     SUM(GEN_AccDailyEntries.AccountabilityValue) AS AccountabilityValue FROM         GEN_Projects INNER JOIN GEN_Tasks ON GEN_Projects.projectID = GEN_Tasks.projectID INNER JOIN GEN_Assignments ON GEN_Tasks.TaskID = GEN_Assignments.TaskID INNER JOIN GEN_AccDailyEntries ON GEN_Assignments.AssignmentD = GEN_AccDailyEntries.AssignmentD GROUP BY GEN_Projects.projectID, GEN_Assignments.ResponsID, GEN_AccDailyEntries.AccountabilityDate, GEN_Assignments.ContactID,GEN_Tasks.TaskUnit HAVING      (GEN_Projects.projectID = ?) AND  (GEN_Assignments.ResponsID = ?) AND (GEN_AccDailyEntries.AccountabilityDate = ?) AND (GEN_Assignments.ContactID = ?)  AND  (GEN_Tasks.TaskUnit = 10)</value>
+  </data>
+  <metadata name="odcProjectEntires.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 350</value>
+  </metadata>
+  <data name="odcProjectEntires.CommandText" xml:space="preserve">
+    <value>SELECT SUM(GEN_AccDailyEntries.AccountabilityValue) AS AccountabilityValue FROM GEN_AccDailyEntries INNER JOIN GEN_Assignments ON GEN_AccDailyEntries.AssignmentD = GEN_Assignments.AssignmentD INNER JOIN GEN_Tasks ON GEN_Assignments.TaskID = GEN_Tasks.TaskID WHERE (GEN_Tasks.TaskUnit = 10) GROUP BY GEN_Tasks.projectID, GEN_Assignments.ContactID, GEN_AccDailyEntries.AccountabilityDate HAVING (GEN_Tasks.projectID = ?) AND (GEN_Assignments.ContactID = ?) AND (GEN_AccDailyEntries.AccountabilityDate = ?)</value>
+  </data>
+  <metadata name="odcResponseEntries.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 239</value>
+  </metadata>
+  <data name="odcResponseEntries.CommandText" xml:space="preserve">
+    <value>SELECT     SUM(GEN_AccDailyEntries.AccountabilityValue) AS AccountabilityValue FROM   GEN_AccDailyEntries INNER JOIN  GEN_Assignments ON GEN_AccDailyEntries.AssignmentD = GEN_Assignments.AssignmentD INNER JOIN  GEN_Tasks ON GEN_Assignments.TaskID = GEN_Tasks.TaskID GROUP BY GEN_Assignments.ContactID, GEN_Assignments.ResponsID, GEN_AccDailyEntries.AccountabilityDate, GEN_Tasks.TaskUnit HAVING  (GEN_Assignments.ContactID = ?) AND (GEN_Assignments.ResponsID = ?) AND (GEN_AccDailyEntries.AccountabilityDate = ?) AND (GEN_Tasks.TaskUnit = 10)</value>
+  </data>
+  <metadata name="odcDayNotes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 276</value>
+  </metadata>
+  <data name="odcDayNotes.CommandText" xml:space="preserve">
+    <value>SELECT GEN_Notes.NoteBody FROM GEN_AccDailyEntries INNER JOIN GEN_Notes ON GEN_AccDailyEntries.NoteID = GEN_Notes.NoteID INNER JOIN GEN_ContactNotes ON GEN_Notes.NoteID = GEN_ContactNotes.NoteID WHERE (GEN_AccDailyEntries.AccountabilityDate = ?) AND (GEN_ContactNotes.ContactID = ?) ORDER BY GEN_AccDailyEntries.TransID DESC</value>
+  </data>
+  <metadata name="odaAccEntries.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 202</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand3.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand3.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbConnection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 91</value>
+  </metadata>
+  <data name="oleDbConnection1.ConnectionString" xml:space="preserve">
+    <value>Integrated Security=SSPI;Packet Size=4096;Data Source=ERP;Tag with column collation when possible=False;Initial Catalog=ERPdb4;Use Procedure for Prepare=1;Auto Translate=True;Persist Security Info=False;Provider="SQLOLEDB.1";Workstation ID=BASANT;Use Encryption for Data=False</value>
+  </data>
+  <metadata name="oleDbDataAdapterContactNotesInInterval.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 165</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand5.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand5.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="dsTaskSummReport1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 128</value>
+  </metadata>
+  <metadata name="oleDbDataAdapterTaskSummary.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand4.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand4.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="oleDbSelectCommand4.CommandText" xml:space="preserve">
+    <value>SELECT GEN_Projects.projectID, GEN_Tasks.TaskName, SUM(GEN_AccDailyEntries.AccountabilityValue) AS SumValue, GEN_Tasks.TaskCloseDate, GEN_Projects.ProjectName, GEN_Contacts.Fullname, GEN_JobTitles.JobName, GEN_CompanyElments.CEName, GEN_Assignments.AssignmentDate, GEN_Tasks.TaskUnit FROM GEN_Tasks INNER JOIN GEN_Assignments INNER JOIN GEN_AccDailyEntries ON GEN_Assignments.AssignmentD = GEN_AccDailyEntries.AssignmentD ON GEN_Tasks.TaskID = GEN_Assignments.TaskID INNER JOIN GEN_Contacts ON GEN_Assignments.ContactID = GEN_Contacts.ContactID INNER JOIN GEN_Employees ON GEN_Contacts.ContactID = GEN_Employees.ContactID INNER JOIN GEN_JobTitles ON GEN_Employees.JobTitleID = GEN_JobTitles.JobTitleID INNER JOIN GEN_CompanyElments ON GEN_Employees.CompElmentID = GEN_CompanyElments.CompElmentID LEFT OUTER JOIN GEN_Projects ON GEN_Tasks.projectID = GEN_Projects.projectID WHERE (GEN_AccDailyEntries.AssignmentD IS NOT NULL) AND (GEN_Assignments.ContactID = ?) AND (GEN_AccDailyEntries.AccountabilityDate BETWEEN ? AND ?) GROUP BY GEN_Tasks.TaskName, GEN_Tasks.TaskName, GEN_Tasks.projectID, GEN_Assignments.AssignmentD, GEN_Projects.ProjectName, GEN_Tasks.TaskCloseDate, GEN_Assignments.AssignmentDate, GEN_Contacts.Fullname, GEN_JobTitles.JobName, GEN_CompanyElments.CEName, GEN_Projects.projectID, GEN_Tasks.TaskUnit ORDER BY GEN_Tasks.projectID DESC</value>
+  </data>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+</root>

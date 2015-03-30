@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Flowcharter">
+</Property><Property Name="Solution File" Value="C:\Program Files\MindFusion\NetDiagram\Samples\C#\Flowcharter\Flowcharter.sln">
+</Property><Property Name="User Options File" Value="C:\Program Files\MindFusion\NetDiagram\Samples\C#\Flowcharter\Flowcharter.suo">
+</Property><Property Name="Date" Value="Wednesday, February 24, 2010">
+</Property><Property Name="Time" Value="12:18 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Flowcharter.sln" Description="File successfully backed up as C:\Program Files\MindFusion\NetDiagram\Samples\C#\Flowcharter\Backup\Flowcharter.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Flowcharter.suo" Description="File successfully backed up as C:\Program Files\MindFusion\NetDiagram\Samples\C#\Flowcharter\Backup\Flowcharter.suo">
+</Event><Event ErrorLevel="1" Project="Flowcharter" Source="..\Flowcharter" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="" Source="Flowcharter.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Flowcharter.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RETURNDATA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://Schema-URL/Schema.xsd">
+  <OVERVIEW_CONTENT>Managing all user accounts in the system, use this screen to add new users to the system and set there user names and passwords </OVERVIEW_CONTENT>
+  <DATA MODULEID="001" LINKID="008" FUNCTIONALITYID="014">
+    <ITEM_DATA>
+      <ITEMID>1</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Add User Account</ITEM_NAME>
+      <ITEM_DESCRIPTION>Click the new user button, type in the user name and password in the text boxes dedicated for this purpose, confirm the password by retyping it in the dedicated text box. Then click the add user button</ITEM_DESCRIPTION>
+      <IMAGENAME>addUser.GIF</IMAGENAME>
+    </ITEM_DATA>
+    <ITEM_DATA>
+      <ITEMID>2</ITEMID>
+      <ITEMPARENT>0</ITEMPARENT>
+      <ITEM_NAME>Edit User Account</ITEM_NAME>
+      <ITEM_DESCRIPTION>Select from the list the user you want to edit , modify the user and then click update</ITEM_DESCRIPTION>
+      <IMAGENAME>updateUser.GIF</IMAGENAME>
+    </ITEM_DATA>
+  </DATA>
+</RETURNDATA>

@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="dsTasks" targetNamespace="http://www.tempuri.org/dsTasks.xsd" xmlns:mstns="http://www.tempuri.org/dsTasks.xsd" xmlns="http://www.tempuri.org/dsTasks.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="dsTasks" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="GEN_Tasks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TaskID" type="xs:int" />
+              <xs:element name="projectID" type="xs:int" minOccurs="0" />
+              <xs:element name="TaskForumID" type="xs:int" minOccurs="0" />
+              <xs:element name="TaskName" type="xs:string" />
+              <xs:element name="TaskDesc" type="xs:string" />
+              <xs:element name="TaskCreatBy" type="xs:int" minOccurs="0" />
+              <xs:element name="TaskProgress" type="xs:short" minOccurs="0" />
+              <xs:element name="TaskStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TaskEndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TaskCloseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TaskStatus" type="xs:short" minOccurs="0" />
+              <xs:element name="TaskDuration" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TaskUnit" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GEN_Tasks" />
+      <xs:field xpath="mstns:TaskID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

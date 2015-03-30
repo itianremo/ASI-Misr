@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="DsModulesXSubModules" targetNamespace="http://www.tempuri.org/DsModulesXSubModules.xsd" xmlns:mstns="http://www.tempuri.org/DsModulesXSubModules.xsd" xmlns="http://www.tempuri.org/DsModulesXSubModules.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="DsModulesXSubModules" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="GEN_ModulesXSubModules">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MSMID" type="xs:int" />
+              <xs:element name="ModID" type="xs:int" minOccurs="0" />
+              <xs:element name="SubModID" type="xs:int" minOccurs="0" />
+              <xs:element name="SubModParent" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GEN_ModulesXSubModules" />
+      <xs:field xpath="mstns:MSMID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

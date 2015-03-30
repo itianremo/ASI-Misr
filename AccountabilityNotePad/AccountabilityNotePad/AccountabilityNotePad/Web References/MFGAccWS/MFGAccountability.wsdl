@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s0="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="ListEmployeeMFGTasks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListEmployeeMFGTasksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListEmployeeMFGTasksResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="s0:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveMFGTasksSheet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsMFGTasks">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMFGTasksSheetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMFGEmployees">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMFGEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMFGEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserIsMFGAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserIsMFGAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserIsMFGAdminResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="ListEmployeeMFGTasksSoapIn">
+    <part name="parameters" element="s0:ListEmployeeMFGTasks" />
+  </message>
+  <message name="ListEmployeeMFGTasksSoapOut">
+    <part name="parameters" element="s0:ListEmployeeMFGTasksResponse" />
+  </message>
+  <message name="ListEmployeeMFGTasksAuthHeader">
+    <part name="AuthHeader" element="s0:AuthHeader" />
+  </message>
+  <message name="SaveMFGTasksSheetSoapIn">
+    <part name="parameters" element="s0:SaveMFGTasksSheet" />
+  </message>
+  <message name="SaveMFGTasksSheetSoapOut">
+    <part name="parameters" element="s0:SaveMFGTasksSheetResponse" />
+  </message>
+  <message name="SaveMFGTasksSheetAuthHeader">
+    <part name="AuthHeader" element="s0:AuthHeader" />
+  </message>
+  <message name="GetAllMFGEmployeesSoapIn">
+    <part name="parameters" element="s0:GetAllMFGEmployees" />
+  </message>
+  <message name="GetAllMFGEmployeesSoapOut">
+    <part name="parameters" element="s0:GetAllMFGEmployeesResponse" />
+  </message>
+  <message name="GetAllMFGEmployeesAuthHeader">
+    <part name="AuthHeader" element="s0:AuthHeader" />
+  </message>
+  <message name="UserIsMFGAdminSoapIn">
+    <part name="parameters" element="s0:UserIsMFGAdmin" />
+  </message>
+  <message name="UserIsMFGAdminSoapOut">
+    <part name="parameters" element="s0:UserIsMFGAdminResponse" />
+  </message>
+  <message name="UserIsMFGAdminAuthHeader">
+    <part name="AuthHeader" element="s0:AuthHeader" />
+  </message>
+  <message name="GetERPSessionSoapIn">
+    <part name="parameters" element="s0:GetERPSession" />
+  </message>
+  <message name="GetERPSessionSoapOut">
+    <part name="parameters" element="s0:GetERPSessionResponse" />
+  </message>
+  <message name="LoginSoapIn">
+    <part name="parameters" element="s0:Login" />
+  </message>
+  <message name="LoginSoapOut">
+    <part name="parameters" element="s0:LoginResponse" />
+  </message>
+  <portType name="MFGAccountabilitySoap">
+    <operation name="ListEmployeeMFGTasks">
+      <input message="s0:ListEmployeeMFGTasksSoapIn" />
+      <output message="s0:ListEmployeeMFGTasksSoapOut" />
+    </operation>
+    <operation name="SaveMFGTasksSheet">
+      <input message="s0:SaveMFGTasksSheetSoapIn" />
+      <output message="s0:SaveMFGTasksSheetSoapOut" />
+    </operation>
+    <operation name="GetAllMFGEmployees">
+      <input message="s0:GetAllMFGEmployeesSoapIn" />
+      <output message="s0:GetAllMFGEmployeesSoapOut" />
+    </operation>
+    <operation name="UserIsMFGAdmin">
+      <input message="s0:UserIsMFGAdminSoapIn" />
+      <output message="s0:UserIsMFGAdminSoapOut" />
+    </operation>
+    <operation name="GetERPSession">
+      <input message="s0:GetERPSessionSoapIn" />
+      <output message="s0:GetERPSessionSoapOut" />
+    </operation>
+    <operation name="Login">
+      <input message="s0:LoginSoapIn" />
+      <output message="s0:LoginSoapOut" />
+    </operation>
+  </portType>
+  <binding name="MFGAccountabilitySoap" type="s0:MFGAccountabilitySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ListEmployeeMFGTasks">
+      <soap:operation soapAction="http://tempuri.org/ListEmployeeMFGTasks" style="document" />
+      <input>
+        <soap:body use="literal" />
+        <soap:header message="s0:ListEmployeeMFGTasksAuthHeader" part="AuthHeader" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SaveMFGTasksSheet">
+      <soap:operation soapAction="http://tempuri.org/SaveMFGTasksSheet" style="document" />
+      <input>
+        <soap:body use="literal" />
+        <soap:header message="s0:SaveMFGTasksSheetAuthHeader" part="AuthHeader" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllMFGEmployees">
+      <soap:operation soapAction="http://tempuri.org/GetAllMFGEmployees" style="document" />
+      <input>
+        <soap:body use="literal" />
+        <soap:header message="s0:GetAllMFGEmployeesAuthHeader" part="AuthHeader" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UserIsMFGAdmin">
+      <soap:operation soapAction="http://tempuri.org/UserIsMFGAdmin" style="document" />
+      <input>
+        <soap:body use="literal" />
+        <soap:header message="s0:UserIsMFGAdminAuthHeader" part="AuthHeader" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetERPSession">
+      <soap:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MFGAccountability">
+    <port name="MFGAccountabilitySoap" binding="s0:MFGAccountabilitySoap">
+      <soap:address location="http://localhost/ERPWebServices/SharedPresentation/MFGAccountability.asmx" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="dsAssignments" targetNamespace="http://www.tempuri.org/dsAssignments.xsd" xmlns:mstns="http://www.tempuri.org/dsAssignments.xsd"
+	xmlns="http://www.tempuri.org/dsAssignments.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="dsAssignments" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="GEN_Assignments">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AssignmentD" type="xs:int" />
+							<xs:element name="TaskID" type="xs:int" minOccurs="0" />
+							<xs:element name="ResponsID" type="xs:int" minOccurs="0" />
+							<xs:element name="ContactID" type="xs:int" minOccurs="0" />
+							<xs:element name="AssignmentDate" type="xs:dateTime" />
+							<xs:element name="AssginedBy" type="xs:int" />
+							<xs:element name="AssignmentPriority" type="xs:int" minOccurs="0" />
+							<xs:element name="AssignmentStatus" type="xs:short" />
+							<xs:element name="AssignmentEvalutation" type="xs:short" minOccurs="0" />
+							<xs:element name="AssignmentScore" type="xs:short" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:GEN_Assignments" />
+			<xs:field xpath="mstns:AssignmentD" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

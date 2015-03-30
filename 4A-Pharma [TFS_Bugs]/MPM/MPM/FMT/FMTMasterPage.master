@@ -1,0 +1,142 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FMTMasterPage.master.cs" Inherits="FMT_FMTMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>::4A-Pharma FMT::</title>
+    <link rel="SHORTCUT ICON" href="~/Images/MPMicon.ico">
+    <link href="~/Styles/MainStyleSheet.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" src="../JScript/FMT-JScript.js"></script>
+
+</head>
+<body style="margin: 0; padding: 0;" bgcolor="#f2f4ef" onload="Startup()">
+    <form id="form1" runat="server">
+        <div id="container">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <table id="tblPage" style="width: 100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td colspan="3">
+                        <table id="tblhdr" background='<%= ResolveClientUrl("~/Images/banner-bg.jpg")%>'
+                            cellpadding="0" cellspacing="0" style="width: 100%">
+                            <tr>
+                                <td width="85%">
+                                    <img src='<%= ResolveClientUrl("~/Images/FMT-banner-left.jpg")%>' /></td>
+                                <td width="10%" align="center">
+                                    <asp:HyperLink ID="lnkChangePassword" runat="server" CssClass="WhitefontStyle" NavigateUrl="~/index.aspx"
+                                        Target="_self" ToolTip="BMD Module">BMD Module</asp:HyperLink></td>
+                                <td width="5%">
+                                    <asp:HyperLink ID="lnkLogOff" runat="server" CssClass="WhitefontStyle" NavigateUrl="~/Login.aspx">Log Off</asp:HyperLink></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="height: 1px">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 10%" background='<%= ResolveClientUrl("~/Images/MenuBar-BG.jpg")%>'>
+                    </td>
+                    <td style="width: 80%" background='<%= ResolveClientUrl("~/Images/MenuBar-BG.jpg")%>'>
+                        <table id="tblTabs" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnHome" runat="server" AlternateText="Home" CausesValidation="False"
+                                        ImageUrl="~/Images/Planning-n.jpg" PostBackUrl="~/FMT/FMTPlanning.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                                <td>
+                                    <asp:ImageButton ID="imgbtnReports" runat="server" AlternateText="Reports" CausesValidation="False"
+                                        ImageUrl="~/Images/Reporting-n.jpg" PostBackUrl="~/FMT/FMTReport.aspx" /></td>
+                                <td>
+                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/MenuBar-split.jpg" /></td>
+                            </tr>
+                        </table>
+                     </td>
+                    <td style="width: 10%" background='<%= ResolveClientUrl("~/Images/MenuBar-BG.jpg")%>'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td style="height: 4px">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <img src='<%= ResolveClientUrl("~/Images/MPM-logo.jpg")%>' /></td>
+                    <td align="center">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td align="center" valign="middle">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td align="center" valign="middle">
+                        &nbsp;</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Footer">
+            <table width="100%">
+                <tr>
+                    <td align="center" width="25%">
+                        <asp:Label ID="lblVersionInfo" runat="server" Font-Bold="False" Text="Version 1, Build 40"
+                            CssClass="MainfontStyle"></asp:Label></td>
+                    <td colspan="2" align="center" width="45%">
+                        <asp:Label ID="lblASICopyright" runat="server" Font-Bold="False" Text="2010 ASI E, LLC © | All Rights Reserved."
+                            CssClass="MainfontStyle"></asp:Label></td>
+                    <td align="right" width="20%">
+                        <asp:Label ID="lblLoggedUser" runat="server" CssClass="MainfontStyle" Font-Bold="False"
+                            Text="lblLoggedUser"></asp:Label></td>
+                         <td align="center" width="10%">
+                        <asp:Label ID="lblDate" runat="server" Font-Bold="False" Text="Monday 24-Jan-2011"
+                            CssClass="MainfontStyle"></asp:Label></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

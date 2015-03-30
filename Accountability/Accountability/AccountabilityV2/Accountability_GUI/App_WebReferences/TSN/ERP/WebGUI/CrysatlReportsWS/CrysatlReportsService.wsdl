@@ -1,0 +1,1378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetDefaultReportInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultReportInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultReportInfoResult" type="tns:ReportInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AdminstratorOnly" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralAccessRules" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReportParameters" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Parameter">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ParmType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="General" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="parameterID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="promptText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParmName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityAccessRights" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="currentValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="SetDefaultReportInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewReportInfo" type="tns:ReportInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDefaultReportInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetDefaultReportInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportFileId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadReportResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportsByParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportFileId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportsByParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListReportsByParametersResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportsByDsParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportFileId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parameters">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportsByDsParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListReportsByDsParametersResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportsInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListReportsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListReportsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportsInfoByQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportsInfoByQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListReportsInfoByQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewReports">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReportInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReportInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletedReports">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReportInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteReportInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateReportsData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifiedReports">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateReportsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateReportsDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReportsData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletedReports">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReportsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteReportsDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportFileID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListReportParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListReportParametersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateReportBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MStream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateReportBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateReportBodyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadReportBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadReportBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadReportBodyResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRegisterdAssemblies">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListRegisterdAssembliesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRegisterdAssembliesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAssemblyCalls">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssemblyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAssemblyCallsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAssemblyCallsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportCalls">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewCalls">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportCallsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReportCallsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportParms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewReportParms">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportParmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReportParmsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportDataSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetReportDataSourceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportDataSourceResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCallParamaters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssemblyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CallName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCallParamatersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCallParamatersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadReportRunInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadReportRunInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadReportRunInfoResult" type="tns:ReportInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParmSelectionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParmdID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParmSelectionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParmSelectionListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListTablesInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListTablesInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListTablesInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListEntities">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListEntitiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetERPSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetERPSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDefaultReportInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultReportInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultReportInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultReportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultReportInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetDefaultReportInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDefaultReportInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetDefaultReportInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDefaultReportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDefaultReportInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadReport" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsByParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListReportsByParameters" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsByParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListReportsByParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsByParametersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsByDsParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListReportsByDsParameters" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsByDsParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListReportsByDsParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsByDsParametersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListReportsInfo" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListReportsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsInfoByQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ListReportsInfoByQuery" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsInfoByQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ListReportsInfoByQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListReportsInfoByQueryAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddReportInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReportInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddReportInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddReportInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteReportInfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteReportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReportsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateReportsData" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReportsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateReportsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReportsDataAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteReportsData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteReportsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportsDataAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListReportParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListReportParameters" />
+  </wsdl:message>
+  <wsdl:message name="ListReportParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListReportParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListReportParametersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReportBodySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateReportBody" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReportBodySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateReportBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReportBodyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportBodySoapIn">
+    <wsdl:part name="parameters" element="tns:LoadReportBody" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportBodySoapOut">
+    <wsdl:part name="parameters" element="tns:LoadReportBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportBodyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListRegisterdAssembliesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRegisterdAssemblies" />
+  </wsdl:message>
+  <wsdl:message name="ListRegisterdAssembliesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRegisterdAssembliesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRegisterdAssembliesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListAssemblyCallsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAssemblyCalls" />
+  </wsdl:message>
+  <wsdl:message name="ListAssemblyCallsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAssemblyCallsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAssemblyCallsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddReportCallsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReportCalls" />
+  </wsdl:message>
+  <wsdl:message name="AddReportCallsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReportCallsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddReportCallsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddReportParmsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReportParms" />
+  </wsdl:message>
+  <wsdl:message name="AddReportParmsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReportParmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddReportParmsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetReportDataSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportDataSource" />
+  </wsdl:message>
+  <wsdl:message name="GetReportDataSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportDataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportDataSourceAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListCallParamatersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCallParamaters" />
+  </wsdl:message>
+  <wsdl:message name="ListCallParamatersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCallParamatersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCallParamatersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportRunInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadReportRunInfo" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportRunInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadReportRunInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadReportRunInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ParmSelectionListSoapIn">
+    <wsdl:part name="parameters" element="tns:ParmSelectionList" />
+  </wsdl:message>
+  <wsdl:message name="ParmSelectionListSoapOut">
+    <wsdl:part name="parameters" element="tns:ParmSelectionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParmSelectionListAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListTablesInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListTablesInfo" />
+  </wsdl:message>
+  <wsdl:message name="ListTablesInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListTablesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListTablesInfoAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListEntities" />
+  </wsdl:message>
+  <wsdl:message name="ListEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListEntitiesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetERPSession" />
+  </wsdl:message>
+  <wsdl:message name="GetERPSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetERPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CrysatlReportsServiceSoap">
+    <wsdl:operation name="GetDefaultReportInfo">
+      <wsdl:input message="tns:GetDefaultReportInfoSoapIn" />
+      <wsdl:output message="tns:GetDefaultReportInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaultReportInfo">
+      <wsdl:input message="tns:SetDefaultReportInfoSoapIn" />
+      <wsdl:output message="tns:SetDefaultReportInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Loads a Report, that after being executed on the COM+ Server</wsdl:documentation>
+      <wsdl:input message="tns:LoadReportSoapIn" />
+      <wsdl:output message="tns:LoadReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Loads a Report, that after being executed on the COM+ Server</wsdl:documentation>
+      <wsdl:input name="ListReportsByParameters" message="tns:ListReportsByParametersSoapIn" />
+      <wsdl:output name="ListReportsByParameters" message="tns:ListReportsByParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Loads a Report, that after being executed on the COM+ Server</wsdl:documentation>
+      <wsdl:input name="ListReportsByDsParameters" message="tns:ListReportsByDsParametersSoapIn" />
+      <wsdl:output name="ListReportsByDsParameters" message="tns:ListReportsByDsParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListReportsInfo">
+      <wsdl:input message="tns:ListReportsInfoSoapIn" />
+      <wsdl:output message="tns:ListReportsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListReportsInfo">
+      <wsdl:input name="ListReportsInfoByQuery" message="tns:ListReportsInfoByQuerySoapIn" />
+      <wsdl:output name="ListReportsInfoByQuery" message="tns:ListReportsInfoByQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReportInfo">
+      <wsdl:input message="tns:AddReportInfoSoapIn" />
+      <wsdl:output message="tns:AddReportInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportInfo">
+      <wsdl:input message="tns:DeleteReportInfoSoapIn" />
+      <wsdl:output message="tns:DeleteReportInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportsData">
+      <wsdl:input message="tns:UpdateReportsDataSoapIn" />
+      <wsdl:output message="tns:UpdateReportsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportsData">
+      <wsdl:input message="tns:DeleteReportsDataSoapIn" />
+      <wsdl:output message="tns:DeleteReportsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListReportParameters">
+      <wsdl:input message="tns:ListReportParametersSoapIn" />
+      <wsdl:output message="tns:ListReportParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportBody">
+      <wsdl:input message="tns:UpdateReportBodySoapIn" />
+      <wsdl:output message="tns:UpdateReportBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadReportBody">
+      <wsdl:input message="tns:LoadReportBodySoapIn" />
+      <wsdl:output message="tns:LoadReportBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRegisterdAssemblies">
+      <wsdl:input message="tns:ListRegisterdAssembliesSoapIn" />
+      <wsdl:output message="tns:ListRegisterdAssembliesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAssemblyCalls">
+      <wsdl:input message="tns:ListAssemblyCallsSoapIn" />
+      <wsdl:output message="tns:ListAssemblyCallsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReportCalls">
+      <wsdl:input message="tns:AddReportCallsSoapIn" />
+      <wsdl:output message="tns:AddReportCallsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReportParms">
+      <wsdl:input message="tns:AddReportParmsSoapIn" />
+      <wsdl:output message="tns:AddReportParmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportDataSource">
+      <wsdl:input message="tns:GetReportDataSourceSoapIn" />
+      <wsdl:output message="tns:GetReportDataSourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCallParamaters">
+      <wsdl:input message="tns:ListCallParamatersSoapIn" />
+      <wsdl:output message="tns:ListCallParamatersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadReportRunInfo">
+      <wsdl:input message="tns:LoadReportRunInfoSoapIn" />
+      <wsdl:output message="tns:LoadReportRunInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParmSelectionList">
+      <wsdl:input message="tns:ParmSelectionListSoapIn" />
+      <wsdl:output message="tns:ParmSelectionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListTablesInfo">
+      <wsdl:input message="tns:ListTablesInfoSoapIn" />
+      <wsdl:output message="tns:ListTablesInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListEntities">
+      <wsdl:input message="tns:ListEntitiesSoapIn" />
+      <wsdl:output message="tns:ListEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <wsdl:input message="tns:GetERPSessionSoapIn" />
+      <wsdl:output message="tns:GetERPSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CrysatlReportsServiceSoap" type="tns:CrysatlReportsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDefaultReportInfo">
+      <soap:operation soapAction="http://tempuri.org/GetDefaultReportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDefaultReportInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaultReportInfo">
+      <soap:operation soapAction="http://tempuri.org/SetDefaultReportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetDefaultReportInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <soap:operation soapAction="http://tempuri.org/LoadReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadReportAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <soap:operation soapAction="http://tempuri.org/ListReportsByParameters" style="document" />
+      <wsdl:input name="ListReportsByParameters">
+        <soap:body use="literal" />
+        <soap:header message="tns:ListReportsByParametersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListReportsByParameters">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <soap:operation soapAction="http://tempuri.org/ListReportsByDsParameters" style="document" />
+      <wsdl:input name="ListReportsByDsParameters">
+        <soap:body use="literal" />
+        <soap:header message="tns:ListReportsByDsParametersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListReportsByDsParameters">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListReportsInfo">
+      <soap:operation soapAction="http://tempuri.org/ListReportsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListReportsInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListReportsInfo">
+      <soap:operation soapAction="http://tempuri.org/ListReportsInfoByQuery" style="document" />
+      <wsdl:input name="ListReportsInfoByQuery">
+        <soap:body use="literal" />
+        <soap:header message="tns:ListReportsInfoByQueryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListReportsInfoByQuery">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportInfo">
+      <soap:operation soapAction="http://tempuri.org/AddReportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddReportInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportInfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteReportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteReportInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportsData">
+      <soap:operation soapAction="http://tempuri.org/UpdateReportsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateReportsDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportsData">
+      <soap:operation soapAction="http://tempuri.org/DeleteReportsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteReportsDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListReportParameters">
+      <soap:operation soapAction="http://tempuri.org/ListReportParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListReportParametersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportBody">
+      <soap:operation soapAction="http://tempuri.org/UpdateReportBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateReportBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReportBody">
+      <soap:operation soapAction="http://tempuri.org/LoadReportBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadReportBodyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRegisterdAssemblies">
+      <soap:operation soapAction="http://tempuri.org/ListRegisterdAssemblies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListRegisterdAssembliesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAssemblyCalls">
+      <soap:operation soapAction="http://tempuri.org/ListAssemblyCalls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListAssemblyCallsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportCalls">
+      <soap:operation soapAction="http://tempuri.org/AddReportCalls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddReportCallsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportParms">
+      <soap:operation soapAction="http://tempuri.org/AddReportParms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddReportParmsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportDataSource">
+      <soap:operation soapAction="http://tempuri.org/GetReportDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetReportDataSourceAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCallParamaters">
+      <soap:operation soapAction="http://tempuri.org/ListCallParamaters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListCallParamatersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReportRunInfo">
+      <soap:operation soapAction="http://tempuri.org/LoadReportRunInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadReportRunInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParmSelectionList">
+      <soap:operation soapAction="http://tempuri.org/ParmSelectionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ParmSelectionListAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListTablesInfo">
+      <soap:operation soapAction="http://tempuri.org/ListTablesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListTablesInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListEntities">
+      <soap:operation soapAction="http://tempuri.org/ListEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListEntitiesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap:operation soapAction="http://tempuri.org/GetERPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CrysatlReportsServiceSoap12" type="tns:CrysatlReportsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="GetDefaultReportInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetDefaultReportInfo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:GetDefaultReportInfoAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaultReportInfo">
+      <soap12:operation soapAction="http://tempuri.org/SetDefaultReportInfo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:SetDefaultReportInfoAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <soap12:operation soapAction="http://tempuri.org/LoadReport" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:LoadReportAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <soap12:operation soapAction="http://tempuri.org/ListReportsByParameters" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input name="ListReportsByParameters">
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListReportsByParametersAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output name="ListReportsByParameters">
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReport">
+      <soap12:operation soapAction="http://tempuri.org/ListReportsByDsParameters" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input name="ListReportsByDsParameters">
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListReportsByDsParametersAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output name="ListReportsByDsParameters">
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListReportsInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListReportsInfo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListReportsInfoAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListReportsInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListReportsInfoByQuery" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input name="ListReportsInfoByQuery">
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListReportsInfoByQueryAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output name="ListReportsInfoByQuery">
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportInfo">
+      <soap12:operation soapAction="http://tempuri.org/AddReportInfo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:AddReportInfoAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportInfo">
+      <soap12:operation soapAction="http://tempuri.org/DeleteReportInfo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:DeleteReportInfoAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportsData">
+      <soap12:operation soapAction="http://tempuri.org/UpdateReportsData" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:UpdateReportsDataAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportsData">
+      <soap12:operation soapAction="http://tempuri.org/DeleteReportsData" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:DeleteReportsDataAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListReportParameters">
+      <soap12:operation soapAction="http://tempuri.org/ListReportParameters" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListReportParametersAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReportBody">
+      <soap12:operation soapAction="http://tempuri.org/UpdateReportBody" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:UpdateReportBodyAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReportBody">
+      <soap12:operation soapAction="http://tempuri.org/LoadReportBody" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:LoadReportBodyAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRegisterdAssemblies">
+      <soap12:operation soapAction="http://tempuri.org/ListRegisterdAssemblies" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListRegisterdAssembliesAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAssemblyCalls">
+      <soap12:operation soapAction="http://tempuri.org/ListAssemblyCalls" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListAssemblyCallsAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportCalls">
+      <soap12:operation soapAction="http://tempuri.org/AddReportCalls" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:AddReportCallsAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportParms">
+      <soap12:operation soapAction="http://tempuri.org/AddReportParms" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:AddReportParmsAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportDataSource">
+      <soap12:operation soapAction="http://tempuri.org/GetReportDataSource" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:GetReportDataSourceAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCallParamaters">
+      <soap12:operation soapAction="http://tempuri.org/ListCallParamaters" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListCallParamatersAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadReportRunInfo">
+      <soap12:operation soapAction="http://tempuri.org/LoadReportRunInfo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:LoadReportRunInfoAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParmSelectionList">
+      <soap12:operation soapAction="http://tempuri.org/ParmSelectionList" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ParmSelectionListAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListTablesInfo">
+      <soap12:operation soapAction="http://tempuri.org/ListTablesInfo" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListTablesInfoAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListEntities">
+      <soap12:operation soapAction="http://tempuri.org/ListEntities" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <soap12:header message="tns:ListEntitiesAuthHeader" part="AuthHeader" use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetERPSession">
+      <soap12:operation soapAction="http://tempuri.org/GetERPSession" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrysatlReportsService">
+    <wsdl:port name="CrysatlReportsServiceSoap" binding="tns:CrysatlReportsServiceSoap">
+      <soap:address location="http://localhost/Accountability_WS/CrysatlReportsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CrysatlReportsServiceSoap12" binding="tns:CrysatlReportsServiceSoap12">
+      <soap12:address location="http://localhost/Accountability_WS/CrysatlReportsService.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

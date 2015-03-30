@@ -1,0 +1,977 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CED62527-B223-497C-8ED9-61306ACC1B7B}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TSN.ERP.SharedComponents</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TSN.ERP.SharedComponents</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Half|AnyCPU' ">
+    <OutputPath>..\..\ERP Workspace\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Name>Accessibility</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="TSN.ERP.Engine, Version=1.0.3862.29655, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="TSN.ERP.Security, Version=1.0.3195.27272, Culture=neutral" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssginmentTransactions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckSecurity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompanyStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataSet1test.cs">
+      <DependentUpon>DataSet1test.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1test.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AccountabilityDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\AddressDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\AssignmentsDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\AssignmentTrxsDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\CityDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\CoElmentsXJobtitlesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\CompanElementsLevelsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\CompaniesProfilesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\CompanyElmentsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ContactsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ContactTypesDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\CountryDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\dsAccDailyEntries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAccDailyEntries.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsAccountabilitySheet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAccountabilitySheet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsAddress.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAddress.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsAssignments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAssignments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsAssignmentTransaction.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAssignmentTransaction.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsCity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCity.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsCompaniesProfiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompaniesProfiles.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsCompanyElements.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompanyElements.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsCompanyStructLevels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompanyStructLevels.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsContacts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsContacts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsContactTypes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsContactTypes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsCountry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCountry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsEmail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsEmployeeOrginal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmployeeOrginal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsEmployeesJobTitles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmployeesJobTitles.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsEmployeesXProjects.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmployeesXProjects.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsEmployeeXTeams.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmployeeXTeams.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsFilesInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFilesInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsJobTitles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsJobTitles.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsJobXCoElements.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsJobXCoElements.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsManagersNotes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsManagersNotes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsMFGGroupMember.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMFGGroupMember.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsMFGMemberTasks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMFGMemberTasks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsNotes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNotes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsOrgnizationCharts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrgnizationCharts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsPhonebook.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPhonebook.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsProjects.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProjects.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsProjectsLevels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProjectsLevels.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsResponsblities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsResponsblities.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsState.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsState.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsTasks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTasks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DsTaskSummReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsTaskSummReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsTeams.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTeams.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsTotalAccSheet.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Data\dsTransactions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTransactions.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsWebSites.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsWebSites.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\EmailDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\EmployeeData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\EmployeeJobTitles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\EmployeeXProjects.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\EmployeeXTeamDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\FilesDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\JobTitlesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ManagersNotesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\MFGGroupMemberData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\MFGMemberTasks.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\NotesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\OrgnizationChartsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\PhonebookDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ProjectLevelsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ProjectsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ResponsblitiesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\StateDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\TasksDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\TeamsDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\TransactionsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\WebSitesDataClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\dsEmployee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeAccountabiltiy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EmployeesManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilesManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JobTitlesManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ManagersNotesManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MFGAccountabilityManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NotesManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrgnizationChartsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProjectsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportWriterManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TasksManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TeamsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Data\AccountabilityDataClass.resx">
+      <DependentUpon>AccountabilityDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\AddressDataClass.resx">
+      <DependentUpon>AddressDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\AssignmentsDataClass.resx">
+      <DependentUpon>AssignmentsDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\AssignmentTrxsDataClass.resx">
+      <DependentUpon>AssignmentTrxsDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\CityDataClass.resx">
+      <DependentUpon>CityDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\CoElmentsXJobtitlesData.resx">
+      <DependentUpon>CoElmentsXJobtitlesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\CompanElementsLevelsData.resx">
+      <DependentUpon>CompanElementsLevelsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\CompaniesProfilesData.resx">
+      <DependentUpon>CompaniesProfilesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\CompanyElmentsData.resx">
+      <DependentUpon>CompanyElmentsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ContactsData.resx">
+      <DependentUpon>ContactsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ContactTypesDataClass.resx">
+      <DependentUpon>ContactTypesDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\CountryDataClass.resx">
+      <DependentUpon>CountryDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\EmailDataClass.resx">
+      <DependentUpon>EmailDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\EmployeeData.resx">
+      <DependentUpon>EmployeeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\EmployeeJobTitles.resx">
+      <DependentUpon>EmployeeJobTitles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\EmployeeXProjects.resx">
+      <DependentUpon>EmployeeXProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\EmployeeXTeamDataClass.resx">
+      <DependentUpon>EmployeeXTeamDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FilesDataClass.resx">
+      <DependentUpon>FilesDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\JobTitlesData.resx">
+      <DependentUpon>JobTitlesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ManagersNotesData.resx">
+      <DependentUpon>ManagersNotesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\MFGGroupMemberData.resx">
+      <DependentUpon>MFGGroupMemberData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\MFGMemberTasks.resx">
+      <DependentUpon>MFGMemberTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\NotesData.resx">
+      <DependentUpon>NotesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\OrgnizationChartsData.resx">
+      <DependentUpon>OrgnizationChartsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\PhonebookDataClass.resx">
+      <DependentUpon>PhonebookDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ProjectLevelsData.resx">
+      <DependentUpon>ProjectLevelsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ProjectsData.resx">
+      <DependentUpon>ProjectsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\ResponsblitiesData.resx">
+      <DependentUpon>ResponsblitiesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\StateDataClass.resx">
+      <DependentUpon>StateDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\TasksDataClass.resx">
+      <DependentUpon>TasksDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\TeamsDataClass.resx">
+      <DependentUpon>TeamsDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\TransactionsData.resx">
+      <DependentUpon>TransactionsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\WebSitesDataClass.resx">
+      <DependentUpon>WebSitesDataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Data\dsAccDailyEntries.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAccDailyEntries.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsAccountabilitySheet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAccountabilitySheet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsAddress.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAddress.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsAssignments.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAssignments.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsAssignmentTransaction.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAssignmentTransaction.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsCity.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCity.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsCompaniesProfiles.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompaniesProfiles.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsCompanyElements.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompanyElements.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsCompanyStructLevels.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompanyStructLevels.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsContacts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsContacts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsContactTypes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsContactTypes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsCountry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCountry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsEmail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsEmployeeOrginal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployeeOrginal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsEmployeesJobTitles.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployeesJobTitles.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsEmployeesXProjects.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployeesXProjects.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsEmployeeXTeams.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployeeXTeams.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsFilesInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFilesInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsJobTitles.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsJobTitles.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsJobXCoElements.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsJobXCoElements.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsManagersNotes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsManagersNotes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsMFGGroupMember.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMFGGroupMember.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsMFGMemberTasks.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMFGMemberTasks.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsNotes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNotes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsOrgnizationCharts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrgnizationCharts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsPhonebook.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPhonebook.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsProjects.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProjects.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsProjectsLevels.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProjectsLevels.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsResponsblities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsResponsblities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsState.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsState.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsTasks.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTasks.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\DsTaskSummReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsTaskSummReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsTeams.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTeams.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsTotalAccSheet.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsTransactions.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTransactions.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\dsWebSites.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsWebSites.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="app.config" />
+    <None Include="DataSet1test.xsc">
+      <DependentUpon>DataSet1test.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1test.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1test.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1test.xss">
+      <DependentUpon>DataSet1test.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAccDailyEntries.xsc">
+      <DependentUpon>dsAccDailyEntries.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAccDailyEntries.xss">
+      <DependentUpon>dsAccDailyEntries.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAccDailyEntries.xsx">
+      <DependentUpon>dsAccDailyEntries.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAccountabilitySheet.xsc">
+      <DependentUpon>dsAccountabilitySheet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAccountabilitySheet.xsx">
+      <DependentUpon>dsAccountabilitySheet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAddress.xsc">
+      <DependentUpon>dsAddress.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAssignments.xsc">
+      <DependentUpon>dsAssignments.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAssignments.xsx">
+      <DependentUpon>dsAssignments.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsAssignmentTransaction.xsc">
+      <DependentUpon>dsAssignmentTransaction.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCity.xsc">
+      <DependentUpon>dsCity.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCity.xss">
+      <DependentUpon>dsCity.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCity.xsx">
+      <DependentUpon>dsCity.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCompaniesProfiles.xsc">
+      <DependentUpon>dsCompaniesProfiles.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCompanyElements.xsc">
+      <DependentUpon>dsCompanyElements.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCompanyElements.xsx">
+      <DependentUpon>dsCompanyElements.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCompanyStructLevels.xsc">
+      <DependentUpon>dsCompanyStructLevels.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCompanyStructLevels.xsx">
+      <DependentUpon>dsCompanyStructLevels.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsContacts.xsc">
+      <DependentUpon>dsContacts.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsContacts.xsx">
+      <DependentUpon>dsContacts.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsContactTypes.xsc">
+      <DependentUpon>dsContactTypes.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsCountry.xsc">
+      <DependentUpon>dsCountry.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmail.xsc">
+      <DependentUpon>dsEmail.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmail.xsx">
+      <DependentUpon>dsEmail.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployeeOrginal.xsc">
+      <DependentUpon>dsEmployeeOrginal.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployeeOrginal.xss">
+      <DependentUpon>dsEmployeeOrginal.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployeeOrginal.xsx">
+      <DependentUpon>dsEmployeeOrginal.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployeesJobTitles.xsc">
+      <DependentUpon>dsEmployeesJobTitles.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployeesXProjects.xsc">
+      <DependentUpon>dsEmployeesXProjects.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployeeXTeams.xsc">
+      <DependentUpon>dsEmployeeXTeams.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployeeXTeams.xsx">
+      <DependentUpon>dsEmployeeXTeams.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsFilesInfo.xsc">
+      <DependentUpon>dsFilesInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsFilesInfo.xss">
+      <DependentUpon>dsFilesInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsFilesInfo.xsx">
+      <DependentUpon>dsFilesInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsJobTitles.xsc">
+      <DependentUpon>dsJobTitles.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsJobTitles.xsx">
+      <DependentUpon>dsJobTitles.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsJobXCoElements.xsc">
+      <DependentUpon>dsJobXCoElements.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsManagersNotes.xsc">
+      <DependentUpon>dsManagersNotes.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsManagersNotes.xsx">
+      <DependentUpon>dsManagersNotes.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsMFGGroupMember.xsc">
+      <DependentUpon>dsMFGGroupMember.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsMFGGroupMember.xss">
+      <DependentUpon>dsMFGGroupMember.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsMFGGroupMember.xsx">
+      <DependentUpon>dsMFGGroupMember.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsMFGMemberTasks.xsc">
+      <DependentUpon>dsMFGMemberTasks.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsMFGMemberTasks.xsx">
+      <DependentUpon>dsMFGMemberTasks.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsNotes.xsc">
+      <DependentUpon>dsNotes.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsNotes.xsx">
+      <DependentUpon>dsNotes.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsOrgnizationCharts.xsc">
+      <DependentUpon>dsOrgnizationCharts.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsOrgnizationCharts.xsx">
+      <DependentUpon>dsOrgnizationCharts.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsPhonebook.xsc">
+      <DependentUpon>dsPhonebook.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsPhonebook.xsx">
+      <DependentUpon>dsPhonebook.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsProjects.xsc">
+      <DependentUpon>dsProjects.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsProjects.xss">
+      <DependentUpon>dsProjects.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsProjects.xsx">
+      <DependentUpon>dsProjects.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsProjectsLevels.xsc">
+      <DependentUpon>dsProjectsLevels.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsProjectsLevels.xsx">
+      <DependentUpon>dsProjectsLevels.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsResponsblities.xsc">
+      <DependentUpon>dsResponsblities.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsResponsblities.xsx">
+      <DependentUpon>dsResponsblities.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsState.xsc">
+      <DependentUpon>dsState.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTasks.xsc">
+      <DependentUpon>dsTasks.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DsTaskSummReport.xsc">
+      <DependentUpon>DsTaskSummReport.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTeams.xsc">
+      <DependentUpon>dsTeams.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTeams.xsx">
+      <DependentUpon>dsTeams.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTotalAccSheet.xsx">
+      <DependentUpon>dsTotalAccSheet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTransactions.xsc">
+      <DependentUpon>dsTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTransactions.xsx">
+      <DependentUpon>dsTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsWebSites.xsc">
+      <DependentUpon>dsWebSites.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployee.xsc">
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsEmployee.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\dsEmployee.xss">
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
